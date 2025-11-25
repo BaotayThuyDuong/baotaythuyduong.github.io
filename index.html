@@ -3,147 +3,752 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Cửa hàng bán bao tay bảo hộ lao động – Giá sỉ tận xưởng, giao hàng toàn quốc.">
-    <title>Cửa Hàng Bao Tay Bảo Hộ</title>
+    <title>Bao Tay Thùy Dương - Bao tay bảo hộ lao động</title>
+    <meta name="description" content="Bao Tay Thùy Dương - Chuyên cung cấp bao tay bảo hộ lao động, găng tay công nghiệp, giá sỉ tận xưởng, giao hàng toàn quốc. Liên hệ Zalo 033 444 9494.">
 
     <style>
-        body { font-family: Arial; margin: 0; background: #f5f5f5; }
-        header { background: #0066cc; padding: 20px; text-align: center; color: #fff; }
-        nav { background: #004a99; padding: 10px; text-align: center; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-        
-        .container { width: 90%; margin: 20px auto; }
-        .products { display: flex; flex-wrap: wrap; gap: 20px; }
-
-        .product {
-            width: 30%;
-            background: #fff;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            text-align: center;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
-        .product img {
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f6fb;
+            color: #222;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0066cc, #00a6ff);
+            color: #fff;
+            padding: 20px 10px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .logo-text {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .logo-text span {
+            color: #ffeb3b;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 14px;
+        }
+
+        .header-right strong {
+            display: block;
+            font-size: 15px;
+        }
+
+        nav {
+            background: #004b99;
+        }
+
+        nav .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 15px;
+            padding: 8px 10px;
+            align-items: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 6px 10px;
+            border-radius: 999px;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-1px);
+        }
+
+        .hero {
+            max-width: 1200px;
+            margin: 15px auto 0;
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 18px 16px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .hero-text {
+            flex: 1 1 260px;
+        }
+
+        .hero-text h1 {
+            font-size: 24px;
+            margin-bottom: 8px;
+            color: #0057b8;
+        }
+
+        .hero-text p {
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+
+        .hero-badges {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .badge {
+            background: #e3f2ff;
+            color: #0057b8;
+            border-radius: 20px;
+            padding: 4px 10px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .hero-highlight {
+            flex: 0 1 220px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        .hero-highlight span {
+            display: inline-block;
+            background: #ffeb3b;
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 18px auto;
+            padding: 0 10px 25px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #0057b8;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-title::before {
+            content: "";
+            width: 5px;
+            height: 20px;
+            border-radius: 3px;
+            background: #ff9800;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+        }
+
+        @media (max-width: 900px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero {
+                flex-direction: column;
+                text-align: left;
+            }
+            .hero-highlight {
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 12px 8px;
+            }
+            .header-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .header-right {
+                text-align: left;
+            }
+        }
+
+        .product-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 10px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+        }
+
+        .product-card img {
             width: 100%;
-            height: 200px;
+            height: 180px;
             object-fit: cover;
             border-radius: 10px;
+            transition: transform 0.2s;
         }
 
-        .product button {
-            width: 100%;
-            padding: 10px;
-            background: #0077cc;
+        .product-card:hover img {
+            transform: scale(1.03);
+        }
+
+        .product-name {
+            font-size: 15px;
+            font-weight: bold;
+            color: #004b99;
+        }
+
+        .product-desc {
+            font-size: 13px;
+            color: #555;
+            min-height: 32px;
+        }
+
+        .product-meta {
+            font-size: 13px;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .price-tag {
+            color: #e65100;
+            font-weight: bold;
+        }
+
+        .product-btn {
+            margin-top: 4px;
+            padding: 8px;
+            border-radius: 999px;
             border: none;
-            color: #fff;
-            font-size: 16px;
-            border-radius: 5px;
             cursor: pointer;
-            margin-top: 10px;
+            background: #0066cc;
+            color: #fff;
+            font-size: 13px;
+            font-weight: bold;
+            transition: background 0.18s, transform 0.18s;
         }
 
-        .cart {
-            background: white;
-            padding: 15px;
-            border-radius: 10px;
-            margin-top: 30px;
+        .product-btn:hover {
+            background: #004f9b;
+            transform: translateY(-1px);
+        }
+
+        .cart-section {
+            margin-top: 25px;
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 12px 12px 16px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .cart-items {
+            font-size: 13px;
+            max-height: 180px;
+            overflow-y: auto;
+            margin-top: 6px;
+            padding-right: 4px;
+        }
+
+        .cart-item-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4px 0;
+            border-bottom: 1px dashed #e0e0e0;
+        }
+
+        .cart-actions {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .cart-summary {
+            font-size: 13px;
+            color: #333;
+        }
+
+        .cart-button-main {
+            padding: 8px 14px;
+            border-radius: 999px;
+            border: none;
+            background: #ff9800;
+            color: #fff;
+            font-size: 13px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.18s, transform 0.18s;
+        }
+
+        .cart-button-main:hover {
+            background: #fb8c00;
+            transform: translateY(-1px);
         }
 
         footer {
-            background: #333;
-            color: white;
-            padding: 15px;
-            text-align: center;
-            margin-top: 30px;
+            background: #0b1830;
+            color: #fff;
+            padding: 14px 10px;
+            margin-top: 20px;
+        }
+
+        footer .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            font-size: 13px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: space-between;
+        }
+
+        /* Nút Zalo nổi */
+        .zalo-floating {
+            position: fixed;
+            right: 14px;
+            bottom: 14px;
+            z-index: 200;
+            background: #00a6ff;
+            color: #fff;
+            border-radius: 999px;
+            padding: 8px 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            font-size: 13px;
+            font-weight: bold;
+            transition: background 0.18s, transform 0.18s, box-shadow 0.18s;
+        }
+
+        .zalo-floating:hover {
+            background: #0089d1;
+            transform: translateY(-2px);
+            box-shadow: 0 7px 18px rgba(0,0,0,0.35);
+        }
+
+        .zalo-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ffeb3b;
+        }
+
+        /* Modal chọn Zalo */
+        .modal-backdrop {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.45);
+            z-index: 300;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-backdrop.show {
+            display: flex;
+        }
+
+        .modal-box {
+            background: #ffffff;
+            border-radius: 12px;
+            max-width: 360px;
+            width: 92%;
+            padding: 14px 14px 16px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+            animation: popup 0.18s ease-out;
+        }
+
+        @keyframes popup {
+            from { transform: translateY(10px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-box h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #0057b8;
+        }
+
+        .modal-box p {
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .zalo-options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .zalo-option-btn {
+            width: 100%;
+            padding: 8px 10px;
+            border-radius: 999px;
+            border: 1px solid #0066cc;
+            background: #ffffff;
+            color: #0066cc;
+            font-size: 13px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.18s, color 0.18s;
+        }
+
+        .zalo-option-btn span.small {
+            font-weight: normal;
+            font-size: 12px;
+            color: #555;
+        }
+
+        .zalo-option-btn:hover {
+            background: #0066cc;
+            color: #ffffff;
+        }
+
+        .modal-close {
+            text-align: right;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        .modal-close button {
+            background: none;
+            border: none;
+            color: #888;
+            cursor: pointer;
+        }
+
+        .empty-cart {
+            font-size: 13px;
+            color: #777;
         }
     </style>
-
-    <script>
-        let cart = [];
-
-        function addToCart(name, price) {
-            cart.push({ name, price });
-            updateCart();
-        }
-
-        function updateCart() {
-            let list = "";
-            let total = 0;
-
-            cart.forEach(item => {
-                list += `<p>${item.name} - ${item.price.toLocaleString()}đ</p>`;
-                total += item.price;
-            });
-
-            document.getElementById("cart-items").innerHTML = list;
-            document.getElementById("cart-total").innerText = total.toLocaleString() + "đ";
-        }
-
-        function checkout() {
-            let message = "Tôi muốn đặt hàng:\n";
-            cart.forEach(item => {
-                message += "- " + item.name + ": " + item.price.toLocaleString() + "đ\n";
-            });
-
-            let phone = "09xxxxxxxx"; // Thay số Zalo cửa hàng bạn
-            window.location.href = "https://zalo.me/" + phone + "?text=" + encodeURI(message);
-        }
-    </script>
 </head>
-
 <body>
 
 <header>
-    <h1>Cửa Hàng Bao Tay Bảo Hộ Lao Động</h1>
-    <p>Giá sỉ tận xưởng – Giao hàng toàn quốc</p>
+    <div class="header-inner">
+        <div class="logo-text">
+            Bao Tay <span>Thùy Dương</span>
+        </div>
+        <div class="header-right">
+            <strong>Chuyên bao tay bảo hộ lao động</strong>
+            <div>Zalo: <b>033 444 9494</b> – <b>0981 171 750</b></div>
+        </div>
+    </div>
 </header>
 
 <nav>
-    <a href="#">Trang Chủ</a>
-    <a href="#sanpham">Sản Phẩm</a>
-    <a href="#giohang">Giỏ Hàng</a>
+    <div class="nav-inner">
+        <a href="#sanpham">Sản phẩm</a>
+        <a href="#giohang">Giỏ hàng</a>
+        <a href="#lienhe">Liên hệ</a>
+    </div>
 </nav>
 
-<div class="container" id="sanpham">
-    <h2>SẢN PHẨM BÁN CHẠY</h2>
+<section class="hero">
+    <div class="hero-text">
+        <h1>Bao Tay Thùy Dương – Giá sỉ, giao nhanh toàn quốc</h1>
+        <p>Chuyên cung cấp bao tay bảo hộ lao động cho xưởng sản xuất, công trình, kho bãi, ngành gỗ, cơ khí, hàng khối lượng lớn.</p>
+        <p>Nhận đơn sỉ, lẻ – Tư vấn chọn mẫu phù hợp từng công việc.</p>
+        <div class="hero-badges">
+            <div class="badge">Hàng luôn sẵn kho</div>
+            <div class="badge">Giá tốt cho xưởng & đại lý</div>
+            <div class="badge">Ship toàn quốc</div>
+        </div>
+    </div>
+    <div class="hero-highlight">
+        <span>Liên hệ Zalo ngay</span>
+        <div><b>033 444 9494</b> – <b>0981 171 750</b></div>
+        <div style="margin-top:6px;">Gửi hình thực tế – báo giá nhanh – tư vấn mẫu miễn phí.</div>
+    </div>
+</section>
 
-    <div class="products">
+<div class="container">
+    <h2 class="section-title" id="sanpham">Sản phẩm bao tay bảo hộ</h2>
 
-        <div class="product">
-            <img src="https://i.imgur.com/3Qp0HBP.jpeg">
-            <h3>Bao Tay Phủ PU</h3>
-            <p>Giá: 4.000đ</p>
-            <button onclick="addToCart('Bao Tay Phủ PU', 4000)">Thêm vào giỏ</button>
+    <div class="products-grid">
+        <!-- SP 1 -->
+        <div class="product-card">
+            <img src="images/sp1.jpg" alt="Bao tay bảo hộ 1">
+            <div class="product-name">Bao tay phủ PU xám</div>
+            <div class="product-desc">Co giãn tốt, ôm tay, phù hợp xưởng điện tử, lắp ráp, kho hàng.</div>
+            <div class="product-meta">
+                <span class="price-tag">Giá: Liên hệ Zalo</span>
+                <span>Mã SP: BT-PU01</span>
+            </div>
+            <button class="product-btn" onclick="addToCart('Bao tay phủ PU xám')">Thêm vào giỏ</button>
         </div>
 
-        <div class="product">
-            <img src="https://i.imgur.com/xgqSsfR.jpeg">
-            <h3>Bao Tay Chống Cắt</h3>
-            <p>Giá: 25.000đ</p>
-            <button onclick="addToCart('Bao Tay Chống Cắt', 25000)">Thêm vào giỏ</button>
+        <!-- SP 2 -->
+        <div class="product-card">
+            <img src="images/sp2.jpg" alt="Bao tay bảo hộ 2">
+            <div class="product-name">Bao tay phủ PU kem</div>
+            <div class="product-desc">Bề mặt phủ PU chống trượt, thao tác tốt với linh kiện nhỏ.</div>
+            <div class="product-meta">
+                <span class="price-tag">Giá: Liên hệ Zalo</span>
+                <span>Mã SP: BT-PU02</span>
+            </div>
+            <button class="product-btn" onclick="addToCart('Bao tay phủ PU kem')">Thêm vào giỏ</button>
         </div>
 
-        <div class="product">
-            <img src="https://i.imgur.com/YwYyRXH.jpeg">
-            <h3>Bao Tay Cao Su</h3>
-            <p>Giá: 10.000đ</p>
-            <button onclick="addToCart('Bao Tay Cao Su', 10000)">Thêm vào giỏ</button>
+        <!-- SP 3 -->
+        <div class="product-card">
+            <img src="images/sp3.jpg" alt="Bao tay bảo hộ 3">
+            <div class="product-name">Bao tay xám đen chống bám bẩn</div>
+            <div class="product-desc">Màu tối, sạch, phù hợp môi trường nhiều bụi bẩn, dầu mỡ nhẹ.</div>
+            <div class="product-meta">
+                <span class="price-tag">Giá: Liên hệ Zalo</span>
+                <span>Mã SP: BT-XD01</span>
+            </div>
+            <button class="product-btn" onclick="addToCart('Bao tay xám đen chống bám bẩn')">Thêm vào giỏ</button>
         </div>
 
+        <!-- SP 4 -->
+        <div class="product-card">
+            <img src="images/sp4.jpg" alt="Bao tay bảo hộ 4">
+            <div class="product-name">Bao tay trắng mỏng ôm tay</div>
+            <div class="product-desc">Thoáng tay, ôm sát, dùng cho đóng gói, phân loại hàng hóa.</div>
+            <div class="product-meta">
+                <span class="price-tag">Giá: Liên hệ Zalo</span>
+                <span>Mã SP: BT-TR01</span>
+            </div>
+            <button class="product-btn" onclick="addToCart('Bao tay trắng mỏng ôm tay')">Thêm vào giỏ</button>
+        </div>
+
+        <!-- SP 5 -->
+        <div class="product-card">
+            <img src="images/sp5.jpg" alt="Bao tay bảo hộ 5">
+            <div class="product-name">Bao tay len xám đậm</div>
+            <div class="product-desc">Len dày, ấm tay, phù hợp môi trường lạnh, kho đông lạnh.</div>
+            <div class="product-meta">
+                <span class="price-tag">Giá: Liên hệ Zalo</span>
+                <span>Mã SP: BT-LEN01</span>
+            </div>
+            <button class="product-btn" onclick="addToCart('Bao tay len xám đậm')">Thêm vào giỏ</button>
+        </div>
+
+        <!-- SP 6 -->
+        <div class="product-card">
+            <img src="images/sp6.jpg" alt="Bao tay bảo hộ 6">
+            <div class="product-name">Bao tay len kem</div>
+            <div class="product-desc">Mềm tay, dễ chịu, sử dụng trong đóng gói, vận chuyển nhẹ.</div>
+            <div class="product-meta">
+                <span class="price-tag">Giá: Liên hệ Zalo</span>
+                <span>Mã SP: BT-LEN02</span>
+            </div>
+            <button class="product-btn" onclick="addToCart('Bao tay len kem')">Thêm vào giỏ</button>
+        </div>
+
+        <!-- SP 7 -->
+        <div class="product-card">
+            <img src="images/sp7.jpg" alt="Bao tay bảo hộ 7">
+            <div class="product-name">Bao tay xám phối trắng</div>
+            <div class="product-desc">Kiểu dáng đẹp, phù hợp cả cho công việc & bảo hộ cơ bản.</div>
+            <div class="product-meta">
+                <span class="price-tag">Giá: Liên hệ Zalo</span>
+                <span>Mã SP: BT-MIX01</span>
+            </div>
+            <button class="product-btn" onclick="addToCart('Bao tay xám phối trắng')">Thêm vào giỏ</button>
+        </div>
+
+        <!-- SP 8 -->
+        <div class="product-card">
+            <img src="images/sp8.jpg" alt="Bao tay bảo hộ 8">
+            <div class="product-name">Bao tay xám mịn</div>
+            <div class="product-desc">Chất liệu mềm, ôm tay, thao tác linh hoạt, ít xù lông.</div>
+            <div class="product-meta">
+                <span class="price-tag">Giá: Liên hệ Zalo</span>
+                <span>Mã SP: BT-XM01</span>
+            </div>
+            <button class="product-btn" onclick="addToCart('Bao tay xám mịn')">Thêm vào giỏ</button>
+        </div>
+
+        <!-- SP 9 -->
+        <div class="product-card">
+            <img src="images/sp9.jpg" alt="Bao tay bảo hộ 9">
+            <div class="product-name">Bao tay len phối màu</div>
+            <div class="product-desc">Màu sắc dễ phân loại theo tổ, SKU, công đoạn sản xuất.</div>
+            <div class="product-meta">
+                <span class="price-tag">Giá: Liên hệ Zalo</span>
+                <span>Mã SP: BT-MAU01</span>
+            </div>
+            <button class="product-btn" onclick="addToCart('Bao tay len phối màu')">Thêm vào giỏ</button>
+        </div>
+
+        <!-- SAU NÀY MUỐN THÊM SẢN PHẨM
+        Copy nguyên một khối <div class="product-card">...</div> ở trên
+        rồi dán thêm vào đây là sẽ có sản phẩm mới.
+        -->
     </div>
 
-    <div class="cart" id="giohang">
-        <h2>GIỎ HÀNG</h2>
-        <div id="cart-items"></div>
-        <h3>Tổng: <span id="cart-total">0đ</span></h3>
-        <button onclick="checkout()">Gửi đơn qua Zalo</button>
+    <div class="cart-section" id="giohang">
+        <h2 class="section-title">Giỏ hàng tạm tính</h2>
+        <div id="cart-items" class="cart-items">
+            <div class="empty-cart">Chưa có sản phẩm nào trong giỏ. Bấm "Thêm vào giỏ" ở sản phẩm để tạo đơn.</div>
+        </div>
+        <div class="cart-actions">
+            <div class="cart-summary">
+                Tổng số sản phẩm: <b><span id="cart-count">0</span></b><br>
+                Ghi chú: Giá sẽ được báo trực tiếp qua Zalo tùy số lượng & mẫu.
+            </div>
+            <button class="cart-button-main" onclick="openZaloModal()">Gửi đơn qua Zalo</button>
+        </div>
     </div>
 </div>
 
-<footer>
-    <p>Liên hệ: 09xx xxx xxx | Zalo</p>
+<footer id="lienhe">
+    <div class="footer-inner">
+        <div>
+            <strong>Bao Tay Thùy Dương</strong><br>
+            Chuyên bao tay bảo hộ lao động cho xưởng, công trình, kho, xí nghiệp.<br>
+            Zalo: 033 444 9494 – 0981 171 750
+        </div>
+        <div>
+            Nhận đơn sỉ, lẻ – Giao hàng toàn quốc.<br>
+            Gửi hình mẫu & số lượng, shop sẽ báo giá nhanh nhất qua Zalo.
+        </div>
+    </div>
 </footer>
+
+<!-- Nút Zalo nổi -->
+<div class="zalo-floating" onclick="openZaloMain()">
+    <div class="zalo-dot"></div>
+    <div>Chat Zalo 033 444 9494</div>
+</div>
+
+<!-- Modal chọn Zalo -->
+<div class="modal-backdrop" id="zaloModal">
+    <div class="modal-box">
+        <h3>Gửi đơn hàng qua Zalo</h3>
+        <p>Chọn Zalo bạn muốn gửi đơn. Nội dung sẽ tự động tạo từ giỏ hàng.</p>
+        <div class="zalo-options">
+            <button class="zalo-option-btn" onclick="checkoutZalo('0334449494')">
+                <span>Zalo 1: 033 444 9494</span>
+                <span class="small">Tư vấn nhanh, báo giá sỉ</span>
+            </button>
+            <button class="zalo-option-btn" onclick="checkoutZalo('0981171750')">
+                <span>Zalo 2: 0981 171 750</span>
+                <span class="small">Hỗ trợ đơn lẻ & khách cũ</span>
+            </button>
+        </div>
+        <div class="modal-close">
+            <button onclick="closeZaloModal()">Đóng</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    let cart = [];
+
+    function addToCart(name) {
+        cart.push(name);
+        renderCart();
+    }
+
+    function renderCart() {
+        const container = document.getElementById('cart-items');
+        const countSpan = document.getElementById('cart-count');
+
+        if (cart.length === 0) {
+            container.innerHTML = '<div class="empty-cart">Chưa có sản phẩm nào trong giỏ. Bấm "Thêm vào giỏ" ở sản phẩm để tạo đơn.</div>';
+            countSpan.textContent = '0';
+            return;
+        }
+
+        let html = '';
+        cart.forEach((item, index) => {
+            html += `
+                <div class="cart-item-row">
+                    <span>${index + 1}. ${item}</span>
+                    <span style="font-size:12px;color:#777;">SL: 1</span>
+                </div>
+            `;
+        });
+
+        container.innerHTML = html;
+        countSpan.textContent = cart.length.toString();
+    }
+
+    function openZaloMain() {
+        window.location.href = "https://zalo.me/0334449494";
+    }
+
+    function openZaloModal() {
+        if (cart.length === 0) {
+            alert("Bạn chưa chọn sản phẩm nào. Vui lòng bấm 'Thêm vào giỏ' ở sản phẩm trước.");
+            return;
+        }
+        document.getElementById('zaloModal').classList.add('show');
+    }
+
+    function closeZaloModal() {
+        document.getElementById('zaloModal').classList.remove('show');
+    }
+
+    function checkoutZalo(phone) {
+        if (cart.length === 0) {
+            alert("Giỏ hàng đang trống.");
+            return;
+        }
+
+        let message = "Chào shop Bao Tay Thùy Dương,%0AEm muốn đặt bao tay:%0A";
+        cart.forEach((item, index) => {
+            message += (index + 1) + ". " + item + "%0A";
+        });
+        message += "%0AVui lòng báo giá giúp em. Cảm ơn shop!";
+
+        const url = "https://zalo.me/" + phone + "?text=" + message;
+        window.location.href = url;
+    }
+</script>
 
 </body>
 </html>
