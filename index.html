@@ -9,131 +9,250 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:Arial, sans-serif;background:#eef4ff;}
 
+/* HEADER */
 header{
-    background:#0a5ad9;color:white;text-align:center;
-    padding:25px 10px;border-bottom:4px solid #083e96;
+    background:#0a5ad9;
+    color:white;
+    text-align:center;
+    padding:25px 10px;
+    border-bottom:4px solid #083e96;
 }
 header h1{font-size:34px;font-weight:900;}
-header p{margin-top:8px;font-size:14px;line-height:1.5;}
+header p{margin-top:8px;font-size:14px;line-height:1.6;}
 
+/* MENU */
 nav{
-    background:#083e96;display:flex;justify-content:center;
-    gap:30px;padding:14px;
+    background:#083e96;
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    padding:12px;
 }
 nav a{
-    color:white;text-decoration:none;font-weight:bold;
-    padding:8px 18px;border-radius:6px;font-size:16px;
+    color:white;
+    font-weight:bold;
+    text-decoration:none;
+    padding:8px 18px;
+    border-radius:6px;
+    font-size:16px;
+    cursor:pointer;
 }
-nav a:hover{background:#ffffff33;}
+nav a:hover{
+    background:#ffffff33;
+}
 
-section{padding:20px;max-width:1100px;margin:auto;}
+/* ACTIVE TAB */
+.active-tab{
+    background:#0a5ad9 !important;
+}
+
+/* SECTION (TAB CONTENT) */
+section{
+    max-width:1100px;
+    margin:auto;
+    padding:20px;
+    display:none;
+}
+section.active{
+    display:block;
+}
 
 h2{
-    font-size:22px;color:#0a5ad9;margin:15px 0;
-    border-left:5px solid #ff9800;padding-left:10px;
+    color:#0a5ad9;
+    font-size:22px;
     font-weight:800;
+    margin-bottom:15px;
+    border-left:5px solid #ff9800;
+    padding-left:10px;
 }
 
+/* PRODUCT GRID */
 .grid{
-    display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
 }
-@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:900px){
+    .grid{grid-template-columns:repeat(2,1fr);}
+}
 
 /* CARD */
 .card{
-    background:white;border-radius:12px;padding:12px;
-    text-align:center;box-shadow:0 3px 10px #00000022;
+    background:white;
+    border-radius:12px;
+    padding:12px;
+    text-align:center;
+    box-shadow:0 3px 10px #00000022;
 }
 .card img{
-    width:100%;height:220px;object-fit:contain;
-    border-radius:10px;background:white;padding:10px;
+    width:100%;
+    height:220px;
+    object-fit:contain;
+    border-radius:10px;
+    background:white;
+    padding:10px;
 }
 .card-title{
-    font-size:15px;font-weight:bold;color:#0a5ad9;margin-top:10px;
+    font-size:15px;
+    font-weight:bold;
+    color:#0a5ad9;
+    margin-top:10px;
 }
-.btn-row{display:flex;justify-content:space-between;margin-top:10px;}
-
+.btn-row{
+    display:flex;
+    justify-content:space-between;
+    margin-top:10px;
+}
 .btn-zalo{
-    background:#0a5ad9;color:white;padding:6px 12px;border-radius:20px;
-    border:none;font-size:13px;cursor:pointer;
+    background:#0a5ad9;
+    color:white;
+    padding:6px 12px;
+    border:none;
+    border-radius:20px;
+    font-size:13px;
+    cursor:pointer;
 }
 .btn-zalo:hover{background:#083e96;}
-
 .btn-mota{
-    background:#ff9800;color:white;padding:6px 12px;border-radius:20px;
-    border:none;font-size:13px;cursor:pointer;
+    background:#ff9800;
+    color:white;
+    padding:6px 12px;
+    border:none;
+    border-radius:20px;
+    font-size:13px;
+    cursor:pointer;
 }
 .btn-mota:hover{background:#d67f00;}
 
-/* POPUP ZALO */
+/* POPUP ZALO QR */
 .zalo-popup{
-    position:fixed;top:0;left:0;width:100%;height:100%;
-    background:rgba(0,0,0,0.5);display:none;
-    align-items:center;justify-content:center;z-index:99999;
+    position:fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background:rgba(0,0,0,0.45);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:99999;
 }
 .zalo-box{
-    background:white;width:90%;max-width:340px;
-    padding:20px;border-radius:12px;text-align:center;
+    background:white;
+    width:90%;
+    max-width:350px;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
     position:relative;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
 }
 .zalo-close{
-    background:red;color:white;border:none;
-    padding:5px 10px;border-radius:6px;
-    position:absolute;right:10px;top:10px;cursor:pointer;
+    background:red;
+    color:white;
+    border:none;
+    padding:6px 10px;
+    border-radius:6px;
+    position:absolute;
+    top:10px; right:10px;
+    cursor:pointer;
+    font-weight:bold;
 }
-.zalo-avatar{
-    width:90px;height:90px;border-radius:50%;margin-bottom:10px;
+.zalo-title{
+    font-size:22px;
+    font-weight:bold;
+    color:#0a5ad9;
+    margin-bottom:15px;
 }
-.zalo-title{font-size:20px;font-weight:bold;color:#0a5ad9;margin-bottom:10px;}
+.zalo-box img{
+    width:220px;
+    height:220px;
+    border-radius:12px;
+    margin-bottom:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.2);
+}
+.zalo-number{
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
 .zalo-btn{
-    width:100%;padding:10px;margin-top:10px;font-size:15px;
-    border:none;border-radius:8px;font-weight:bold;cursor:pointer;
+    width:100%;
+    padding:12px;
+    background:#0a5ad9;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
 }
-.btn-call{background:#ff9800;color:white;}
-.btn-zalo2{background:#0a5ad9;color:white;}
 
-/* POPUP MÔ TẢ */
+/* POPUP MÔ TẢ (Cách 2 – nguyên văn) */
 .mota-popup{
-    position:fixed;top:0;left:0;width:100%;height:100%;
-    background:rgba(0,0,0,0.45);display:none;
-    align-items:center;justify-content:center;z-index:9999;
+    position:fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background:rgba(0,0,0,0.45);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:9999;
 }
 .mota-box{
-    background:white;width:90%;max-width:380px;padding:20px;
-    border-radius:10px;box-shadow:0 5px 15px #0004;
+    background:white;
+    width:90%;
+    max-width:380px;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 5px 15px #0004;
     white-space:pre-line;
     font-size:14px;
 }
 .mota-close button{
-    background:red;color:white;border:none;padding:6px 10px;
-    border-radius:5px;float:right;margin-top:-10px;margin-right:-10px;
+    background:red;
+    color:white;
+    border:none;
+    padding:6px 10px;
+    border-radius:5px;
+    float:right;
+    margin-top:-10px;
+    margin-right:-10px;
     cursor:pointer;
 }
-.mota-box h3{color:#0a5ad9;margin-bottom:10px;}
-
-/* VIDEO & GIỚI THIỆU & FOOTER */
-.videos{
-    display:grid;grid-template-columns:repeat(2,1fr);gap:20px;
-}
-@media(max-width:900px){.videos{grid-template-columns:1fr;}}
-iframe{
-    width:100%;height:240px;border-radius:12px;background:#000;border:none;
-}
-.intro{
-    font-size:14px;line-height:1.6;margin-bottom:20px;
-}
-footer{
-    background:#083e96;color:white;text-align:center;
-    padding:18px 10px;font-size:14px;margin-top:30px;line-height:1.6;
+.mota-box h3{
+    color:#0a5ad9;
+    margin-bottom:10px;
 }
 </style>
 
 <script>
-function showZalo(){ document.getElementById("zaloPopup").style.display="flex"; }
-function closeZalo(){ document.getElementById("zaloPopup").style.display="none"; }
+/* SWITCH TAB */
+function showTab(tab){
+    document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
+    document.getElementById(tab).classList.add("active");
 
-function openMota(id){ document.getElementById("popup-"+id).style.display="flex"; }
-function closeMota(id){ document.getElementById("popup-"+id).style.display="none"; }
+    document.querySelectorAll("nav a").forEach(a => a.classList.remove("active-tab"));
+    document.getElementById("tab-"+tab).classList.add("active-tab");
+}
+
+/* ZALO QR POPUP */
+function showZalo(){
+    document.getElementById("zaloPopup").style.display="flex";
+}
+function closeZalo(){
+    document.getElementById("zaloPopup").style.display="none";
+}
+
+/* MÔ TẢ POPUP */
+function openMota(id){
+    document.getElementById("popup-"+id).style.display="flex";
+}
+function closeMota(id){
+    document.getElementById("popup-"+id).style.display="none";
+}
+
+window.onload = function(){
+    showTab('len'); /* mở BAO TAY LEN mặc định */
+}
 </script>
 </head>
 
@@ -148,16 +267,15 @@ function closeMota(id){ document.getElementById("popup-"+id).style.display="none
 </header>
 
 <nav>
-    <a href="index.html">BAO TAY LEN</a>
-    <a href="other.html">CÁC LOẠI KHÁC</a>
-    <a href="#video">VIDEO</a>
-    <a href="#gioithieu">GIỚI THIỆU</a>
+    <a id="tab-len" onclick="showTab('len')">BAO TAY LEN</a>
+    <a id="tab-khac" onclick="showTab('khac')">PHỦ SƠN – PHỦ HẠT – CHỐNG CẮT</a>
 </nav>
 
-<section>
-<h2>BAO TAY LEN (16 SẢN PHẨM)</h2>
-
-<div class="grid">
+<!-- TAB 1: BAO TAY LEN -->
+<section id="len" class="active">
+    <h2>BAO TAY LEN (16 SẢN PHẨM)</h2>
+    <div class="grid">
+<!-- ========================= SẢN PHẨM BAO TAY LEN ========================= -->
 
 <!-- SP1 -->
 <div class="card">
@@ -319,34 +437,22 @@ function closeMota(id){ document.getElementById("popup-"+id).style.display="none
     </div>
 </div>
 
-</div>
+</div> <!-- đóng grid -->
 </section>
 
-<!-- POPUP ZALO -->
-<div class="zalo-popup" id="zaloPopup">
-    <div class="zalo-box">
-        <button class="zalo-close" onclick="closeZalo()">X</button>
-        <img class="zalo-avatar" src="https://chat.zalo.me/assets/icons/zalo.png" alt="Zalo">
-        <div class="zalo-title">Liên hệ Zalo</div>
-        <b>0981 171 750</b><br>
-        <b>033 444 9494</b><br><br>
-        <button class="zalo-btn btn-zalo2"
-            onclick="window.open('https://zalo.me/0981171750','_blank')">Nhắn Zalo</button>
-        <button class="zalo-btn btn-call"
-            onclick="window.location.href='tel:0981171750'">Gọi Ngay</button>
-    </div>
-</div>
 
-<!-- ================= POPUP MÔ TẢ SP1–SP16 ================= -->
+<!-- ========================= POPUP MÔ TẢ CHI TIẾT ========================= -->
+
+<!-- Mô tả NGUYÊN VĂN cho tất cả 16 SP (Cách 2) -->
 
 <!-- SP1 -->
 <div class="mota-popup" id="popup-sp1">
 <div class="mota-box">
 <div class="mota-close"><button onclick="closeMota('sp1')">X</button></div>
 <h3>Xám 30g</h3>
-Loại Găng Tay: Găng Tay LEN
+Loại Găng Tay LEN
 Chất liệu & Cấu tạo: Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.
-Lợi ích (Công dụng) Chi tiết: Bảo vệ Cơ bản và Thoải Mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.
+Lợi ích (Công dụng) Chi tiết: Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.
 Ngành nghề sử dụng Phổ biến: Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, Lái xe tải, Thợ hàn, Cơ khí.
 </div></div>
 
@@ -355,9 +461,9 @@ Ngành nghề sử dụng Phổ biến: Bốc xếp kho bãi, Xây dựng, Nông
 <div class="mota-box">
 <div class="mota-close"><button onclick="closeMota('sp2')">X</button></div>
 <h3>Xám 40g</h3>
-Loại Găng Tay: Găng Tay LEN
+Loại Găng Tay LEN
 Chất liệu & Cấu tạo: Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.
-Lợi ích (Công dụng) Chi tiết: Bảo vệ Cơ bản và Thoải Mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.
+Lợi ích (Công dụng) Chi tiết: Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.
 Ngành nghề sử dụng Phổ biến: Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, Lái xe tải, Thợ hàn, Cơ khí.
 </div></div>
 
@@ -366,9 +472,9 @@ Ngành nghề sử dụng Phổ biến: Bốc xếp kho bãi, Xây dựng, Nông
 <div class="mota-box">
 <div class="mota-close"><button onclick="closeMota('sp3')">X</button></div>
 <h3>Xám 50g</h3>
-Loại Găng Tay: Găng Tay LEN
+Loại Găng Tay LEN
 Chất liệu & Cấu tạo: Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.
-Lợi ích (Công dụng) Chi tiết: Bảo vệ Cơ bản và Thoải Mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.
+Lợi ích (Công dụng) Chi tiết: Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.
 Ngành nghề sử dụng Phổ biến: Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, Lái xe tải, Thợ hàn, Cơ khí.
 </div></div>
 
@@ -377,9 +483,9 @@ Ngành nghề sử dụng Phổ biến: Bốc xếp kho bãi, Xây dựng, Nông
 <div class="mota-box">
 <div class="mota-close"><button onclick="closeMota('sp4')">X</button></div>
 <h3>Xám 60g</h3>
-Loại Găng Tay: Găng Tay LEN
+Loại Găng Tay LEN
 Chất liệu & Cấu tạo: Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.
-Lợi ích (Công dụng) Chi tiết: Bảo vệ Cơ bản và Thoải Mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.
+Lợi ích (Công dụng) Chi tiết: Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.
 Ngành nghề sử dụng Phổ biến: Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, Lái xe tải, Thợ hàn, Cơ khí.
 </div></div>
 
@@ -388,9 +494,9 @@ Ngành nghề sử dụng Phổ biến: Bốc xếp kho bãi, Xây dựng, Nông
 <div class="mota-box">
 <div class="mota-close"><button onclick="closeMota('sp5')">X</button></div>
 <h3>Xám 70g</h3>
-Loại Găng Tay: Găng Tay LEN
+Loại Găng Tay LEN
 Chất liệu & Cấu tạo: Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.
-Lợi ích (Công dụng) Chi tiết: Bảo vệ Cơ bản và Thoải Mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.
+Lợi ích (Công dụng) Chi tiết: Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.
 Ngành nghề sử dụng Phổ biến: Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, Lái xe tải, Thợ hàn, Cơ khí.
 </div></div>
 
@@ -399,9 +505,9 @@ Ngành nghề sử dụng Phổ biến: Bốc xếp kho bãi, Xây dựng, Nông
 <div class="mota-box">
 <div class="mota-close"><button onclick="closeMota('sp6')">X</button></div>
 <h3>Xám 80g</h3>
-Loại Găng Tay: Găng Tay LEN
+Loại Găng Tay LEN
 Chất liệu & Cấu tạo: Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.
-Lợi ích (Công dụng) Chi tiết: Bảo vệ Cơ bản và Thoải Mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.
+Lợi ích (Công dụng) Chi tiết: Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.
 Ngành nghề sử dụng Phổ biến: Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, Lái xe tải, Thợ hàn, Cơ khí.
 </div></div>
 
@@ -410,9 +516,9 @@ Ngành nghề sử dụng Phổ biến: Bốc xếp kho bãi, Xây dựng, Nông
 <div class="mota-box">
 <div class="mota-close"><button onclick="closeMota('sp7')">X</button></div>
 <h3>Xám kim10 – 50g</h3>
-Loại Găng Tay: Găng Tay LEN
+Loại Găng Tay LEN
 Chất liệu & Cấu tạo: Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.
-Lợi ích (Công dụng) Chi tiết: Bảo vệ Cơ bản và Thoải Mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.
+Lợi ích (Công dụng) Chi tiết: Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.
 Ngành nghề sử dụng Phổ biến: Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, Lái xe tải, Thợ hàn, Cơ khí.
 </div></div>
 
@@ -421,9 +527,9 @@ Ngành nghề sử dụng Phổ biến: Bốc xếp kho bãi, Xây dựng, Nông
 <div class="mota-box">
 <div class="mota-close"><button onclick="closeMota('sp8')">X</button></div>
 <h3>Xám kim10 – 60g</h3>
-Loại Găng Tay: Găng Tay LEN
+Loại Găng Tay LEN
 Chất liệu & Cấu tạo: Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.
-Lợi ích (Công dụng) Chi tiết: Bảo vệ Cơ bản và Thoải Mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.
+Lợi ích (Công dụng) Chi tiết: Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.
 Ngành nghề sử dụng Phổ biến: Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, Lái xe tải, Thợ hàn, Cơ khí.
 </div></div>
 
@@ -432,9 +538,9 @@ Ngành nghề sử dụng Phổ biến: Bốc xếp kho bãi, Xây dựng, Nông
 <div class="mota-box">
 <div class="mota-close"><button onclick="closeMota('sp9')">X</button></div>
 <h3>Kem 40g</h3>
-Loại Găng Tay: Găng Tay LEN
+Loại Găng Tay LEN
 Chất liệu & Cấu tạo: Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.
-Lợi ích (Công dụng) Chi tiết: Bảo vệ Cơ bản và Thoải Mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.
+Lợi ích (Công dụng) Chi tiết: Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.
 Ngành nghề sử dụng Phổ biến: Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, Lái xe tải, Thợ hàn, Cơ khí.
 </div></div>
 
@@ -443,9 +549,9 @@ Ngành nghề sử dụng Phổ biến: Bốc xếp kho bãi, Xây dựng, Nông
 <div class="mota-box">
 <div class="mota-close"><button onclick="closeMota('sp10')">X</button></div>
 <h3>Kem 50g</h3>
-Loại Găng Tay: Găng Tay LEN
+Loại Găng Tay LEN
 Chất liệu & Cấu tạo: Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.
-Lợi ích (Công dụng) Chi tiết: Bảo vệ Cơ bản và Thoải Mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.
+Lợi ích (Công dụng) Chi tiết: Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.
 Ngành nghề sử dụng Phổ biến: Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, Lái xe tải, Thợ hàn, Cơ khí.
 </div></div>
 
@@ -454,9 +560,9 @@ Ngành nghề sử dụng Phổ biến: Bốc xếp kho bãi, Xây dựng, Nông
 <div class="mota-box">
 <div class="mota-close"><button onclick="closeMota('sp11')">X</button></div>
 <h3>Kem 60g</h3>
-Loại Găng Tay: Găng Tay LEN
+Loại Găng Tay LEN
 Chất liệu & Cấu tạo: Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.
-Lợi ích (Công dụng) Chi tiết: Bảo vệ Cơ bản và Thoải Mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.
+Lợi ích (Công dụng) Chi tiết: Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.
 Ngành nghề sử dụng Phổ biến: Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, Lái xe tải, Thợ hàn, Cơ khí.
 </div></div>
 
@@ -465,9 +571,9 @@ Ngành nghề sử dụng Phổ biến: Bốc xếp kho bãi, Xây dựng, Nông
 <div class="mota-box">
 <div class="mota-close"><button onclick="closeMota('sp12')">X</button></div>
 <h3>Kem 70g</h3>
-Loại Găng Tay: Găng Tay LEN
+Loại Găng Tay LEN
 Chất liệu & Cấu tạo: Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.
-Lợi ích (Công dụng) Chi tiết: Bảo vệ Cơ bản và Thoải Mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.
+Lợi ích (Công dụng) Chi tiết: Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.
 Ngành nghề sử dụng Phổ biến: Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, Lái xe tải, Thợ hàn, Cơ khí.
 </div></div>
 
@@ -476,9 +582,9 @@ Ngành nghề sử dụng Phổ biến: Bốc xếp kho bãi, Xây dựng, Nông
 <div class="mota-box">
 <div class="mota-close"><button onclick="closeMota('sp13')">X</button></div>
 <h3>Poly 40g</h3>
-Loại Găng Tay: Găng Tay LEN
+Loại Găng Tay LEN
 Chất liệu & Cấu tạo: Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.
-Lợi ích (Công dụng) Chi tiết: Bảo vệ Cơ bản và Thoải Mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.
+Lợi ích (Công dụng) Chi tiết: Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.
 Ngành nghề sử dụng Phổ biến: Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, Lái xe tải, Thợ hàn, Cơ khí.
 </div></div>
 
@@ -487,9 +593,9 @@ Ngành nghề sử dụng Phổ biến: Bốc xếp kho bãi, Xây dựng, Nông
 <div class="mota-box">
 <div class="mota-close"><button onclick="closeMota('sp14')">X</button></div>
 <h3>Poly 50g</h3>
-Loại Găng Tay: Găng Tay LEN
+Loại Găng Tay LEN
 Chất liệu & Cấu tạo: Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.
-Lợi ích (Công dụng) Chi tiết: Bảo vệ Cơ bản và Thoải Mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.
+Lợi ích (Công dụng) Chi tiết: Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.
 Ngành nghề sử dụng Phổ biến: Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, Lái xe tải, Thợ hàn, Cơ khí.
 </div></div>
 
@@ -498,9 +604,9 @@ Ngành nghề sử dụng Phổ biến: Bốc xếp kho bãi, Xây dựng, Nông
 <div class="mota-box">
 <div class="mota-close"><button onclick="closeMota('sp15')">X</button></div>
 <h3>Poly 60g</h3>
-Loại Găng Tay: Găng Tay LEN
+Loại Găng Tay LEN
 Chất liệu & Cấu tạo: Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.
-Lợi ích (Công dụng) Chi tiết: Bảo vệ Cơ bản và Thoải Mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.
+Lợi ích (Công dụng) Chi tiết: Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.
 Ngành nghề sử dụng Phổ biến: Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, Lái xe tải, Thợ hàn, Cơ khí.
 </div></div>
 
@@ -509,13 +615,197 @@ Ngành nghề sử dụng Phổ biến: Bốc xếp kho bãi, Xây dựng, Nông
 <div class="mota-box">
 <div class="mota-close"><button onclick="closeMota('sp16')">X</button></div>
 <h3>Poly 70g</h3>
-Loại Găng Tay: Găng Tay LEN
+Loại Găng Tay LEN
 Chất liệu & Cấu tạo: Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.
-Lợi ích (Công dụng) Chi tiết: Bảo vệ Cơ bản và Thoải Mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.
+Lợi ích (Công dụng) Chi tiết: Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.
 Ngành nghề sử dụng Phổ biến: Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, Lái xe tải, Thợ hàn, Cơ khí.
 </div></div>
+<!-- ==================== TAB 2: PHỦ SƠN – PHỦ HẠT – CHỐNG CẮT ==================== -->
 
-<!-- ====================== VIDEO ====================== -->
+<section id="khac">
+    <h2>PHỦ SƠN – PHỦ HẠT – CHỐNG CẮT</h2>
+
+    <div class="grid">
+
+        <!-- SP17 – Phủ sơn xanh -->
+        <div class="card">
+            <img src="images/sp17.jpg">
+            <div class="card-title">Phủ sơn xanh</div>
+            <div class="btn-row">
+                <button class="btn-zalo" onclick="showZalo()">Zalo</button>
+                <button class="btn-mota" onclick="openMota('sp17')">Mô tả</button>
+            </div>
+        </div>
+
+        <!-- SP18 – Phủ sơn đỏ -->
+        <div class="card">
+            <img src="images/sp18.jpg">
+            <div class="card-title">Phủ sơn đỏ</div>
+            <div class="btn-row">
+                <button class="btn-zalo" onclick="showZalo()">Zalo</button>
+                <button class="btn-mota" onclick="openMota('sp18')">Mô tả</button>
+            </div>
+        </div>
+
+        <!-- SP19 – Latex vàng -->
+        <div class="card">
+            <img src="images/sp19.jpg">
+            <div class="card-title">Latex vàng</div>
+            <div class="btn-row">
+                <button class="btn-zalo" onclick="showZalo()">Zalo</button>
+                <button class="btn-mota" onclick="openMota('sp19')">Mô tả</button>
+            </div>
+        </div>
+
+        <!-- SP20 – Nitrile xanh -->
+        <div class="card">
+            <img src="images/sp20.jpg">
+            <div class="card-title">Nitrile xanh</div>
+            <div class="btn-row">
+                <button class="btn-zalo" onclick="showZalo()">Zalo</button>
+                <button class="btn-mota" onclick="openMota('sp20')">Mô tả</button>
+            </div>
+        </div>
+
+        <!-- SP21 – Phủ hạt trắng -->
+        <div class="card">
+            <img src="images/sp21.jpg">
+            <div class="card-title">Phủ hạt trắng</div>
+            <div class="btn-row">
+                <button class="btn-zalo" onclick="showZalo()">Zalo</button>
+                <button class="btn-mota" onclick="openMota('sp21')">Mô tả</button>
+            </div>
+        </div>
+
+        <!-- SP22 – Phủ hạt vàng -->
+        <div class="card">
+            <img src="images/sp22.jpg">
+            <div class="card-title">Phủ hạt vàng</div>
+            <div class="btn-row">
+                <button class="btn-zalo" onclick="showZalo()">Zalo</button>
+                <button class="btn-mota" onclick="openMota('sp22')">Mô tả</button>
+            </div>
+        </div>
+
+        <!-- SP23 – Chống cắt cấp 3 -->
+        <div class="card">
+            <img src="images/sp23.jpg">
+            <div class="card-title">Chống cắt cấp 3</div>
+            <div class="btn-row">
+                <button class="btn-zalo" onclick="showZalo()">Zalo</button>
+                <button class="btn-mota" onclick="openMota('sp23')">Mô tả</button>
+            </div>
+        </div>
+
+        <!-- SP24 – Chống cắt cấp 5 -->
+        <div class="card">
+            <img src="images/sp24.jpg">
+            <div class="card-title">Chống cắt cấp 5</div>
+            <div class="btn-row">
+                <button class="btn-zalo" onclick="showZalo()">Zalo</button>
+                <button class="btn-mota" onclick="openMota('sp24')">Mô tả</button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ==================== POPUP MÔ TẢ TAB 2 ==================== -->
+
+<!-- SP17 – Phủ sơn xanh -->
+<div class="mota-popup" id="popup-sp17">
+<div class="mota-box">
+<div class="mota-close"><button onclick="closeMota('sp17')">X</button></div>
+<h3>Phủ sơn xanh</h3>
+Găng Tay Phủ SƠN/Cao su
+Chất liệu & Cấu tạo: Lõi sợi dệt (Poly/Cotton) + Lớp phủ cao su (Latex, Nitrile, PU, PVC). Lớp phủ có thể là lòng bàn tay, 3/4 hoặc phủ toàn bộ.
+Lợi ích (Công dụng) Chi tiết: Tăng độ bám dính vượt trội trong môi trường trơn trượt. Chống thấm dầu, mỡ, hóa chất nhẹ, nước. Lớp phủ Nitrile giúp tăng khả năng chống mài mòn và kháng dầu hơn.
+Ngành nghề sử dụng Phổ biến: Cơ khí, Lắp ráp linh kiện, Điện tử, Sửa chữa ô tô, Bảo trì máy móc, Xử lý vật liệu dính dầu mỡ.
+</div></div>
+
+<!-- SP18 – Phủ sơn đỏ -->
+<div class="mota-popup" id="popup-sp18">
+<div class="mota-box">
+<div class="mota-close"><button onclick="closeMota('sp18')">X</button></div>
+<h3>Phủ sơn đỏ</h3>
+Găng Tay Phủ SƠN/Cao su
+Chất liệu & Cấu tạo: Lõi sợi dệt (Poly/Cotton) + Lớp phủ cao su (Latex, Nitrile, PU, PVC). Lớp phủ có thể là lòng bàn tay, 3/4 hoặc phủ toàn bộ.
+Lợi ích (Công dụng) Chi tiết: Tăng độ bám dính vượt trội trong môi trường trơn trượt. Chống thấm dầu, mỡ, hóa chất nhẹ, nước. Lớp phủ Nitrile giúp tăng khả năng chống mài mòn và kháng dầu hơn.
+Ngành nghề sử dụng Phổ biến: Cơ khí, Lắp ráp linh kiện, Điện tử, Sửa chữa ô tô, Bảo trì máy móc, Xử lý vật liệu dính dầu mỡ.
+</div></div>
+
+<!-- SP19 – Latex vàng -->
+<div class="mota-popup" id="popup-sp19">
+<div class="mota-box">
+<div class="mota-close"><button onclick="closeMota('sp19')">X</button></div>
+<h3>Latex vàng</h3>
+Găng Tay Phủ SƠN/Cao su
+Chất liệu & Cấu tạo: Lõi sợi dệt (Poly/Cotton) + Lớp phủ cao su (Latex, Nitrile, PU, PVC). Lớp phủ có thể là lòng bàn tay, 3/4 hoặc phủ toàn bộ.
+Lợi ích (Công dụng) Chi tiết: Tăng độ bám dính vượt trội trong môi trường trơn trượt. Chống thấm dầu, mỡ, hóa chất nhẹ, nước. Lớp phủ Nitrile giúp tăng khả năng chống mài mòn và kháng dầu hơn.
+Ngành nghề sử dụng Phổ biến: Cơ khí, Lắp ráp linh kiện, Điện tử, Sửa chữa ô tô, Bảo trì máy móc, Xử lý vật liệu dính dầu mỡ.
+</div></div>
+
+<!-- SP20 – Nitrile xanh -->
+<div class="mota-popup" id="popup-sp20">
+<div class="mota-box">
+<div class="mota-close"><button onclick="closeMota('sp20')">X</button></div>
+<h3>Nitrile xanh</h3>
+Găng Tay Phủ SƠN/Cao su
+Chất liệu & Cấu tạo: Lõi sợi dệt (Poly/Cotton) + Lớp phủ cao su (Latex, Nitrile, PU, PVC). Lớp phủ có thể là lòng bàn tay, 3/4 hoặc phủ toàn bộ.
+Lợi ích (Công dụng) Chi tiết: Tăng độ bám dính vượt trội trong môi trường trơn trượt. Chống thấm dầu, mỡ, hóa chất nhẹ, nước. Lớp phủ Nitrile giúp tăng khả năng chống mài mòn và kháng dầu hơn.
+Ngành nghề sử dụng Phổ biến: Cơ khí, Lắp ráp linh kiện, Điện tử, Sửa chữa ô tô, Bảo trì máy móc, Xử lý vật liệu dính dầu mỡ.
+</div></div>
+
+
+<!-- SP21 – Phủ hạt trắng -->
+<div class="mota-popup" id="popup-sp21">
+<div class="mota-box">
+<div class="mota-close"><button onclick="closeMota('sp21')">X</button></div>
+<h3>Phủ hạt trắng</h3>
+Găng Tay Phủ HẠT
+Chất liệu & Cấu tạo: Sợi dệt cotton/poly + Hạt nhựa PVC (Polyvinyl Clorua) được in nổi/đính ở lòng bàn tay (hoặc cả hai mặt).
+Lợi ích (Công dụng) Chi tiết: Chống trơn trượt tối đa nhờ các hạt PVC tạo lực ma sát. Giúp cầm nắm chắc chắn các vật liệu nặng, trơn, giảm rủi ro rơi vỡ hàng hóa. Tăng độ bền cho lòng bàn tay.
+Ngành nghề sử dụng Phổ biến: Vận chuyển/Logistics, Kho bãi, Xử lý thùng carton, Xử lý vật liệu kính/gốm sứ, Thao tác máy móc rung nhẹ.
+</div></div>
+
+<!-- SP22 – Phủ hạt vàng -->
+<div class="mota-popup" id="popup-sp22">
+<div class="mota-box">
+<div class="mota-close"><button onclick="closeMota('sp22')">X</button></div>
+<h3>Phủ hạt vàng</h3>
+Găng Tay Phủ HẠT
+Chất liệu & Cấu tạo: Sợi dệt cotton/poly + Hạt nhựa PVC (Polyvinyl Clorua) được in nổi/đính ở lòng bàn tay (hoặc cả hai mặt).
+Lợi ích (Công dụng) Chi tiết: Chống trơn trượt tối đa nhờ các hạt PVC tạo lực ma sát. Giúp cầm nắm chắc chắn các vật liệu nặng, trơn, giảm rủi ro rơi vỡ hàng hóa. Tăng độ bền cho lòng bàn tay.
+Ngành nghề sử dụng Phổ biến: Vận chuyển/Logistics, Kho bãi, Xử lý thùng carton, Xử lý vật liệu kính/gốm sứ, Thao tác máy móc rung nhẹ.
+</div></div>
+
+
+<!-- SP23 – Chống cắt cấp 3 -->
+<div class="mota-popup" id="popup-sp23">
+<div class="mota-box">
+<div class="mota-close"><button onclick="closeMota('sp23')">X</button></div>
+<h3>Chống cắt cấp 3</h3>
+Găng Tay Chống CẮT
+Chất liệu & Cấu tạo: Sợi kỹ thuật cao (HPPE, Kevlar, Sợi thủy tinh), thường đi kèm lớp phủ PU hoặc Nitrile ở lòng bàn tay.
+Lợi ích (Công dụng) Chi tiết: Bảo vệ tay khỏi rủi ro cắt/cứa nguy hiểm. Chống mài mòn và chống đâm xuyên cơ bản. Giúp người lao động tự tin và an toàn khi làm việc với vật sắc nhọn.
+Ngành nghề sử dụng Phổ biến: Chế biến thực phẩm/thịt, Công nghiệp kính, Gia công kim loại tấm, Xử lý rác thải nguy hại, Lắp ráp chi tiết sắc.
+</div></div>
+
+<!-- SP24 – Chống cắt cấp 5 -->
+<div class="mota-popup" id="popup-sp24">
+<div class="mota-box">
+<div class="mota-close"><button onclick="closeMota('sp24')">X</button></div>
+<h3>Chống cắt cấp 5</h3>
+Găng Tay Chống CẮT
+Chất liệu & Cấu tạo: Sợi kỹ thuật cao (HPPE, Kevlar, Sợi thủy tinh), thường đi kèm lớp phủ PU hoặc Nitrile ở lòng bàn tay.
+Lợi ích (Công dụng) Chi tiết: Bảo vệ tay khỏi rủi ro cắt/cứa nguy hiểm. Chống mài mòn và chống đâm xuyên cơ bản. Giúp người lao động tự tin và an toàn khi làm việc với vật sắc nhọn.
+Ngành nghề sử dụng Phổ biến: Chế biến thực phẩm/thịt, Công nghiệp kính, Gia công kim loại tấm, Xử lý rác thải nguy hại, Lắp ráp chi tiết sắc.
+</div></div>
+
+
+
+<!-- ==================== VIDEO ==================== -->
 <section id="video">
     <h2>VIDEO GIỚI THIỆU SẢN PHẨM</h2>
     <div class="videos">
@@ -524,9 +814,11 @@ Ngành nghề sử dụng Phổ biến: Bốc xếp kho bãi, Xây dựng, Nông
     </div>
 </section>
 
-<!-- ====================== GIỚI THIỆU ====================== -->
+
+<!-- ==================== GIỚI THIỆU ==================== -->
 <section id="gioithieu">
     <h2>GIỚI THIỆU CÔNG TY</h2>
+
     <p class="intro">
         <b>CÔNG TY TNHH XUÂN CHƯƠNG GLOVES</b><br><br>
         Chuyên cung cấp bao tay len – phủ sơn – phủ hạt – chống cắt chất lượng cao.<br>
@@ -535,6 +827,8 @@ Ngành nghề sử dụng Phổ biến: Bốc xếp kho bãi, Xây dựng, Nông
     </p>
 </section>
 
+
+<!-- ==================== FOOTER ==================== -->
 <footer>
     CÔNG TY TNHH XUÂN CHƯƠNG GLOVES<br>
     MST: 3603502397<br>
@@ -544,3 +838,4 @@ Ngành nghề sử dụng Phổ biến: Bốc xếp kho bãi, Xây dựng, Nông
 
 </body>
 </html>
+
