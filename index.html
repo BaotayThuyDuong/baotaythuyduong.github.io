@@ -40,7 +40,9 @@ h2{font-size:22px;color:#0a5ad9;margin:15px 0;border-left:5px solid #ff9800;padd
     background:rgba(0,0,0,0.5);display:none;justify-content:center;align-items:center;z-index:9999;
 }
 .mota-box{
-    background:white;width:90%;max-width:400px;padding:20px;border-radius:10px;
+    background:white;width:90%;max-width:500px;padding:20px;border-radius:10px;
+    max-height: 80vh;
+    overflow-y: auto;
 }
 .mota-close{text-align:right;margin-bottom:10px;}
 .mota-close button{
@@ -82,6 +84,7 @@ h2{font-size:22px;color:#0a5ad9;margin:15px 0;border-left:5px solid #ff9800;padd
 .mota-table td {
     padding: 8px 12px;
     border: 1px solid #ddd;
+    vertical-align: top;
 }
 
 /* CSS cho footer */
@@ -104,23 +107,6 @@ footer {
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
-/* CSS cho QR code */
-.qr-code {
-    width: 200px;
-    height: 200px;
-    margin: 10px auto;
-    background: white;
-    padding: 10px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    color: #0a5ad9;
-    border: 2px dashed #0a5ad9;
-    text-align: center;
-}
-
 /* CSS cho danh thiếp Zalo */
 .danh-thiep {
     text-align: center;
@@ -139,6 +125,15 @@ footer {
 .danh-thiep .qr-code {
     background: white;
     margin: 15px auto;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #0a5ad9;
+    border: 2px dashed #0a5ad9;
+    text-align: center;
 }
 .danh-thiep .sdt {
     margin-top: 15px;
@@ -476,8 +471,8 @@ window.onload=function(){
     </div>
 </div>
 
-<!-- CÁC POPUP MÔ TẢ SẢN PHẨM ĐÃ CẬP NHẬT -->
-<!-- MÔ TẢ SP1 -->
+<!-- CÁC POPUP MÔ TẢ SẢN PHẨM ĐÃ CẬP NHẬT THEO ĐÚNG NỘI DUNG BẠN GỬI -->
+<!-- MÔ TẢ SP1 - SP16: GĂNG TAY LEN -->
 <div class="mota-popup" id="mota-sp1">
   <div class="mota-box">
     <div class="mota-close"><button onclick="closeMota('sp1')">X</button></div>
@@ -491,7 +486,6 @@ window.onload=function(){
   </div>
 </div>
 
-<!-- MÔ TẢ SP2 -->
 <div class="mota-popup" id="mota-sp2">
   <div class="mota-box">
     <div class="mota-close"><button onclick="closeMota('sp2')">X</button></div>
@@ -505,7 +499,6 @@ window.onload=function(){
   </div>
 </div>
 
-<!-- MÔ TẢ SP3 -->
 <div class="mota-popup" id="mota-sp3">
   <div class="mota-box">
     <div class="mota-close"><button onclick="closeMota('sp3')">X</button></div>
@@ -519,7 +512,6 @@ window.onload=function(){
   </div>
 </div>
 
-<!-- MÔ TẢ SP4 -->
 <div class="mota-popup" id="mota-sp4">
   <div class="mota-box">
     <div class="mota-close"><button onclick="closeMota('sp4')">X</button></div>
@@ -533,7 +525,6 @@ window.onload=function(){
   </div>
 </div>
 
-<!-- MÔ TẢ SP5 -->
 <div class="mota-popup" id="mota-sp5">
   <div class="mota-box">
     <div class="mota-close"><button onclick="closeMota('sp5')">X</button></div>
@@ -547,7 +538,6 @@ window.onload=function(){
   </div>
 </div>
 
-<!-- MÔ TẢ SP6 -->
 <div class="mota-popup" id="mota-sp6">
   <div class="mota-box">
     <div class="mota-close"><button onclick="closeMota('sp6')">X</button></div>
@@ -561,7 +551,6 @@ window.onload=function(){
   </div>
 </div>
 
-<!-- MÔ TẢ SP7 -->
 <div class="mota-popup" id="mota-sp7">
   <div class="mota-box">
     <div class="mota-close"><button onclick="closeMota('sp7')">X</button></div>
@@ -575,7 +564,6 @@ window.onload=function(){
   </div>
 </div>
 
-<!-- MÔ TẢ SP8 -->
 <div class="mota-popup" id="mota-sp8">
   <div class="mota-box">
     <div class="mota-close"><button onclick="closeMota('sp8')">X</button></div>
@@ -589,7 +577,6 @@ window.onload=function(){
   </div>
 </div>
 
-<!-- MÔ TẢ SP9 -->
 <div class="mota-popup" id="mota-sp9">
   <div class="mota-box">
     <div class="mota-close"><button onclick="closeMota('sp9')">X</button></div>
@@ -603,7 +590,6 @@ window.onload=function(){
   </div>
 </div>
 
-<!-- MÔ TẢ SP10 -->
 <div class="mota-popup" id="mota-sp10">
   <div class="mota-box">
     <div class="mota-close"><button onclick="closeMota('sp10')">X</button></div>
@@ -617,7 +603,6 @@ window.onload=function(){
   </div>
 </div>
 
-<!-- MÔ TẢ SP11 -->
 <div class="mota-popup" id="mota-sp11">
   <div class="mota-box">
     <div class="mota-close"><button onclick="closeMota('sp11')">X</button></div>
@@ -631,7 +616,6 @@ window.onload=function(){
   </div>
 </div>
 
-<!-- MÔ TẢ SP12 -->
 <div class="mota-popup" id="mota-sp12">
   <div class="mota-box">
     <div class="mota-close"><button onclick="closeMota('sp12')">X</button></div>
@@ -645,7 +629,6 @@ window.onload=function(){
   </div>
 </div>
 
-<!-- MÔ TẢ SP13 -->
 <div class="mota-popup" id="mota-sp13">
   <div class="mota-box">
     <div class="mota-close"><button onclick="closeMota('sp13')">X</button></div>
@@ -659,7 +642,6 @@ window.onload=function(){
   </div>
 </div>
 
-<!-- MÔ TẢ SP14 -->
 <div class="mota-popup" id="mota-sp14">
   <div class="mota-box">
     <div class="mota-close"><button onclick="closeMota('sp14')">X</button></div>
@@ -673,7 +655,6 @@ window.onload=function(){
   </div>
 </div>
 
-<!-- MÔ TẢ SP15 -->
 <div class="mota-popup" id="mota-sp15">
   <div class="mota-box">
     <div class="mota-close"><button onclick="closeMota('sp15')">X</button></div>
@@ -687,7 +668,6 @@ window.onload=function(){
   </div>
 </div>
 
-<!-- MÔ TẢ SP16 -->
 <div class="mota-popup" id="mota-sp16">
   <div class="mota-box">
     <div class="mota-close"><button onclick="closeMota('sp16')">X</button></div>
@@ -701,7 +681,7 @@ window.onload=function(){
   </div>
 </div>
 
-<!-- MÔ TẢ SP17 -->
+<!-- MÔ TẢ SP17 - SP20: GĂNG TAY PHỦ SƠN/CAO SU -->
 <div class="mota-popup" id="mota-sp17">
   <div class="mota-box">
     <div class="mota-close"><button onclick="closeMota('sp17')">X</button></div>
@@ -715,7 +695,6 @@ window.onload=function(){
   </div>
 </div>
 
-<!-- MÔ TẢ SP18 -->
 <div class="mota-popup" id="mota-sp18">
   <div class="mota-box">
     <div class="mota-close"><button onclick="closeMota('sp18')">X</button></div>
@@ -729,7 +708,6 @@ window.onload=function(){
   </div>
 </div>
 
-<!-- MÔ TẢ SP19 -->
 <div class="mota-popup" id="mota-sp19">
   <div class="mota-box">
     <div class="mota-close"><button onclick="closeMota('sp19')">X</button></div>
@@ -743,7 +721,6 @@ window.onload=function(){
   </div>
 </div>
 
-<!-- MÔ TẢ SP20 -->
 <div class="mota-popup" id="mota-sp20">
   <div class="mota-box">
     <div class="mota-close"><button onclick="closeMota('sp20')">X</button></div>
@@ -757,7 +734,7 @@ window.onload=function(){
   </div>
 </div>
 
-<!-- MÔ TẢ SP21 -->
+<!-- MÔ TẢ SP21 - SP22: GĂNG TAY PHỦ HẠT -->
 <div class="mota-popup" id="mota-sp21">
   <div class="mota-box">
     <div class="mota-close"><button onclick="closeMota('sp21')">X</button></div>
@@ -771,7 +748,6 @@ window.onload=function(){
   </div>
 </div>
 
-<!-- MÔ TẢ SP22 -->
 <div class="mota-popup" id="mota-sp22">
   <div class="mota-box">
     <div class="mota-close"><button onclick="closeMota('sp22')">X</button></div>
@@ -785,7 +761,7 @@ window.onload=function(){
   </div>
 </div>
 
-<!-- MÔ TẢ SP23 -->
+<!-- MÔ TẢ SP23 - SP24: GĂNG TAY CHỐNG CẮT -->
 <div class="mota-popup" id="mota-sp23">
   <div class="mota-box">
     <div class="mota-close"><button onclick="closeMota('sp23')">X</button></div>
@@ -799,7 +775,6 @@ window.onload=function(){
   </div>
 </div>
 
-<!-- MÔ TẢ SP24 -->
 <div class="mota-popup" id="mota-sp24">
   <div class="mota-box">
     <div class="mota-close"><button onclick="closeMota('sp24')">X</button></div>
