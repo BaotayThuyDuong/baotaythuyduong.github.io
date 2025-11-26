@@ -94,19 +94,24 @@ section.active{display:block;}
 </style>
 
 <script>
-// Hiển thị từng tab
-function showTab(id){
-    document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
-    document.getElementById(id).classList.add("active");
+function showTab(tab){
+    document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
+    document.getElementById(tab).classList.add("active");
 }
 
-// QR Zalo
 function openQR(){
     document.getElementById("popupQR").style.display = "flex";
 }
+
 function closeQR(){
     document.getElementById("popupQR").style.display = "none";
 }
+
+window.onload = function(){
+    showTab('len');   // mở tab bao tay len khi vừa vào web
+}
+</script>
+
 
 
 // Popup mô tả
@@ -130,10 +135,12 @@ window.onload = ()=>showTab("sanpham");
 </header>
 
 <nav>
-    <a onclick="showTab('sanpham')">SẢN PHẨM</a>
+    <a onclick="showTab('len')">BAO TAY LEN</a>
+    <a onclick="showTab('son-hat-cat')">PHỦ SƠN – PHỦ HẠT – CHỐNG CẮT</a>
     <a onclick="showTab('video')">VIDEO</a>
     <a onclick="showTab('gioithieu')">GIỚI THIỆU</a>
 </nav>
+
 
 <!-- POPUP QR ZALO -->
 <div class="qr-popup" id="qrBox">
@@ -209,7 +216,7 @@ window.onload = ()=>showTab("sanpham");
     <img src="images/sp17.jpg">
     <div class="card-title">Phủ sơn xanh</div>
     <div class="btn-row">
-        <button class="btn-zalo" onclick="openQR()">Zalo</button>
+        section id"openQR()">Zalo</button>
         <button class="btn-mota" onclick="openMota('sp17')">Mô tả</button>
     </div>
 </div>
@@ -367,6 +374,7 @@ window.onload = ()=>showTab("sanpham");
 <!-- ========================= TAB VIDEO ========================= -->
 
 <section id="video">
+
     <h2>VIDEO GIỚI THIỆU SẢN PHẨM</h2>
     <div class="videos">
         <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
@@ -377,6 +385,7 @@ window.onload = ()=>showTab("sanpham");
 <!-- ========================= TAB GIỚI THIỆU ========================= -->
 
 <section id="gioithieu">
+
     <h2>GIỚI THIỆU CÔNG TY</h2>
 
     <p class="intro">
@@ -423,6 +432,7 @@ window.onload = ()=>showTab("sanpham");
 
     </div>
 </div>
+
 
 
 
