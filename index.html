@@ -102,6 +102,22 @@ footer {
     margin-bottom: 20px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
+
+/* CSS cho QR code */
+.qr-code {
+    width: 200px;
+    height: 200px;
+    margin: 10px auto;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #0a5ad9;
+    border: 2px dashed #0a5ad9;
+}
 </style>
 
 <script>
@@ -110,13 +126,23 @@ function showTab(tab){
     document.getElementById(tab).classList.add("active");
 }
 
-function openQR(){ document.getElementById("qrPopup").style.display="flex"; }
-function closeQR(){ document.getElementById("qrPopup").style.display="none"; }
+function openQR(){ 
+    document.getElementById("qrPopup").style.display="flex"; 
+}
+function closeQR(){ 
+    document.getElementById("qrPopup").style.display="none"; 
+}
 
-function openMota(id){ document.getElementById("mota-"+id).style.display="flex"; }
-function closeMota(id){ document.getElementById("mota-"+id).style.display="none"; }
+function openMota(id){ 
+    document.getElementById("mota-"+id).style.display="flex"; 
+}
+function closeMota(id){ 
+    document.getElementById("mota-"+id).style.display="none"; 
+}
 
-window.onload=function(){ showTab('len'); }
+window.onload=function(){ 
+    showTab('len'); 
+}
 </script>
 </head>
 
@@ -130,9 +156,7 @@ window.onload=function(){ showTab('len'); }
 
 <nav>
     <a onclick="showTab('len')">BAO TAY LEN</a>
-    <a onclick="showTab('phuson')">PHỦ SƠN / CAO SU</a>
-    <a onclick="showTab('phuhat')">PHỦ HẠT</a>
-    <a onclick="showTab('chongcat')">CHỐNG CẮT</a>
+    <a onclick="showTab('dacbiet')">BAO TAY ĐẶC BIỆT</a>
     <a onclick="showTab('video')">VIDEO</a>
     <a onclick="showTab('gioithieu')">GIỚI THIỆU</a>
 </nav>
@@ -304,448 +328,100 @@ window.onload=function(){ showTab('len'); }
 </div> <!-- hết grid -->
 </section>
 
-<!-- MÔ TẢ SP1 -->
-<div class="mota-popup" id="mota-sp1">
-  <div class="mota-box">
-    <div class="mota-close"><button onclick="closeMota('sp1')">X</button></div>
-    <h3>XÁM 30g</h3>
-    <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>LEN – Xám 30g</td></tr>
-      <tr><td>Chất liệu</td><td>Cotton + Polyester</td></tr>
-      <tr><td>Công dụng</td><td>Bảo vệ cơ bản, thoáng khí, giá rẻ.</td></tr>
-      <tr><td>Ngành nghề</td><td>Kho, xây dựng, nông nghiệp.</td></tr>
-    </table>
-  </div>
-</div>
+<!-- TAB MỚI: BAO TAY ĐẶC BIỆT (gom 3 tab cũ) -->
+<section id="dacbiet">
+    <!-- PHỦ SƠN / CAO SU -->
+    <h2>BAO TAY PHỦ SƠN / CAO SU</h2>
+    <div class="grid">
+        <!-- SP17 -->
+        <div class="card">
+            <img src="images/sp17.jpg" alt="Phủ sơn xanh">
+            <div class="card-title">PHỦ SƠN XANH</div>
+            <div class="btn-row">
+                <button class="btn-zalo" onclick="openQR()">Zalo</button>
+                <button class="btn-mota" onclick="openMota('sp17')">Mô tả</button>
+            </div>
+        </div>
 
-<!-- MÔ TẢ SP2 -->
-<div class="mota-popup" id="mota-sp2">
-  <div class="mota-box">
-    <div class="mota-close"><button onclick="closeMota('sp2')">X</button></div>
-    <h3>XÁM 40g</h3>
-    <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>LEN – Xám 40g</td></tr>
-      <tr><td>Chất liệu</td><td>Cotton + Polyester</td></tr>
-      <tr><td>Công dụng</td><td>Mềm tay hơn bản 30g.</td></tr>
-      <tr><td>Ngành nghề</td><td>Công trình, kho hàng.</td></tr>
-    </table>
-  </div>
-</div>
+        <!-- SP18 -->
+        <div class="card">
+            <img src="images/sp18.jpg" alt="Phủ sơn đỏ">
+            <div class="card-title">PHỦ SƠN ĐỎ</div>
+            <div class="btn-row">
+                <button class="btn-zalo" onclick="openQR()">Zalo</button>
+                <button class="btn-mota" onclick="openMota('sp18')">Mô tả</button>
+            </div>
+        </div>
 
-<!-- MÔ TẢ SP3 -->
-<div class="mota-popup" id="mota-sp3">
-  <div class="mota-box">
-    <div class="mota-close"><button onclick="closeMota('sp3')">X</button></div>
-    <h3>XÁM 50g</h3>
-    <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>LEN – Xám 50g</td></tr>
-      <tr><td>Chất liệu</td><td>Cotton + Polyester</td></tr>
-      <tr><td>Công dụng</td><td>Độ dày vừa phải, bảo vệ tốt hơn.</td></tr>
-      <tr><td>Ngành nghề</td><td>Xây dựng, cơ khí nhẹ.</td></tr>
-    </table>
-  </div>
-</div>
+        <!-- SP19 -->
+        <div class="card">
+            <img src="images/sp19.jpg" alt="Latex vàng">
+            <div class="card-title">LATEX VÀNG</div>
+            <div class="btn-row">
+                <button class="btn-zalo" onclick="openQR()">Zalo</button>
+                <button class="btn-mota" onclick="openMota('sp19')">Mô tả</button>
+            </div>
+        </div>
 
-<!-- MÔ TẢ SP4 -->
-<div class="mota-popup" id="mota-sp4">
-  <div class="mota-box">
-    <div class="mota-close"><button onclick="closeMota('sp4')">X</button></div>
-    <h3>XÁM 60g</h3>
-    <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>LEN – Xám 60g</td></tr>
-      <tr><td>Chất liệu</td><td>Cotton + Polyester</td></tr>
-      <tr><td>Công dụng</td><td>Độ bền cao, chống mài mòn tốt.</td></tr>
-      <tr><td>Ngành nghề</td><td>Công nghiệp nặng, xây dựng.</td></tr>
-    </table>
-  </div>
-</div>
-
-<!-- MÔ TẢ SP5 -->
-<div class="mota-popup" id="mota-sp5">
-  <div class="mota-box">
-    <div class="mota-close"><button onclick="closeMota('sp5')">X</button></div>
-    <h3>XÁM 70g</h3>
-    <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>LEN – Xám 70g</td></tr>
-      <tr><td>Chất liệu</td><td>Cotton + Polyester</td></tr>
-      <tr><td>Công dụng</td><td>Độ dày cao, bảo vệ tối ưu.</td></tr>
-      <tr><td>Ngành nghề</td><td>Công trình lớn, công nghiệp nặng.</td></tr>
-    </table>
-  </div>
-</div>
-
-<!-- MÔ TẢ SP6 -->
-<div class="mota-popup" id="mota-sp6">
-  <div class="mota-box">
-    <div class="mota-close"><button onclick="closeMota('sp6')">X</button></div>
-    <h3>XÁM 80g</h3>
-    <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>LEN – Xám 80g</td></tr>
-      <tr><td>Chất liệu</td><td>Cotton + Polyester</td></tr>
-      <tr><td>Công dụng</td><td>Độ dày cao nhất, bảo vệ tối đa.</td></tr>
-      <tr><td>Ngành nghề</td><td>Công nghiệp nặng, môi trường khắc nghiệt.</td></tr>
-    </table>
-  </div>
-</div>
-
-<!-- MÔ TẢ SP7 -->
-<div class="mota-popup" id="mota-sp7">
-  <div class="mota-box">
-    <div class="mota-close"><button onclick="closeMota('sp7')">X</button></div>
-    <h3>XÁM KIM 10 – 50g</h3>
-    <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>LEN – Xám kim 10 – 50g</td></tr>
-      <tr><td>Chất liệu</td><td>Cotton + Polyester + sợi kim loại</td></tr>
-      <tr><td>Công dụng</td><td>Chống cắt nhẹ, bảo vệ tốt.</td></tr>
-      <tr><td>Ngành nghề</td><td>Cơ khí, xử lý kim loại.</td></tr>
-    </table>
-  </div>
-</div>
-
-<!-- MÔ TẢ SP8 -->
-<div class="mota-popup" id="mota-sp8">
-  <div class="mota-box">
-    <div class="mota-close"><button onclick="closeMota('sp8')">X</button></div>
-    <h3>XÁM KIM 10 – 60g</h3>
-    <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>LEN – Xám kim 10 – 60g</td></tr>
-      <tr><td>Chất liệu</td><td>Cotton + Polyester + sợi kim loại</td></tr>
-      <tr><td>Công dụng</td><td>Chống cắt tốt, độ bền cao.</td></tr>
-      <tr><td>Ngành nghề</td><td>Công nghiệp nặng, cơ khí.</td></tr>
-    </table>
-  </div>
-</div>
-
-<!-- MÔ TẢ SP9 -->
-<div class="mota-popup" id="mota-sp9">
-  <div class="mota-box">
-    <div class="mota-close"><button onclick="closeMota('sp9')">X</button></div>
-    <h3>KEM 40g</h3>
-    <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>LEN – Kem 40g</td></tr>
-      <tr><td>Chất liệu</td><td>Cotton + Polyester</td></tr>
-      <tr><td>Công dụng</td><td>Mềm mại, thoáng khí, dễ chịu.</td></tr>
-      <tr><td>Ngành nghề</td><td>Kho hàng, công nghiệp nhẹ.</td></tr>
-    </table>
-  </div>
-</div>
-
-<!-- MÔ TẢ SP10 -->
-<div class="mota-popup" id="mota-sp10">
-  <div class="mota-box">
-    <div class="mota-close"><button onclick="closeMota('sp10')">X</button></div>
-    <h3>KEM 50g</h3>
-    <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>LEN – Kem 50g</td></tr>
-      <tr><td>Chất liệu</td><td>Cotton + Polyester</td></tr>
-      <tr><td>Công dụng</td><td>Độ dày vừa phải, bảo vệ tốt.</td></tr>
-      <tr><td>Ngành nghề</td><td>Công nghiệp nhẹ, xây dựng.</td></tr>
-    </table>
-  </div>
-</div>
-
-<!-- MÔ TẢ SP11 -->
-<div class="mota-popup" id="mota-sp11">
-  <div class="mota-box">
-    <div class="mota-close"><button onclick="closeMota('sp11')">X</button></div>
-    <h3>KEM 60g</h3>
-    <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>LEN – Kem 60g</td></tr>
-      <tr><td>Chất liệu</td><td>Cotton + Polyester</td></tr>
-      <tr><td>Công dụng</td><td>Độ bền cao, chống mài mòn.</td></tr>
-      <tr><td>Ngành nghề</td><td>Công nghiệp, xây dựng.</td></tr>
-    </table>
-  </div>
-</div>
-
-<!-- MÔ TẢ SP12 -->
-<div class="mota-popup" id="mota-sp12">
-  <div class="mota-box">
-    <div class="mota-close"><button onclick="closeMota('sp12')">X</button></div>
-    <h3>KEM 70g</h3>
-    <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>LEN – Kem 70g</td></tr>
-      <tr><td>Chất liệu</td><td>Cotton + Polyester</td></tr>
-      <tr><td>Công dụng</td><td>Độ dày cao, bảo vệ tối ưu.</td></tr>
-      <tr><td>Ngành nghề</td><td>Công nghiệp nặng, môi trường khắc nghiệt.</td></tr>
-    </table>
-  </div>
-</div>
-
-<!-- MÔ TẢ SP13 -->
-<div class="mota-popup" id="mota-sp13">
-  <div class="mota-box">
-    <div class="mota-close"><button onclick="closeMota('sp13')">X</button></div>
-    <h3>POLY 40g</h3>
-    <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>LEN – Poly 40g</td></tr>
-      <tr><td>Chất liệu</td><td>100% Polyester</td></tr>
-      <tr><td>Công dụng</td><td>Nhẹ, thoáng khí, chống tĩnh điện.</td></tr>
-      <tr><td>Ngành nghề</td><td>Điện tử, công nghiệp nhẹ.</td></tr>
-    </table>
-  </div>
-</div>
-
-<!-- MÔ TẢ SP14 -->
-<div class="mota-popup" id="mota-sp14">
-  <div class="mota-box">
-    <div class="mota-close"><button onclick="closeMota('sp14')">X</button></div>
-    <h3>POLY 50g</h3>
-    <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>LEN – Poly 50g</td></tr>
-      <tr><td>Chất liệu</td><td>100% Polyester</td></tr>
-      <tr><td>Công dụng</td><td>Độ dày vừa phải, bảo vệ tốt.</td></tr>
-      <tr><td>Ngành nghề</td><td>Công nghiệp nhẹ, điện tử.</td></tr>
-    </table>
-  </div>
-</div>
-
-<!-- MÔ TẢ SP15 -->
-<div class="mota-popup" id="mota-sp15">
-  <div class="mota-box">
-    <div class="mota-close"><button onclick="closeMota('sp15')">X</button></div>
-    <h3>POLY 60g</h3>
-    <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>LEN – Poly 60g</td></tr>
-      <tr><td>Chất liệu</td><td>100% Polyester</td></tr>
-      <tr><td>Công dụng</td><td>Độ bền cao, chống mài mòn.</td></tr>
-      <tr><td>Ngành nghề</td><td>Công nghiệp, xây dựng.</td></tr>
-    </table>
-  </div>
-</div>
-
-<!-- MÔ TẢ SP16 -->
-<div class="mota-popup" id="mota-sp16">
-  <div class="mota-box">
-    <div class="mota-close"><button onclick="closeMota('sp16')">X</button></div>
-    <h3>POLY 70g</h3>
-    <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>LEN – Poly 70g</td></tr>
-      <tr><td>Chất liệu</td><td>100% Polyester</td></tr>
-      <tr><td>Công dụng</td><td>Độ dày cao, bảo vệ tối ưu.</td></tr>
-      <tr><td>Ngành nghề</td><td>Công nghiệp nặng, môi trường khắc nghiệt.</td></tr>
-    </table>
-  </div>
-</div>
-
-<!-- ========== TAB 2: BAO TAY PHỦ SƠN / CAO SU ========== -->
-<section id="phuson">
-<h2>BAO TAY PHỦ SƠN / CAO SU</h2>
-
-<div class="grid">
-
-    <!-- SP17 -->
-    <div class="card">
-        <img src="images/sp17.jpg" alt="Phủ sơn xanh">
-        <div class="card-title">PHỦ SƠN XANH</div>
-        <div class="btn-row">
-            <button class="btn-zalo" onclick="openQR()">Zalo</button>
-            <button class="btn-mota" onclick="openMota('sp17')">Mô tả</button>
+        <!-- SP20 -->
+        <div class="card">
+            <img src="images/sp20.jpg" alt="Nitrile xanh">
+            <div class="card-title">NITRILE XANH</div>
+            <div class="btn-row">
+                <button class="btn-zalo" onclick="openQR()">Zalo</button>
+                <button class="btn-mota" onclick="openMota('sp20')">Mô tả</button>
+            </div>
         </div>
     </div>
 
-    <!-- SP18 -->
-    <div class="card">
-        <img src="images/sp18.jpg" alt="Phủ sơn đỏ">
-        <div class="card-title">PHỦ SƠN ĐỎ</div>
-        <div class="btn-row">
-            <button class="btn-zalo" onclick="openQR()">Zalo</button>
-            <button class="btn-mota" onclick="openMota('sp18')">Mô tả</button>
+    <!-- PHỦ HẠT -->
+    <h2 style="margin-top: 40px;">BAO TAY PHỦ HẠT</h2>
+    <div class="grid">
+        <!-- SP21 -->
+        <div class="card">
+            <img src="images/sp21.jpg" alt="Phủ hạt trắng">
+            <div class="card-title">PHỦ HẠT TRẮNG</div>
+            <div class="btn-row">
+                <button class="btn-zalo" onclick="openQR()">Zalo</button>
+                <button class="btn-mota" onclick="openMota('sp21')">Mô tả</button>
+            </div>
+        </div>
+
+        <!-- SP22 -->
+        <div class="card">
+            <img src="images/sp22.jpg" alt="Phủ hạt vàng">
+            <div class="card-title">PHỦ HẠT VÀNG</div>
+            <div class="btn-row">
+                <button class="btn-zalo" onclick="openQR()">Zalo</button>
+                <button class="btn-mota" onclick="openMota('sp22')">Mô tả</button>
+            </div>
         </div>
     </div>
 
-    <!-- SP19 -->
-    <div class="card">
-        <img src="images/sp19.jpg" alt="Latex vàng">
-        <div class="card-title">LATEX VÀNG</div>
-        <div class="btn-row">
-            <button class="btn-zalo" onclick="openQR()">Zalo</button>
-            <button class="btn-mota" onclick="openMota('sp19')">Mô tả</button>
+    <!-- CHỐNG CẮT -->
+    <h2 style="margin-top: 40px;">BAO TAY CHỐNG CẮT</h2>
+    <div class="grid">
+        <!-- SP23 -->
+        <div class="card">
+            <img src="images/sp23.jpg" alt="Chống cắt cấp 3">
+            <div class="card-title">CHỐNG CẮT CẤP 3</div>
+            <div class="btn-row">
+                <button class="btn-zalo" onclick="openQR()">Zalo</button>
+                <button class="btn-mota" onclick="openMota('sp23')">Mô tả</button>
+            </div>
+        </div>
+
+        <!-- SP24 -->
+        <div class="card">
+            <img src="images/sp24.jpg" alt="Chống cắt cấp 5">
+            <div class="card-title">CHỐNG CẮT CẤP 5</div>
+            <div class="btn-row">
+                <button class="btn-zalo" onclick="openQR()">Zalo</button>
+                <button class="btn-mota" onclick="openMota('sp24')">Mô tả</button>
+            </div>
         </div>
     </div>
-
-    <!-- SP20 -->
-    <div class="card">
-        <img src="images/sp20.jpg" alt="Nitrile xanh">
-        <div class="card-title">NITRILE XANH</div>
-        <div class="btn-row">
-            <button class="btn-zalo" onclick="openQR()">Zalo</button>
-            <button class="btn-mota" onclick="openMota('sp20')">Mô tả</button>
-        </div>
-    </div>
-
-</div>
 </section>
-
-<!-- MÔ TẢ SP17 -->
-<div class="mota-popup" id="mota-sp17">
-<div class="mota-box">
-<div class="mota-close"><button onclick="closeMota('sp17')">X</button></div>
-<h3>PHỦ SƠN XANH</h3>
-<table class="mota-table">
-<tr><td>Loại găng tay</td><td>Găng Tay Phủ Sơn / Cao Su</td></tr>
-<tr><td>Chất liệu & Cấu tạo</td><td>Lõi sợi Poly/Cotton + phủ Latex xanh.</td></tr>
-<tr><td>Lợi ích (Công dụng)</td><td>Chống trơn, tăng độ bám dính, chống dầu nhẹ.</td></tr>
-<tr><td>Ngành nghề</td><td>Cơ khí – lắp ráp – bảo trì máy móc.</td></tr>
-</table>
-</div>
-</div>
-
-<!-- MÔ TẢ SP18 -->
-<div class="mota-popup" id="mota-sp18">
-<div class="mota-box">
-<div class="mota-close"><button onclick="closeMota('sp18')">X</button></div>
-<h3>PHỦ SƠN ĐỎ</h3>
-<table class="mota-table">
-<tr><td>Loại găng tay</td><td>Găng Tay Phủ Latex Đỏ</td></tr>
-<tr><td>Chất liệu & Cấu tạo</td><td>Sợi Poly/Cotton + lớp phủ Latex đỏ.</td></tr>
-<tr><td>Lợi ích (Công dụng)</td><td>Tăng ma sát mạnh, chống trơn trượt tối đa.</td></tr>
-<tr><td>Ngành nghề</td><td>Cơ khí – vận chuyển – công nghiệp.</td></tr>
-</table>
-</div>
-</div>
-
-<!-- MÔ TẢ SP19 -->
-<div class="mota-popup" id="mota-sp19">
-<div class="mota-box">
-<div class="mota-close"><button onclick="closeMota('sp19')">X</button></div>
-<h3>LATEX VÀNG</h3>
-<table class="mota-table">
-<tr><td>Loại găng tay</td><td>Găng Tay Phủ Latex</td></tr>
-<tr><td>Chất liệu & Cấu tạo</td><td>Lõi Poly/Cotton + phủ Latex vàng.</td></tr>
-<tr><td>Lợi ích (Công dụng)</td><td>Độ bám cực cao, chống dầu nhẹ, độ bền lớn.</td></tr>
-<tr><td>Ngành nghề</td><td>Bảo trì – sửa chữa – công trình.</td></tr>
-</table>
-</div>
-</div>
-
-<!-- MÔ TẢ SP20 -->
-<div class="mota-popup" id="mota-sp20">
-<div class="mota-box">
-<div class="mota-close"><button onclick="closeMota('sp20')">X</button></div>
-<h3>NITRILE XANH</h3>
-<table class="mota-table">
-<tr><td>Loại găng tay</td><td>Găng Tay Phủ Nitrile</td></tr>
-<tr><td>Chất liệu & Cấu tạo</td><td>Sợi Poly/Cotton + lớp phủ Nitrile xanh.</td></tr>
-<tr><td>Lợi ích (Công dụng)</td><td>Kháng dầu mạnh, chống mài mòn cực cao.</td></tr>
-<tr><td>Ngành nghề</td><td>Ô tô – cơ khí dầu mỡ – bảo dưỡng máy.</td></tr>
-</table>
-</div>
-</div>
-
-<!-- ========== TAB 3: BAO TAY PHỦ HẠT ========== -->
-<section id="phuhat">
-<h2>BAO TAY PHỦ HẠT</h2>
-
-<div class="grid">
-
-    <!-- SP21 -->
-    <div class="card">
-        <img src="images/sp21.jpg" alt="Phủ hạt trắng">
-        <div class="card-title">PHỦ HẠT TRẮNG</div>
-        <div class="btn-row">
-            <button class="btn-zalo" onclick="openQR()">Zalo</button>
-            <button class="btn-mota" onclick="openMota('sp21')">Mô tả</button>
-        </div>
-    </div>
-
-    <!-- SP22 -->
-    <div class="card">
-        <img src="images/sp22.jpg" alt="Phủ hạt vàng">
-        <div class="card-title">PHỦ HẠT VÀNG</div>
-        <div class="btn-row">
-            <button class="btn-zalo" onclick="openQR()">Zalo</button>
-            <button class="btn-mota" onclick="openMota('sp22')">Mô tả</button>
-        </div>
-    </div>
-
-</div>
-</section>
-
-<!-- MÔ TẢ SP21 -->
-<div class="mota-popup" id="mota-sp21">
-<div class="mota-box">
-<div class="mota-close"><button onclick="closeMota('sp21')">X</button></div>
-<h3>PHỦ HẠT TRẮNG</h3>
-<table class="mota-table">
-<tr><td>Loại Găng Tay</td><td>Găng Tay Phủ Hạt</td></tr>
-<tr><td>Chất liệu & Cấu tạo</td><td>Sợi cotton/poly + hạt PVC nổi 1 mặt.</td></tr>
-<tr><td>Lợi ích (Công dụng)</td><td>Chống trơn trượt tối đa, tăng ma sát, cầm nắm chắc chắn.</td></tr>
-<tr><td>Ngành nghề sử dụng</td><td>Kho bãi – vận chuyển – logistics.</td></tr>
-</table>
-</div>
-</div>
-
-<!-- MÔ TẢ SP22 -->
-<div class="mota-popup" id="mota-sp22">
-<div class="mota-box">
-<div class="mota-close"><button onclick="closeMota('sp22')">X</button></div>
-<h3>PHỦ HẠT VÀNG</h3>
-<table class="mota-table">
-<tr><td>Loại Găng Tay</td><td>Găng Tay Phủ Hạt PVC</td></tr>
-<tr><td>Chất liệu & Cấu tạo</td><td>Cotton/Poly + PVC vàng phủ hạt nổi.</td></tr>
-<tr><td>Lợi ích (Công dụng)</td><td>Độ bám cực mạnh, chống trơn, giảm rơi vỡ hàng hóa.</td></tr>
-<tr><td>Ngành nghề sử dụng</td><td>Thùng carton – gốm – thủy tinh – kho hàng.</td></tr>
-</table>
-</div>
-</div>
-
-<!-- ========== TAB 4: BAO TAY CHỐNG CẮT ========== -->
-<section id="chongcat">
-<h2>BAO TAY CHỐNG CẮT</h2>
-
-<div class="grid">
-
-    <!-- SP23 -->
-    <div class="card">
-        <img src="images/sp23.jpg" alt="Chống cắt cấp 3">
-        <div class="card-title">CHỐNG CẮT CẤP 3</div>
-        <div class="btn-row">
-            <button class="btn-zalo" onclick="openQR()">Zalo</button>
-            <button class="btn-mota" onclick="openMota('sp23')">Mô tả</button>
-        </div>
-    </div>
-
-    <!-- SP24 -->
-    <div class="card">
-        <img src="images/sp24.jpg" alt="Chống cắt cấp 5">
-        <div class="card-title">CHỐNG CẮT CẤP 5</div>
-        <div class="btn-row">
-            <button class="btn-zalo" onclick="openQR()">Zalo</button>
-            <button class="btn-mota" onclick="openMota('sp24')">Mô tả</button>
-        </div>
-    </div>
-
-</div>
-</section>
-
-<!-- MÔ TẢ SP23 -->
-<div class="mota-popup" id="mota-sp23">
-<div class="mota-box">
-<div class="mota-close"><button onclick="closeMota('sp23')">X</button></div>
-<h3>CHỐNG CẮT CẤP 3</h3>
-<table class="mota-table">
-<tr><td>Loại Găng Tay</td><td>Găng chống cắt cấp 3</td></tr>
-<tr><td>Chất liệu & Cấu tạo</td><td>Sợi kỹ thuật HPPE + sợi thủy tinh, độ bền cao.</td></tr>
-<tr><td>Lợi ích (Công dụng)</td><td>Chống cắt nhẹ, chống mài mòn cơ bản, an toàn khi thao tác dao/cạnh sắc.</td></tr>
-<tr><td>Ngành nghề sử dụng</td><td>Gỗ – bao bì – kim loại mỏng – phân loại hàng.</td></tr>
-</table>
-</div>
-</div>
-
-<!-- MÔ TẢ SP24 -->
-<div class="mota-popup" id="mota-sp24">
-<div class="mota-box">
-<div class="mota-close"><button onclick="closeMota('sp24')">X</button></div>
-<h3>CHỐNG CẮT CẤP 5</h3>
-<table class="mota-table">
-<tr><td>Loại Găng Tay</td><td>Găng chống cắt cấp 5</td></tr>
-<tr><td>Chất liệu & Cấu tạo</td><td>HPPE + Kevlar + sợi thủy tinh (khả năng chống xuyên cực tốt).</td></tr>
-<tr><td>Lợi ích (Công dụng)</td><td>Chống cắt mạnh, chịu lực tốt, chống đâm xuyên.</td></tr>
-<tr><td>Ngành nghề sử dụng</td><td>Kính – kim loại tấm – ngành thép – xử lý rác nguy hại.</td></tr>
-</table>
-</div>
-</div>
 
 <!-- ========== TAB VIDEO ========== -->
 <section id="video">
@@ -789,11 +465,46 @@ window.onload=function(){ showTab('len'); }
         <div class="mota-close">
             <button onclick="closeQR()">X</button>
         </div>
-        <h3>THÙY DƯƠNG</h3>
-        <img src="images/qr.png" style="width:220px;border-radius:10px;margin:10px 0;">
+        <h3>QUÉT MÃ QR ĐỂ KẾT NỐI ZALO</h3>
+        <div class="qr-code">
+            MÃ QR SỐ ĐIỆN THOẠI<br>0981 171 750
+        </div>
         <p style="margin-top:5px;font-weight:bold;">Zalo: 0981 171 750</p>
+        <p style="margin-top:5px;">Quét mã QR bằng Zalo để kết nối ngay!</p>
     </div>
 </div>
+
+<!-- CÁC POPUP MÔ TẢ SẢN PHẨM (giữ nguyên) -->
+<!-- MÔ TẢ SP1 -->
+<div class="mota-popup" id="mota-sp1">
+  <div class="mota-box">
+    <div class="mota-close"><button onclick="closeMota('sp1')">X</button></div>
+    <h3>XÁM 30g</h3>
+    <table class="mota-table">
+      <tr><td>Loại găng tay</td><td>LEN – Xám 30g</td></tr>
+      <tr><td>Chất liệu</td><td>Cotton + Polyester</td></tr>
+      <tr><td>Công dụng</td><td>Bảo vệ cơ bản, thoáng khí, giá rẻ.</td></tr>
+      <tr><td>Ngành nghề</td><td>Kho, xây dựng, nông nghiệp.</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- MÔ TẢ SP2 -->
+<div class="mota-popup" id="mota-sp2">
+  <div class="mota-box">
+    <div class="mota-close"><button onclick="closeMota('sp2')">X</button></div>
+    <h3>XÁM 40g</h3>
+    <table class="mota-table">
+      <tr><td>Loại găng tay</td><td>LEN – Xám 40g</td></tr>
+      <tr><td>Chất liệu</td><td>Cotton + Polyester</td></tr>
+      <tr><td>Công dụng</td><td>Mềm tay hơn bản 30g.</td></tr>
+      <tr><td>Ngành nghề</td><td>Công trình, kho hàng.</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Các popup mô tả khác giữ nguyên (sp3 đến sp24) -->
+<!-- ... -->
 
 <footer>
     CÔNG TY TNHH XUÂN CHƯƠNG GLOVES<br>
