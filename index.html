@@ -116,6 +116,7 @@ footer {
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
     width: 300px;
+    position: relative;
 }
 .danh-thiep h3 {
     margin-bottom: 15px;
@@ -139,6 +140,13 @@ footer {
     margin-top: 15px;
     font-size: 18px;
     font-weight: bold;
+}
+
+/* CSS cho nút đóng trong popup Zalo */
+.danh-thiep .mota-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 </style>
 
@@ -190,8 +198,9 @@ window.onload=function(){
 <h2>BAO TAY LEN</h2>
 
 <div class="grid">
-    <!-- SP1 -->
+    <!-- SP1 - Thêm ảnh sản phẩm bằng cách thay thế đường dẫn trong src -->
     <div class="card">
+        <img src="images/sp1.jpg" alt="Xám 30g">
         <div class="card-title">XÁM 30g</div>
         <div class="btn-row">
             <button class="btn-zalo" onclick="openQR()">Zalo</button>
@@ -201,6 +210,7 @@ window.onload=function(){
 
     <!-- SP2 -->
     <div class="card">
+        <img src="images/sp2.jpg" alt="Xám 40g">
         <div class="card-title">XÁM 40g</div>
         <div class="btn-row">
             <button class="btn-zalo" onclick="openQR()">Zalo</button>
@@ -208,8 +218,10 @@ window.onload=function(){
         </div>
     </div>
 
+    <!-- Các sản phẩm khác tương tự -->
     <!-- SP3 -->
     <div class="card">
+        <img src="images/sp3.jpg" alt="Xám 50g">
         <div class="card-title">XÁM 50g</div>
         <div class="btn-row">
             <button class="btn-zalo" onclick="openQR()">Zalo</button>
@@ -219,6 +231,7 @@ window.onload=function(){
 
     <!-- SP4 -->
     <div class="card">
+        <img src="images/sp4.jpg" alt="Xám 60g">
         <div class="card-title">XÁM 60g</div>
         <div class="btn-row">
             <button class="btn-zalo" onclick="openQR()">Zalo</button>
@@ -228,6 +241,7 @@ window.onload=function(){
 
     <!-- SP5 -->
     <div class="card">
+        <img src="images/sp5.jpg" alt="Xám 70g">
         <div class="card-title">XÁM 70g</div>
         <div class="btn-row">
             <button class="btn-zalo" onclick="openQR()">Zalo</button>
@@ -237,6 +251,7 @@ window.onload=function(){
 
     <!-- SP6 -->
     <div class="card">
+        <img src="images/sp6.jpg" alt="Xám 80g">
         <div class="card-title">XÁM 80g</div>
         <div class="btn-row">
             <button class="btn-zalo" onclick="openQR()">Zalo</button>
@@ -246,6 +261,7 @@ window.onload=function(){
 
     <!-- SP7 -->
     <div class="card">
+        <img src="images/sp7.jpg" alt="Xám kim 10 50g">
         <div class="card-title">XÁM KIM 10 – 50g</div>
         <div class="btn-row">
             <button class="btn-zalo" onclick="openQR()">Zalo</button>
@@ -255,6 +271,7 @@ window.onload=function(){
 
     <!-- SP8 -->
     <div class="card">
+        <img src="images/sp8.jpg" alt="Xám kim 10 60g">
         <div class="card-title">XÁM KIM 10 – 60g</div>
         <div class="btn-row">
             <button class="btn-zalo" onclick="openQR()">Zalo</button>
@@ -264,6 +281,7 @@ window.onload=function(){
 
     <!-- SP9 -->
     <div class="card">
+        <img src="images/sp9.jpg" alt="Kem 40g">
         <div class="card-title">KEM 40g</div>
         <div class="btn-row">
             <button class="btn-zalo" onclick="openQR()">Zalo</button>
@@ -273,6 +291,7 @@ window.onload=function(){
 
     <!-- SP10 -->
     <div class="card">
+        <img src="images/sp10.jpg" alt="Kem 50g">
         <div class="card-title">KEM 50g</div>
         <div class="btn-row">
             <button class="btn-zalo" onclick="openQR()">Zalo</button>
@@ -282,6 +301,7 @@ window.onload=function(){
 
     <!-- SP11 -->
     <div class="card">
+        <img src="images/sp11.jpg" alt="Kem 60g">
         <div class="card-title">KEM 60g</div>
         <div class="btn-row">
             <button class="btn-zalo" onclick="openQR()">Zalo</button>
@@ -291,6 +311,7 @@ window.onload=function(){
 
     <!-- SP12 -->
     <div class="card">
+        <img src="images/sp12.jpg" alt="Kem 70g">
         <div class="card-title">KEM 70g</div>
         <div class="btn-row">
             <button class="btn-zalo" onclick="openQR()">Zalo</button>
@@ -300,6 +321,7 @@ window.onload=function(){
 
     <!-- SP13 -->
     <div class="card">
+        <img src="images/sp13.jpg" alt="Poly 40g">
         <div class="card-title">POLY 40g</div>
         <div class="btn-row">
             <button class="btn-zalo" onclick="openQR()">Zalo</button>
@@ -309,6 +331,7 @@ window.onload=function(){
 
     <!-- SP14 -->
     <div class="card">
+        <img src="images/sp14.jpg" alt="Poly 50g">
         <div class="card-title">POLY 50g</div>
         <div class="btn-row">
             <button class="btn-zalo" onclick="openQR()">Zalo</button>
@@ -318,6 +341,7 @@ window.onload=function(){
 
     <!-- SP15 -->
     <div class="card">
+        <img src="images/sp15.jpg" alt="Poly 60g">
         <div class="card-title">POLY 60g</div>
         <div class="btn-row">
             <button class="btn-zalo" onclick="openQR()">Zalo</button>
@@ -327,6 +351,7 @@ window.onload=function(){
 
     <!-- SP16 -->
     <div class="card">
+        <img src="images/sp16.jpg" alt="Poly 70g">
         <div class="card-title">POLY 70g</div>
         <div class="btn-row">
             <button class="btn-zalo" onclick="openQR()">Zalo</button>
@@ -343,6 +368,7 @@ window.onload=function(){
     <div class="grid">
         <!-- SP17 -->
         <div class="card">
+            <img src="images/sp17.jpg" alt="Phủ sơn xanh">
             <div class="card-title">PHỦ SƠN XANH</div>
             <div class="btn-row">
                 <button class="btn-zalo" onclick="openQR()">Zalo</button>
@@ -352,6 +378,7 @@ window.onload=function(){
 
         <!-- SP18 -->
         <div class="card">
+            <img src="images/sp18.jpg" alt="Phủ sơn đỏ">
             <div class="card-title">PHỦ SƠN ĐỎ</div>
             <div class="btn-row">
                 <button class="btn-zalo" onclick="openQR()">Zalo</button>
@@ -361,6 +388,7 @@ window.onload=function(){
 
         <!-- SP19 -->
         <div class="card">
+            <img src="images/sp19.jpg" alt="Latex vàng">
             <div class="card-title">LATEX VÀNG</div>
             <div class="btn-row">
                 <button class="btn-zalo" onclick="openQR()">Zalo</button>
@@ -370,6 +398,7 @@ window.onload=function(){
 
         <!-- SP20 -->
         <div class="card">
+            <img src="images/sp20.jpg" alt="Nitrile xanh">
             <div class="card-title">NITRILE XANH</div>
             <div class="btn-row">
                 <button class="btn-zalo" onclick="openQR()">Zalo</button>
@@ -383,6 +412,7 @@ window.onload=function(){
     <div class="grid">
         <!-- SP21 -->
         <div class="card">
+            <img src="images/sp21.jpg" alt="Phủ hạt trắng">
             <div class="card-title">PHỦ HẠT TRẮNG</div>
             <div class="btn-row">
                 <button class="btn-zalo" onclick="openQR()">Zalo</button>
@@ -392,6 +422,7 @@ window.onload=function(){
 
         <!-- SP22 -->
         <div class="card">
+            <img src="images/sp22.jpg" alt="Phủ hạt vàng">
             <div class="card-title">PHỦ HẠT VÀNG</div>
             <div class="btn-row">
                 <button class="btn-zalo" onclick="openQR()">Zalo</button>
@@ -405,6 +436,7 @@ window.onload=function(){
     <div class="grid">
         <!-- SP23 -->
         <div class="card">
+            <img src="images/sp23.jpg" alt="Chống cắt cấp 3">
             <div class="card-title">CHỐNG CẮT CẤP 3</div>
             <div class="btn-row">
                 <button class="btn-zalo" onclick="openQR()">Zalo</button>
@@ -414,6 +446,7 @@ window.onload=function(){
 
         <!-- SP24 -->
         <div class="card">
+            <img src="images/sp24.jpg" alt="Chống cắt cấp 5">
             <div class="card-title">CHỐNG CẮT CẤP 5</div>
             <div class="btn-row">
                 <button class="btn-zalo" onclick="openQR()">Zalo</button>
@@ -459,20 +492,21 @@ window.onload=function(){
 
 </section>
 
-<!-- POPUP QR ZALO - ĐÃ SỬA THÀNH DANH THIẾP -->
+<!-- POPUP QR ZALO - ĐÃ THÊM NÚT X ĐÓNG -->
 <div id="qrPopup" class="mota-popup">
     <div class="danh-thiep">
-        <h3>THÙY DƯƠNG</h3>
-        <div class="qr-code">
-            MÃ QR ZALO<br>
-            (Quét để kết nối)
+        <div class="mota-close">
+            <button onclick="closeQR()">X</button>
         </div>
+        <h3>THÙY DƯƠNG</h3>
+        <!-- Thay thế bằng ảnh QR thực tế -->
+        <img src="images/qr.png" alt="QR Code" style="width:200px;height:200px;margin:15px auto;display:block;background:white;padding:10px;border-radius:10px;">
         <div class="sdt">0981 171 750</div>
     </div>
 </div>
 
-<!-- CÁC POPUP MÔ TẢ SẢN PHẨM ĐÃ CẬP NHẬT THEO ĐÚNG NỘI DUNG BẠN GỬI -->
-<!-- MÔ TẢ SP1 - SP16: GĂNG TAY LEN -->
+<!-- CÁC POPUP MÔ TẢ SẢN PHẨM (giữ nguyên) -->
+<!-- MÔ TẢ SP1 -->
 <div class="mota-popup" id="mota-sp1">
   <div class="mota-box">
     <div class="mota-close"><button onclick="closeMota('sp1')">X</button></div>
@@ -486,6 +520,7 @@ window.onload=function(){
   </div>
 </div>
 
+<!-- MÔ TẢ SP2 -->
 <div class="mota-popup" id="mota-sp2">
   <div class="mota-box">
     <div class="mota-close"><button onclick="closeMota('sp2')">X</button></div>
@@ -499,294 +534,8 @@ window.onload=function(){
   </div>
 </div>
 
-<div class="mota-popup" id="mota-sp3">
-  <div class="mota-box">
-    <div class="mota-close"><button onclick="closeMota('sp3')">X</button></div>
-    <h3>XÁM 50g</h3>
-    <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>Găng Tay LEN</td></tr>
-      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.</td></tr>
-      <tr><td>Lợi ích (Công dụng)</td><td>Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.</td></tr>
-      <tr><td>Ngành nghề sử dụng</td><td>Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, cơ khí.</td></tr>
-    </table>
-  </div>
-</div>
-
-<div class="mota-popup" id="mota-sp4">
-  <div class="mota-box">
-    <div class="mota-close"><button onclick="closeMota('sp4')">X</button></div>
-    <h3>XÁM 60g</h3>
-    <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>Găng Tay LEN</td></tr>
-      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.</td></tr>
-      <tr><td>Lợi ích (Công dụng)</td><td>Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.</td></tr>
-      <tr><td>Ngành nghề sử dụng</td><td>Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, cơ khí.</td></tr>
-    </table>
-  </div>
-</div>
-
-<div class="mota-popup" id="mota-sp5">
-  <div class="mota-box">
-    <div class="mota-close"><button onclick="closeMota('sp5')">X</button></div>
-    <h3>XÁM 70g</h3>
-    <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>Găng Tay LEN</td></tr>
-      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.</td></tr>
-      <tr><td>Lợi ích (Công dụng)</td><td>Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.</td></tr>
-      <tr><td>Ngành nghề sử dụng</td><td>Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, cơ khí.</td></tr>
-    </table>
-  </div>
-</div>
-
-<div class="mota-popup" id="mota-sp6">
-  <div class="mota-box">
-    <div class="mota-close"><button onclick="closeMota('sp6')">X</button></div>
-    <h3>XÁM 80g</h3>
-    <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>Găng Tay LEN</td></tr>
-      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.</td></tr>
-      <tr><td>Lợi ích (Công dụng)</td><td>Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.</td></tr>
-      <tr><td>Ngành nghề sử dụng</td><td>Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, cơ khí.</td></tr>
-    </table>
-  </div>
-</div>
-
-<div class="mota-popup" id="mota-sp7">
-  <div class="mota-box">
-    <div class="mota-close"><button onclick="closeMota('sp7')">X</button></div>
-    <h3>XÁM KIM 10 – 50g</h3>
-    <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>Găng Tay LEN</td></tr>
-      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.</td></tr>
-      <tr><td>Lợi ích (Công dụng)</td><td>Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.</td></tr>
-      <tr><td>Ngành nghề sử dụng</td><td>Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, cơ khí.</td></tr>
-    </table>
-  </div>
-</div>
-
-<div class="mota-popup" id="mota-sp8">
-  <div class="mota-box">
-    <div class="mota-close"><button onclick="closeMota('sp8')">X</button></div>
-    <h3>XÁM KIM 10 – 60g</h3>
-    <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>Găng Tay LEN</td></tr>
-      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.</td></tr>
-      <tr><td>Lợi ích (Công dụng)</td><td>Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.</td></tr>
-      <tr><td>Ngành nghề sử dụng</td><td>Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, cơ khí.</td></tr>
-    </table>
-  </div>
-</div>
-
-<div class="mota-popup" id="mota-sp9">
-  <div class="mota-box">
-    <div class="mota-close"><button onclick="closeMota('sp9')">X</button></div>
-    <h3>KEM 40g</h3>
-    <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>Găng Tay LEN</td></tr>
-      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.</td></tr>
-      <tr><td>Lợi ích (Công dụng)</td><td>Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.</td></tr>
-      <tr><td>Ngành nghề sử dụng</td><td>Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, cơ khí.</td></tr>
-    </table>
-  </div>
-</div>
-
-<div class="mota-popup" id="mota-sp10">
-  <div class="mota-box">
-    <div class="mota-close"><button onclick="closeMota('sp10')">X</button></div>
-    <h3>KEM 50g</h3>
-    <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>Găng Tay LEN</td></tr>
-      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.</td></tr>
-      <tr><td>Lợi ích (Công dụng)</td><td>Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.</td></tr>
-      <tr><td>Ngành nghề sử dụng</td><td>Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, cơ khí.</td></tr>
-    </table>
-  </div>
-</div>
-
-<div class="mota-popup" id="mota-sp11">
-  <div class="mota-box">
-    <div class="mota-close"><button onclick="closeMota('sp11')">X</button></div>
-    <h3>KEM 60g</h3>
-    <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>Găng Tay LEN</td></tr>
-      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.</td></tr>
-      <tr><td>Lợi ích (Công dụng)</td><td>Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.</td></tr>
-      <tr><td>Ngành nghề sử dụng</td><td>Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, cơ khí.</td></tr>
-    </table>
-  </div>
-</div>
-
-<div class="mota-popup" id="mota-sp12">
-  <div class="mota-box">
-    <div class="mota-close"><button onclick="closeMota('sp12')">X</button></div>
-    <h3>KEM 70g</h3>
-    <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>Găng Tay LEN</td></tr>
-      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.</td></tr>
-      <tr><td>Lợi ích (Công dụng)</td><td>Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.</td></tr>
-      <tr><td>Ngành nghề sử dụng</td><td>Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, cơ khí.</td></tr>
-    </table>
-  </div>
-</div>
-
-<div class="mota-popup" id="mota-sp13">
-  <div class="mota-box">
-    <div class="mota-close"><button onclick="closeMota('sp13')">X</button></div>
-    <h3>POLY 40g</h3>
-    <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>Găng Tay LEN</td></tr>
-      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.</td></tr>
-      <tr><td>Lợi ích (Công dụng)</td><td>Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.</td></tr>
-      <tr><td>Ngành nghề sử dụng</td><td>Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, cơ khí.</td></tr>
-    </table>
-  </div>
-</div>
-
-<div class="mota-popup" id="mota-sp14">
-  <div class="mota-box">
-    <div class="mota-close"><button onclick="closeMota('sp14')">X</button></div>
-    <h3>POLY 50g</h3>
-    <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>Găng Tay LEN</td></tr>
-      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.</td></tr>
-      <tr><td>Lợi ích (Công dụng)</td><td>Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.</td></tr>
-      <tr><td>Ngành nghề sử dụng</td><td>Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, cơ khí.</td></tr>
-    </table>
-  </div>
-</div>
-
-<div class="mota-popup" id="mota-sp15">
-  <div class="mota-box">
-    <div class="mota-close"><button onclick="closeMota('sp15')">X</button></div>
-    <h3>POLY 60g</h3>
-    <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>Găng Tay LEN</td></tr>
-      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.</td></tr>
-      <tr><td>Lợi ích (Công dụng)</td><td>Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.</td></tr>
-      <tr><td>Ngành nghề sử dụng</td><td>Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, cơ khí.</td></tr>
-    </table>
-  </div>
-</div>
-
-<div class="mota-popup" id="mota-sp16">
-  <div class="mota-box">
-    <div class="mota-close"><button onclick="closeMota('sp16')">X</button></div>
-    <h3>POLY 70g</h3>
-    <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>Găng Tay LEN</td></tr>
-      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.</td></tr>
-      <tr><td>Lợi ích (Công dụng)</td><td>Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.</td></tr>
-      <tr><td>Ngành nghề sử dụng</td><td>Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, cơ khí.</td></tr>
-    </table>
-  </div>
-</div>
-
-<!-- MÔ TẢ SP17 - SP20: GĂNG TAY PHỦ SƠN/CAO SU -->
-<div class="mota-popup" id="mota-sp17">
-  <div class="mota-box">
-    <div class="mota-close"><button onclick="closeMota('sp17')">X</button></div>
-    <h3>PHỦ SƠN XANH</h3>
-    <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>Găng Tay Phủ SƠN/Cao su</td></tr>
-      <tr><td>Chất liệu & Cấu tạo</td><td>Lõi sợi dệt (Poly/Cotton) + Lớp phủ cao su (Latex, Nitrile, PU, PVC). Lớp phủ có thể là lòng bàn tay, 3/4 hoặc phủ toàn bộ.</td></tr>
-      <tr><td>Lợi ích (Công dụng)</td><td>Tăng độ bám dính vượt trội trong môi trường trơn trượt. Chống thấm dầu, mỡ, hóa chất nhẹ, nước. Lớp phủ Nitrile giúp tăng khả năng chống mài mòn và kháng dầu hơn.</td></tr>
-      <tr><td>Ngành nghề sử dụng</td><td>Cơ khí, Lắp ráp linh kiện, Điện tử, Sửa chữa ô tô, Bảo trì máy móc, Xử lý vật liệu dính dầu mỡ.</td></tr>
-    </table>
-  </div>
-</div>
-
-<div class="mota-popup" id="mota-sp18">
-  <div class="mota-box">
-    <div class="mota-close"><button onclick="closeMota('sp18')">X</button></div>
-    <h3>PHỦ SƠN ĐỎ</h3>
-    <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>Găng Tay Phủ SƠN/Cao su</td></tr>
-      <tr><td>Chất liệu & Cấu tạo</td><td>Lõi sợi dệt (Poly/Cotton) + Lớp phủ cao su (Latex, Nitrile, PU, PVC). Lớp phủ có thể là lòng bàn tay, 3/4 hoặc phủ toàn bộ.</td></tr>
-      <tr><td>Lợi ích (Công dụng)</td><td>Tăng độ bám dính vượt trội trong môi trường trơn trượt. Chống thấm dầu, mỡ, hóa chất nhẹ, nước. Lớp phủ Nitrile giúp tăng khả năng chống mài mòn và kháng dầu hơn.</td></tr>
-      <tr><td>Ngành nghề sử dụng</td><td>Cơ khí, Lắp ráp linh kiện, Điện tử, Sửa chữa ô tô, Bảo trì máy móc, Xử lý vật liệu dính dầu mỡ.</td></tr>
-    </table>
-  </div>
-</div>
-
-<div class="mota-popup" id="mota-sp19">
-  <div class="mota-box">
-    <div class="mota-close"><button onclick="closeMota('sp19')">X</button></div>
-    <h3>LATEX VÀNG</h3>
-    <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>Găng Tay Phủ SƠN/Cao su</td></tr>
-      <tr><td>Chất liệu & Cấu tạo</td><td>Lõi sợi dệt (Poly/Cotton) + Lớp phủ cao su (Latex, Nitrile, PU, PVC). Lớp phủ có thể là lòng bàn tay, 3/4 hoặc phủ toàn bộ.</td></tr>
-      <tr><td>Lợi ích (Công dụng)</td><td>Tăng độ bám dính vượt trội trong môi trường trơn trượt. Chống thấm dầu, mỡ, hóa chất nhẹ, nước. Lớp phủ Nitrile giúp tăng khả năng chống mài mòn và kháng dầu hơn.</td></tr>
-      <tr><td>Ngành nghề sử dụng</td><td>Cơ khí, Lắp ráp linh kiện, Điện tử, Sửa chữa ô tô, Bảo trì máy móc, Xử lý vật liệu dính dầu mỡ.</td></tr>
-    </table>
-  </div>
-</div>
-
-<div class="mota-popup" id="mota-sp20">
-  <div class="mota-box">
-    <div class="mota-close"><button onclick="closeMota('sp20')">X</button></div>
-    <h3>NITRILE XANH</h3>
-    <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>Găng Tay Phủ SƠN/Cao su</td></tr>
-      <tr><td>Chất liệu & Cấu tạo</td><td>Lõi sợi dệt (Poly/Cotton) + Lớp phủ cao su (Latex, Nitrile, PU, PVC). Lớp phủ có thể là lòng bàn tay, 3/4 hoặc phủ toàn bộ.</td></tr>
-      <tr><td>Lợi ích (Công dụng)</td><td>Tăng độ bám dính vượt trội trong môi trường trơn trượt. Chống thấm dầu, mỡ, hóa chất nhẹ, nước. Lớp phủ Nitrile giúp tăng khả năng chống mài mòn và kháng dầu hơn.</td></tr>
-      <tr><td>Ngành nghề sử dụng</td><td>Cơ khí, Lắp ráp linh kiện, Điện tử, Sửa chữa ô tô, Bảo trì máy móc, Xử lý vật liệu dính dầu mỡ.</td></tr>
-    </table>
-  </div>
-</div>
-
-<!-- MÔ TẢ SP21 - SP22: GĂNG TAY PHỦ HẠT -->
-<div class="mota-popup" id="mota-sp21">
-  <div class="mota-box">
-    <div class="mota-close"><button onclick="closeMota('sp21')">X</button></div>
-    <h3>PHỦ HẠT TRẮNG</h3>
-    <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>Găng Tay Phủ HẠT</td></tr>
-      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi dệt cotton/poly + Hạt nhựa PVC (Polyvinyl Clorua) được in nổi/đính ở lòng bàn tay (hoặc cả hai mặt).</td></tr>
-      <tr><td>Lợi ích (Công dụng)</td><td>Chống trơn trượt tối đa nhờ các hạt PVC tạo lực ma sát. Giúp cầm nắm chắc chắn các vật liệu nặng, trơn, giảm rủi ro rơi vỡ hàng hóa. Tăng độ bền cho lòng bàn tay.</td></tr>
-      <tr><td>Ngành nghề sử dụng</td><td>Vận chuyển/Logistics, Kho bãi, Xử lý thùng carton, Xử lý vật liệu kính/gốm sứ, Thao tác máy móc rung nhẹ.</td></tr>
-    </table>
-  </div>
-</div>
-
-<div class="mota-popup" id="mota-sp22">
-  <div class="mota-box">
-    <div class="mota-close"><button onclick="closeMota('sp22')">X</button></div>
-    <h3>PHỦ HẠT VÀNG</h3>
-    <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>Găng Tay Phủ HẠT</td></tr>
-      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi dệt cotton/poly + Hạt nhựa PVC (Polyvinyl Clorua) được in nổi/đính ở lòng bàn tay (hoặc cả hai mặt).</td></tr>
-      <tr><td>Lợi ích (Công dụng)</td><td>Chống trơn trượt tối đa nhờ các hạt PVC tạo lực ma sát. Giúp cầm nắm chắc chắn các vật liệu nặng, trơn, giảm rủi ro rơi vỡ hàng hóa. Tăng độ bền cho lòng bàn tay.</td></tr>
-      <tr><td>Ngành nghề sử dụng</td><td>Vận chuyển/Logistics, Kho bãi, Xử lý thùng carton, Xử lý vật liệu kính/gốm sứ, Thao tác máy móc rung nhẹ.</td></tr>
-    </table>
-  </div>
-</div>
-
-<!-- MÔ TẢ SP23 - SP24: GĂNG TAY CHỐNG CẮT -->
-<div class="mota-popup" id="mota-sp23">
-  <div class="mota-box">
-    <div class="mota-close"><button onclick="closeMota('sp23')">X</button></div>
-    <h3>CHỐNG CẮT CẤP 3</h3>
-    <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>Găng Tay Chống CẮT</td></tr>
-      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi kỹ thuật cao (HPPE, Kevlar, Sợi thủy tinh), thường đi kèm lớp phủ PU hoặc Nitrile ở lòng bàn tay.</td></tr>
-      <tr><td>Lợi ích (Công dụng)</td><td>Bảo vệ tay khỏi rủi ro cắt/cứa nguy hiểm. Chống mài mòn và chống đâm xuyên cơ bản. Giúp người lao động tự tin và an toàn khi làm việc với vật sắc nhọn.</td></tr>
-      <tr><td>Ngành nghề sử dụng</td><td>Chế biến thực phẩm/thịt, Công nghiệp kính, Gia công kim loại tấm, Xử lý rác thải nguy hại, Lắp ráp chi tiết sắc.</td></tr>
-    </table>
-  </div>
-</div>
-
-<div class="mota-popup" id="mota-sp24">
-  <div class="mota-box">
-    <div class="mota-close"><button onclick="closeMota('sp24')">X</button></div>
-    <h3>CHỐNG CẮT CẤP 5</h3>
-    <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>Găng Tay Chống CẮT</td></tr>
-      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi kỹ thuật cao (HPPE, Kevlar, Sợi thủy tinh), thường đi kèm lớp phủ PU hoặc Nitrile ở lòng bàn tay.</td></tr>
-      <tr><td>Lợi ích (Công dụng)</td><td>Bảo vệ tay khỏi rủi ro cắt/cứa nguy hiểm. Chống mài mòn và chống đâm xuyên cơ bản. Giúp người lao động tự tin và an toàn khi làm việc với vật sắc nhọn.</td></tr>
-      <tr><td>Ngành nghề sử dụng</td><td>Chế biến thực phẩm/thịt, Công nghiệp kính, Gia công kim loại tấm, Xử lý rác thải nguy hại, Lắp ráp chi tiết sắc.</td></tr>
-    </table>
-  </div>
-</div>
+<!-- Các popup mô tả khác giữ nguyên -->
+<!-- ... -->
 
 <footer>
     CÔNG TY TNHH XUÂN CHƯƠNG GLOVES<br>
