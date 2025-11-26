@@ -1,227 +1,245 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CÔNG TY TNHH XUÂN CHƯƠNG GLOVES</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CÔNG TY TNHH XUÂN CHƯƠNG GLOVES</title>
 
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background: #f4f4f4;
-        margin: 0;
-        padding: 0;
-    }
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
 
-    /* HEADER */
-    header {
-        background: #ff8800;
-        padding: 15px;
-        color: white;
-        text-align: center;
-        font-size: 22px;
-        font-weight: bold;
-    }
+        /* HEADER */
+        header {
+            background: #ff8800;
+            padding: 15px;
+            color: white;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
 
-    /* MENU */
-    nav {
-        background: #333;
-        padding: 10px 0;
-        text-align: center;
-    }
+        /* MENU */
+        nav {
+            background: #333;
+            padding: 10px 0;
+            text-align: center;
+        }
 
-    nav a {
-        color: white;
-        text-decoration: none;
-        margin: 0 15px;
-        font-size: 17px;
-        font-weight: bold;
-    }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+            font-weight: bold;
+        }
 
-    nav a:hover {
-        color: #ff8800;
-    }
+        nav a:hover {
+            color: #ff8800;
+        }
 
-    /* BANNER */
-    .banner {
-        width: 100%;
-        height: 250px;
-        background: url('https://via.placeholder.com/1920x500?text=Banner+G%C4%83ng+Tay+B%E1%BA%A3o+H%E1%BB%99') no-repeat center/cover;
-    }
+        /* BANNER */
+        .banner {
+            width: 100%;
+            height: 250px;
+            background-image: url("https://via.placeholder.com/1920x500?text=GANG+TAY+BAO+HO");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
 
-    /* TIÊU ĐỀ CHÍNH */
-    h2.section-title {
-        text-align: center;
-        margin: 25px 0 10px 0;
-        font-size: 26px;
-        color: #222;
-    }
+        /* TIÊU ĐỀ CHÍNH */
+        .section-title {
+            text-align: center;
+            margin: 25px 0 10px 0;
+            font-size: 24px;
+            color: #222;
+        }
 
-    /* LƯỚI SẢN PHẨM */
-    .product-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 20px;
-        padding: 20px;
-    }
+        /* LƯỚI SẢN PHẨM */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
 
-    /* Ô SẢN PHẨM */
-    .product-card {
-        background: #fff;
-        border-radius: 10px;
-        padding: 15px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
+        /* Ô SẢN PHẨM */
+        .product-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
 
-    .product-card img {
-        width: 100%;
-        border-radius: 10px;
-    }
+        .product-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
 
-    .product-title {
-        font-size: 18px;
-        font-weight: 600;
-        margin-top: 10px;
-        text-align: center;
-    }
+        .product-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 10px;
+            text-align: center;
+        }
 
-    /* TAB BUTTON */
-    .tab-buttons {
-        margin-top: 12px;
-        display: flex;
-    }
+        /* NÚT TAB */
+        .tab-buttons {
+            margin-top: 12px;
+            display: flex;
+        }
 
-    .tab-buttons button {
-        flex: 1;
-        padding: 10px;
-        font-size: 15px;
-        border: none;
-        cursor: pointer;
-        background: #ddd;
-        border-right: 1px solid #ccc;
-    }
+        .tab-buttons button {
+            flex: 1;
+            padding: 10px;
+            font-size: 15px;
+            border: none;
+            cursor: pointer;
+            background: #ddd;
+            border-right: 1px solid #ccc;
+        }
 
-    .tab-buttons button:last-child {
-        border-right: none;
-    }
+        .tab-buttons button:last-child {
+            border-right: none;
+        }
 
-    .tab-buttons button.active {
-        background: #ff8800;
-        color: white;
-        font-weight: bold;
-    }
+        .tab-buttons button.active {
+            background: #ff8800;
+            color: white;
+            font-weight: bold;
+        }
 
-    /* TAB CONTENT */
-    .tab-content {
-        display: none;
-        padding: 10px;
-        background: #fafafa;
-        margin-top: 10px;
-        border-radius: 8px;
-        font-size: 15px;
-        line-height: 1.5;
-    }
+        /* NỘI DUNG TAB */
+        .tab-content {
+            display: none;
+            padding: 10px;
+            background: #fafafa;
+            margin-top: 10px;
+            border-radius: 8px;
+            font-size: 15px;
+            line-height: 1.5;
+        }
 
-    .tab-content.active {
-        display: block;
-    }
+        .tab-content.active {
+            display: block;
+        }
 
-    .qr-img {
-        width: 160px;
-        display: block;
-        margin: auto;
-    }
+        .qr-img {
+            width: 160px;
+            display: block;
+            margin: auto;
+        }
 
-    /* FOOTER */
-    footer {
-        background: #222;
-        color: white;
-        padding: 20px;
-        margin-top: 40px;
-        text-align: center;
-        line-height: 1.6;
-    }
-</style>
-
+        /* FOOTER */
+        footer {
+            background: #222;
+            color: white;
+            padding: 20px;
+            margin-top: 40px;
+            text-align: center;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
 
-<!-- HEADER -->
-<header>
-    CÔNG TY TNHH XUÂN CHƯƠNG GLOVES
-</header>
+    <!-- HEADER -->
+    <header>
+        CÔNG TY TNHH XUÂN CHƯƠNG GLOVES
+    </header>
 
-<!-- MENU -->
-<nav>
-    <a href="#">Trang Chủ</a>
-    <a href="#">Sản Phẩm</a>
-    <a href="#">Video</a>
-    <a href="#">Liên Hệ</a>
-</nav>
+    <!-- MENU -->
+    <nav>
+        <a href="#">Trang Chủ</a>
+        <a href="#">Sản Phẩm</a>
+        <a href="#">Video</a>
+        <a href="#">Liên Hệ</a>
+    </nav>
 
-<!-- BANNER -->
-<div class="banner"></div>
+    <!-- BANNER -->
+    <div class="banner"></div>
 
-<!-- KHỐI SẢN PHẨM -->
-<h2 class="section-title">Sản phẩm găng tay bảo hộ</h2>
+    <!-- KHỐI SẢN PHẨM -->
+    <h2 class="section-title">Sản phẩm găng tay bảo hộ</h2>
 
-<div class="product-grid">
+    <div class="product-grid">
 
-    <!-- SẢN PHẨM 1 -->
-    <div class="product-card">
+        <!-- SẢN PHẨM 1 -->
+        <div class="product-card">
 
-        <img src="https://via.placeholder.com/800x1000" alt="Bao tay PU">
+            <img src="https://via.placeholder.com/800x1000" alt="Bao tay phủ PU xám">
 
-        <div class="product-title">Bao tay phủ PU xám</div>
+            <div class="product-title">Bao tay phủ PU xám</div>
 
-        <!-- TAB BUTTON -->
-        <div class="tab-buttons">
-            <button class="tab-btn active" onclick="openTab(this,'mota1')">Mô Tả</button>
-            <button class="tab-btn" onclick="openTab(this,'lienhe1')">Liên Hệ</button>
-        </div>
+            <!-- NÚT TAB -->
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="openTab(this, 'mota1')">Mô Tả</button>
+                <button class="tab-btn" onclick="openTab(this, 'lienhe1')">Liên Hệ</button>
+            </div>
 
-        <!-- TAB NỘI DUNG -->
-        <div id="mota1" class="tab-content active">
-            <p><b>Tên SP:</b> Bao tay phủ PU xám</p>
-            <p><b>Chất liệu:</b> Polyester + phủ PU</p>
-            <p><b>Công dụng:</b> Chống trượt, thao tác chi tiết nhỏ</p>
-            <p><b>Ngành nghề:</b> Điện tử, cơ khí nhẹ, đóng gói</p>
-        </div>
+            <!-- TAB MÔ TẢ -->
+            <div id="mota1" class="tab-content active">
+                <p><b>Tên SP:</b> Bao tay phủ PU xám</p>
+                <p><b>Chất liệu:</b> Sợi Polyester + phủ PU</p>
+                <p><b>Công dụng:</b> Chống trượt, thao tác chi tiết nhỏ, hạn chế trầy xước tay</p>
+                <p><b>Ngành nghề sử dụng:</b> Điện tử, lắp ráp linh kiện, cơ khí nhẹ, đóng gói</p>
+            </div>
 
-        <div id="lienhe1" class="tab-content">
-            <img class="qr-img" src="https://via.placeholder.com/300x300?text=QR+Zalo">
-            <p style="text-align:center;">
-                <b>Zalo:</b> 0981171750<br>
-                <b>Hotline:</b> 0981171750
-            </p>
+            <!-- TAB LIÊN HỆ -->
+            <div id="lienhe1" class="tab-content">
+                <img class="qr-img" src="https://via.placeholder.com/300x300?text=QR+Zalo">
+                <p style="text-align:center;">
+                    <b>Zalo:</b> 0981171750<br>
+                    <b>Hotline:</b> 0981171750
+                </p>
+            </div>
+
         </div>
 
     </div>
 
-</div>
+    <!-- FOOTER -->
+    <footer>
+        <b>ĐƠN VỊ BÁN HÀNG:</b> CÔNG TY TNHH XUÂN CHƯƠNG GLOVES<br>
+        <b>Mã số thuế:</b> 3603502397<br>
+        <b>Địa chỉ:</b> Số 68, tổ 4, Khu phố 4, Phường Trảng Dài, Tỉnh Đồng Nai, Việt Nam<br>
+        <b>Zalo liên hệ:</b> 0981171750
+    </footer>
 
-<!-- FOOTER -->
-<footer>
-    <b>ĐƠN VỊ BÁN HÀNG:</b> CÔNG TY TNHH XUÂN CHƯƠNG GLOVES<br>
-    <b>Mã số thuế:</b> 3603502397<br>
-    <b>Địa chỉ:</b> Số 68, tổ 4, Khu phố 4, Phường Trảng Dài, Tỉnh Đồng Nai, Việt Nam<br>
-    <b>Zalo liên hệ:</b> 0981171750
-</footer>
+    <script>
+        // HÀM MỞ TAB – ĐẢM BẢO MỞ TAB NÀY THÌ TAB KHÁC TẮT
+        function openTab(button, tabId) {
+            // Tìm ô sản phẩm cha
+            var card = button.closest(".product-card");
 
-<script>
-/* TAB FUNCTION - CHỈ 1 TAB MỞ */
-function openTab(button, tabId) {
-    let card = button.closest(".product-card");
+            // Tắt hết nội dung tab trong ô đó
+            var contents = card.querySelectorAll(".tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].classList.remove("active");
+            }
 
-    // Tắt toàn bộ tab
-    card.querySelectorAll(".tab-content").forEach(tab => tab.classList.remove("active"));
-    card.querySelectorAll(".tab-btn").forEach(btn => btn.classList.remove("active"));
+            // Bỏ active trên tất cả nút tab trong ô đó
+            var btns = card.querySelectorAll(".tab-btn");
+            for (var j = 0; j < btns.length; j++) {
+                btns[j].classList.remove("active");
+            }
 
-    // Mở tab được chọn
-    document.getElementById(tabId).classList.add("active");
-    button.classList.add("active");
-}
-</script>
+            // Mở nội dung tab được chọn
+            var tab = document.getElementById(tabId);
+            if (tab) {
+                tab.classList.add("active");
+            }
+
+            // Đánh dấu nút đang chọn
+            button.classList.add("active");
+        }
+    </script>
 
 </body>
 </html>
