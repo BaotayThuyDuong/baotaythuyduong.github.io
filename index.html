@@ -120,6 +120,31 @@ footer {
     border: 2px dashed #0a5ad9;
     text-align: center;
 }
+
+/* CSS cho danh thiếp Zalo */
+.danh-thiep {
+    text-align: center;
+    background: linear-gradient(135deg, #0a5ad9, #00a2ff);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    width: 300px;
+}
+.danh-thiep h3 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: bold;
+}
+.danh-thiep .qr-code {
+    background: white;
+    margin: 15px auto;
+}
+.danh-thiep .sdt {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
 </style>
 
 <script>
@@ -439,32 +464,29 @@ window.onload=function(){
 
 </section>
 
-<!-- POPUP QR ZALO -->
+<!-- POPUP QR ZALO - ĐÃ SỬA THÀNH DANH THIẾP -->
 <div id="qrPopup" class="mota-popup">
-    <div class="mota-box" style="text-align:center">
-        <div class="mota-close">
-            <button onclick="closeQR()">X</button>
-        </div>
-        <h3>QUÉT MÃ QR ĐỂ KẾT NỐI ZALO</h3>
+    <div class="danh-thiep">
+        <h3>THÙY DƯƠNG</h3>
         <div class="qr-code">
-            MÃ QR SỐ ĐIỆN THOẠI<br>0981 171 750
+            MÃ QR ZALO<br>
+            (Quét để kết nối)
         </div>
-        <p style="margin-top:5px;font-weight:bold;">Zalo: 0981 171 750</p>
-        <p style="margin-top:5px;">Quét mã QR bằng Zalo để kết nối ngay!</p>
+        <div class="sdt">0981 171 750</div>
     </div>
 </div>
 
-<!-- CÁC POPUP MÔ TẢ SẢN PHẨM -->
+<!-- CÁC POPUP MÔ TẢ SẢN PHẨM ĐÃ CẬP NHẬT -->
 <!-- MÔ TẢ SP1 -->
 <div class="mota-popup" id="mota-sp1">
   <div class="mota-box">
     <div class="mota-close"><button onclick="closeMota('sp1')">X</button></div>
     <h3>XÁM 30g</h3>
     <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>LEN – Xám 30g</td></tr>
-      <tr><td>Chất liệu</td><td>Cotton + Polyester</td></tr>
-      <tr><td>Công dụng</td><td>Bảo vệ cơ bản, thoáng khí, giá rẻ.</td></tr>
-      <tr><td>Ngành nghề</td><td>Kho, xây dựng, nông nghiệp.</td></tr>
+      <tr><td>Loại găng tay</td><td>Găng Tay LEN</td></tr>
+      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.</td></tr>
+      <tr><td>Lợi ích (Công dụng)</td><td>Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.</td></tr>
+      <tr><td>Ngành nghề sử dụng</td><td>Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, cơ khí.</td></tr>
     </table>
   </div>
 </div>
@@ -475,10 +497,10 @@ window.onload=function(){
     <div class="mota-close"><button onclick="closeMota('sp2')">X</button></div>
     <h3>XÁM 40g</h3>
     <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>LEN – Xám 40g</td></tr>
-      <tr><td>Chất liệu</td><td>Cotton + Polyester</td></tr>
-      <tr><td>Công dụng</td><td>Mềm tay hơn bản 30g.</td></tr>
-      <tr><td>Ngành nghề</td><td>Công trình, kho hàng.</td></tr>
+      <tr><td>Loại găng tay</td><td>Găng Tay LEN</td></tr>
+      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.</td></tr>
+      <tr><td>Lợi ích (Công dụng)</td><td>Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.</td></tr>
+      <tr><td>Ngành nghề sử dụng</td><td>Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, cơ khí.</td></tr>
     </table>
   </div>
 </div>
@@ -489,10 +511,10 @@ window.onload=function(){
     <div class="mota-close"><button onclick="closeMota('sp3')">X</button></div>
     <h3>XÁM 50g</h3>
     <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>LEN – Xám 50g</td></tr>
-      <tr><td>Chất liệu</td><td>Cotton + Polyester</td></tr>
-      <tr><td>Công dụng</td><td>Độ dày vừa phải, bảo vệ tốt hơn.</td></tr>
-      <tr><td>Ngành nghề</td><td>Xây dựng, cơ khí nhẹ.</td></tr>
+      <tr><td>Loại găng tay</td><td>Găng Tay LEN</td></tr>
+      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.</td></tr>
+      <tr><td>Lợi ích (Công dụng)</td><td>Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.</td></tr>
+      <tr><td>Ngành nghề sử dụng</td><td>Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, cơ khí.</td></tr>
     </table>
   </div>
 </div>
@@ -503,10 +525,10 @@ window.onload=function(){
     <div class="mota-close"><button onclick="closeMota('sp4')">X</button></div>
     <h3>XÁM 60g</h3>
     <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>LEN – Xám 60g</td></tr>
-      <tr><td>Chất liệu</td><td>Cotton + Polyester</td></tr>
-      <tr><td>Công dụng</td><td>Độ bền cao, chống mài mòn tốt.</td></tr>
-      <tr><td>Ngành nghề</td><td>Công nghiệp nặng, xây dựng.</td></tr>
+      <tr><td>Loại găng tay</td><td>Găng Tay LEN</td></tr>
+      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.</td></tr>
+      <tr><td>Lợi ích (Công dụng)</td><td>Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.</td></tr>
+      <tr><td>Ngành nghề sử dụng</td><td>Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, cơ khí.</td></tr>
     </table>
   </div>
 </div>
@@ -517,10 +539,10 @@ window.onload=function(){
     <div class="mota-close"><button onclick="closeMota('sp5')">X</button></div>
     <h3>XÁM 70g</h3>
     <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>LEN – Xám 70g</td></tr>
-      <tr><td>Chất liệu</td><td>Cotton + Polyester</td></tr>
-      <tr><td>Công dụng</td><td>Độ dày cao, bảo vệ tối ưu.</td></tr>
-      <tr><td>Ngành nghề</td><td>Công trình lớn, công nghiệp nặng.</td></tr>
+      <tr><td>Loại găng tay</td><td>Găng Tay LEN</td></tr>
+      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.</td></tr>
+      <tr><td>Lợi ích (Công dụng)</td><td>Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.</td></tr>
+      <tr><td>Ngành nghề sử dụng</td><td>Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, cơ khí.</td></tr>
     </table>
   </div>
 </div>
@@ -531,10 +553,10 @@ window.onload=function(){
     <div class="mota-close"><button onclick="closeMota('sp6')">X</button></div>
     <h3>XÁM 80g</h3>
     <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>LEN – Xám 80g</td></tr>
-      <tr><td>Chất liệu</td><td>Cotton + Polyester</td></tr>
-      <tr><td>Công dụng</td><td>Độ dày cao nhất, bảo vệ tối đa.</td></tr>
-      <tr><td>Ngành nghề</td><td>Công nghiệp nặng, môi trường khắc nghiệt.</td></tr>
+      <tr><td>Loại găng tay</td><td>Găng Tay LEN</td></tr>
+      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.</td></tr>
+      <tr><td>Lợi ích (Công dụng)</td><td>Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.</td></tr>
+      <tr><td>Ngành nghề sử dụng</td><td>Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, cơ khí.</td></tr>
     </table>
   </div>
 </div>
@@ -545,10 +567,10 @@ window.onload=function(){
     <div class="mota-close"><button onclick="closeMota('sp7')">X</button></div>
     <h3>XÁM KIM 10 – 50g</h3>
     <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>LEN – Xám kim 10 – 50g</td></tr>
-      <tr><td>Chất liệu</td><td>Cotton + Polyester + sợi kim loại</td></tr>
-      <tr><td>Công dụng</td><td>Chống cắt nhẹ, bảo vệ tốt.</td></tr>
-      <tr><td>Ngành nghề</td><td>Cơ khí, xử lý kim loại.</td></tr>
+      <tr><td>Loại găng tay</td><td>Găng Tay LEN</td></tr>
+      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.</td></tr>
+      <tr><td>Lợi ích (Công dụng)</td><td>Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.</td></tr>
+      <tr><td>Ngành nghề sử dụng</td><td>Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, cơ khí.</td></tr>
     </table>
   </div>
 </div>
@@ -559,10 +581,10 @@ window.onload=function(){
     <div class="mota-close"><button onclick="closeMota('sp8')">X</button></div>
     <h3>XÁM KIM 10 – 60g</h3>
     <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>LEN – Xám kim 10 – 60g</td></tr>
-      <tr><td>Chất liệu</td><td>Cotton + Polyester + sợi kim loại</td></tr>
-      <tr><td>Công dụng</td><td>Chống cắt tốt, độ bền cao.</td></tr>
-      <tr><td>Ngành nghề</td><td>Công nghiệp nặng, cơ khí.</td></tr>
+      <tr><td>Loại găng tay</td><td>Găng Tay LEN</td></tr>
+      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.</td></tr>
+      <tr><td>Lợi ích (Công dụng)</td><td>Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.</td></tr>
+      <tr><td>Ngành nghề sử dụng</td><td>Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, cơ khí.</td></tr>
     </table>
   </div>
 </div>
@@ -573,10 +595,10 @@ window.onload=function(){
     <div class="mota-close"><button onclick="closeMota('sp9')">X</button></div>
     <h3>KEM 40g</h3>
     <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>LEN – Kem 40g</td></tr>
-      <tr><td>Chất liệu</td><td>Cotton + Polyester</td></tr>
-      <tr><td>Công dụng</td><td>Mềm mại, thoáng khí, dễ chịu.</td></tr>
-      <tr><td>Ngành nghề</td><td>Kho hàng, công nghiệp nhẹ.</td></tr>
+      <tr><td>Loại găng tay</td><td>Găng Tay LEN</td></tr>
+      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.</td></tr>
+      <tr><td>Lợi ích (Công dụng)</td><td>Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.</td></tr>
+      <tr><td>Ngành nghề sử dụng</td><td>Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, cơ khí.</td></tr>
     </table>
   </div>
 </div>
@@ -587,10 +609,10 @@ window.onload=function(){
     <div class="mota-close"><button onclick="closeMota('sp10')">X</button></div>
     <h3>KEM 50g</h3>
     <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>LEN – Kem 50g</td></tr>
-      <tr><td>Chất liệu</td><td>Cotton + Polyester</td></tr>
-      <tr><td>Công dụng</td><td>Độ dày vừa phải, bảo vệ tốt.</td></tr>
-      <tr><td>Ngành nghề</td><td>Công nghiệp nhẹ, xây dựng.</td></tr>
+      <tr><td>Loại găng tay</td><td>Găng Tay LEN</td></tr>
+      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.</td></tr>
+      <tr><td>Lợi ích (Công dụng)</td><td>Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.</td></tr>
+      <tr><td>Ngành nghề sử dụng</td><td>Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, cơ khí.</td></tr>
     </table>
   </div>
 </div>
@@ -601,10 +623,10 @@ window.onload=function(){
     <div class="mota-close"><button onclick="closeMota('sp11')">X</button></div>
     <h3>KEM 60g</h3>
     <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>LEN – Kem 60g</td></tr>
-      <tr><td>Chất liệu</td><td>Cotton + Polyester</td></tr>
-      <tr><td>Công dụng</td><td>Độ bền cao, chống mài mòn.</td></tr>
-      <tr><td>Ngành nghề</td><td>Công nghiệp, xây dựng.</td></tr>
+      <tr><td>Loại găng tay</td><td>Găng Tay LEN</td></tr>
+      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.</td></tr>
+      <tr><td>Lợi ích (Công dụng)</td><td>Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.</td></tr>
+      <tr><td>Ngành nghề sử dụng</td><td>Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, cơ khí.</td></tr>
     </table>
   </div>
 </div>
@@ -615,10 +637,10 @@ window.onload=function(){
     <div class="mota-close"><button onclick="closeMota('sp12')">X</button></div>
     <h3>KEM 70g</h3>
     <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>LEN – Kem 70g</td></tr>
-      <tr><td>Chất liệu</td><td>Cotton + Polyester</td></tr>
-      <tr><td>Công dụng</td><td>Độ dày cao, bảo vệ tối ưu.</td></tr>
-      <tr><td>Ngành nghề</td><td>Công nghiệp nặng, môi trường khắc nghiệt.</td></tr>
+      <tr><td>Loại găng tay</td><td>Găng Tay LEN</td></tr>
+      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.</td></tr>
+      <tr><td>Lợi ích (Công dụng)</td><td>Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.</td></tr>
+      <tr><td>Ngành nghề sử dụng</td><td>Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, cơ khí.</td></tr>
     </table>
   </div>
 </div>
@@ -629,10 +651,10 @@ window.onload=function(){
     <div class="mota-close"><button onclick="closeMota('sp13')">X</button></div>
     <h3>POLY 40g</h3>
     <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>LEN – Poly 40g</td></tr>
-      <tr><td>Chất liệu</td><td>100% Polyester</td></tr>
-      <tr><td>Công dụng</td><td>Nhẹ, thoáng khí, chống tĩnh điện.</td></tr>
-      <tr><td>Ngành nghề</td><td>Điện tử, công nghiệp nhẹ.</td></tr>
+      <tr><td>Loại găng tay</td><td>Găng Tay LEN</td></tr>
+      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.</td></tr>
+      <tr><td>Lợi ích (Công dụng)</td><td>Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.</td></tr>
+      <tr><td>Ngành nghề sử dụng</td><td>Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, cơ khí.</td></tr>
     </table>
   </div>
 </div>
@@ -643,10 +665,10 @@ window.onload=function(){
     <div class="mota-close"><button onclick="closeMota('sp14')">X</button></div>
     <h3>POLY 50g</h3>
     <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>LEN – Poly 50g</td></tr>
-      <tr><td>Chất liệu</td><td>100% Polyester</td></tr>
-      <tr><td>Công dụng</td><td>Độ dày vừa phải, bảo vệ tốt.</td></tr>
-      <tr><td>Ngành nghề</td><td>Công nghiệp nhẹ, điện tử.</td></tr>
+      <tr><td>Loại găng tay</td><td>Găng Tay LEN</td></tr>
+      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.</td></tr>
+      <tr><td>Lợi ích (Công dụng)</td><td>Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.</td></tr>
+      <tr><td>Ngành nghề sử dụng</td><td>Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, cơ khí.</td></tr>
     </table>
   </div>
 </div>
@@ -657,10 +679,10 @@ window.onload=function(){
     <div class="mota-close"><button onclick="closeMota('sp15')">X</button></div>
     <h3>POLY 60g</h3>
     <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>LEN – Poly 60g</td></tr>
-      <tr><td>Chất liệu</td><td>100% Polyester</td></tr>
-      <tr><td>Công dụng</td><td>Độ bền cao, chống mài mòn.</td></tr>
-      <tr><td>Ngành nghề</td><td>Công nghiệp, xây dựng.</td></tr>
+      <tr><td>Loại găng tay</td><td>Găng Tay LEN</td></tr>
+      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.</td></tr>
+      <tr><td>Lợi ích (Công dụng)</td><td>Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.</td></tr>
+      <tr><td>Ngành nghề sử dụng</td><td>Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, cơ khí.</td></tr>
     </table>
   </div>
 </div>
@@ -671,10 +693,10 @@ window.onload=function(){
     <div class="mota-close"><button onclick="closeMota('sp16')">X</button></div>
     <h3>POLY 70g</h3>
     <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>LEN – Poly 70g</td></tr>
-      <tr><td>Chất liệu</td><td>100% Polyester</td></tr>
-      <tr><td>Công dụng</td><td>Độ dày cao, bảo vệ tối ưu.</td></tr>
-      <tr><td>Ngành nghề</td><td>Công nghiệp nặng, môi trường khắc nghiệt.</td></tr>
+      <tr><td>Loại găng tay</td><td>Găng Tay LEN</td></tr>
+      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.</td></tr>
+      <tr><td>Lợi ích (Công dụng)</td><td>Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.</td></tr>
+      <tr><td>Ngành nghề sử dụng</td><td>Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, cơ khí.</td></tr>
     </table>
   </div>
 </div>
@@ -685,10 +707,10 @@ window.onload=function(){
     <div class="mota-close"><button onclick="closeMota('sp17')">X</button></div>
     <h3>PHỦ SƠN XANH</h3>
     <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>Găng Tay Phủ Sơn / Cao Su</td></tr>
-      <tr><td>Chất liệu & Cấu tạo</td><td>Lõi sợi Poly/Cotton + phủ Latex xanh.</td></tr>
-      <tr><td>Lợi ích (Công dụng)</td><td>Chống trơn, tăng độ bám dính, chống dầu nhẹ.</td></tr>
-      <tr><td>Ngành nghề</td><td>Cơ khí – lắp ráp – bảo trì máy móc.</td></tr>
+      <tr><td>Loại găng tay</td><td>Găng Tay Phủ SƠN/Cao su</td></tr>
+      <tr><td>Chất liệu & Cấu tạo</td><td>Lõi sợi dệt (Poly/Cotton) + Lớp phủ cao su (Latex, Nitrile, PU, PVC). Lớp phủ có thể là lòng bàn tay, 3/4 hoặc phủ toàn bộ.</td></tr>
+      <tr><td>Lợi ích (Công dụng)</td><td>Tăng độ bám dính vượt trội trong môi trường trơn trượt. Chống thấm dầu, mỡ, hóa chất nhẹ, nước. Lớp phủ Nitrile giúp tăng khả năng chống mài mòn và kháng dầu hơn.</td></tr>
+      <tr><td>Ngành nghề sử dụng</td><td>Cơ khí, Lắp ráp linh kiện, Điện tử, Sửa chữa ô tô, Bảo trì máy móc, Xử lý vật liệu dính dầu mỡ.</td></tr>
     </table>
   </div>
 </div>
@@ -699,10 +721,10 @@ window.onload=function(){
     <div class="mota-close"><button onclick="closeMota('sp18')">X</button></div>
     <h3>PHỦ SƠN ĐỎ</h3>
     <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>Găng Tay Phủ Latex Đỏ</td></tr>
-      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi Poly/Cotton + lớp phủ Latex đỏ.</td></tr>
-      <tr><td>Lợi ích (Công dụng)</td><td>Tăng ma sát mạnh, chống trơn trượt tối đa.</td></tr>
-      <tr><td>Ngành nghề</td><td>Cơ khí – vận chuyển – công nghiệp.</td></tr>
+      <tr><td>Loại găng tay</td><td>Găng Tay Phủ SƠN/Cao su</td></tr>
+      <tr><td>Chất liệu & Cấu tạo</td><td>Lõi sợi dệt (Poly/Cotton) + Lớp phủ cao su (Latex, Nitrile, PU, PVC). Lớp phủ có thể là lòng bàn tay, 3/4 hoặc phủ toàn bộ.</td></tr>
+      <tr><td>Lợi ích (Công dụng)</td><td>Tăng độ bám dính vượt trội trong môi trường trơn trượt. Chống thấm dầu, mỡ, hóa chất nhẹ, nước. Lớp phủ Nitrile giúp tăng khả năng chống mài mòn và kháng dầu hơn.</td></tr>
+      <tr><td>Ngành nghề sử dụng</td><td>Cơ khí, Lắp ráp linh kiện, Điện tử, Sửa chữa ô tô, Bảo trì máy móc, Xử lý vật liệu dính dầu mỡ.</td></tr>
     </table>
   </div>
 </div>
@@ -713,10 +735,10 @@ window.onload=function(){
     <div class="mota-close"><button onclick="closeMota('sp19')">X</button></div>
     <h3>LATEX VÀNG</h3>
     <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>Găng Tay Phủ Latex</td></tr>
-      <tr><td>Chất liệu & Cấu tạo</td><td>Lõi Poly/Cotton + phủ Latex vàng.</td></tr>
-      <tr><td>Lợi ích (Công dụng)</td><td>Độ bám cực cao, chống dầu nhẹ, độ bền lớn.</td></tr>
-      <tr><td>Ngành nghề</td><td>Bảo trì – sửa chữa – công trình.</td></tr>
+      <tr><td>Loại găng tay</td><td>Găng Tay Phủ SƠN/Cao su</td></tr>
+      <tr><td>Chất liệu & Cấu tạo</td><td>Lõi sợi dệt (Poly/Cotton) + Lớp phủ cao su (Latex, Nitrile, PU, PVC). Lớp phủ có thể là lòng bàn tay, 3/4 hoặc phủ toàn bộ.</td></tr>
+      <tr><td>Lợi ích (Công dụng)</td><td>Tăng độ bám dính vượt trội trong môi trường trơn trượt. Chống thấm dầu, mỡ, hóa chất nhẹ, nước. Lớp phủ Nitrile giúp tăng khả năng chống mài mòn và kháng dầu hơn.</td></tr>
+      <tr><td>Ngành nghề sử dụng</td><td>Cơ khí, Lắp ráp linh kiện, Điện tử, Sửa chữa ô tô, Bảo trì máy móc, Xử lý vật liệu dính dầu mỡ.</td></tr>
     </table>
   </div>
 </div>
@@ -727,10 +749,10 @@ window.onload=function(){
     <div class="mota-close"><button onclick="closeMota('sp20')">X</button></div>
     <h3>NITRILE XANH</h3>
     <table class="mota-table">
-      <tr><td>Loại găng tay</td><td>Găng Tay Phủ Nitrile</td></tr>
-      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi Poly/Cotton + lớp phủ Nitrile xanh.</td></tr>
-      <tr><td>Lợi ích (Công dụng)</td><td>Kháng dầu mạnh, chống mài mòn cực cao.</td></tr>
-      <tr><td>Ngành nghề</td><td>Ô tô – cơ khí dầu mỡ – bảo dưỡng máy.</td></tr>
+      <tr><td>Loại găng tay</td><td>Găng Tay Phủ SƠN/Cao su</td></tr>
+      <tr><td>Chất liệu & Cấu tạo</td><td>Lõi sợi dệt (Poly/Cotton) + Lớp phủ cao su (Latex, Nitrile, PU, PVC). Lớp phủ có thể là lòng bàn tay, 3/4 hoặc phủ toàn bộ.</td></tr>
+      <tr><td>Lợi ích (Công dụng)</td><td>Tăng độ bám dính vượt trội trong môi trường trơn trượt. Chống thấm dầu, mỡ, hóa chất nhẹ, nước. Lớp phủ Nitrile giúp tăng khả năng chống mài mòn và kháng dầu hơn.</td></tr>
+      <tr><td>Ngành nghề sử dụng</td><td>Cơ khí, Lắp ráp linh kiện, Điện tử, Sửa chữa ô tô, Bảo trì máy móc, Xử lý vật liệu dính dầu mỡ.</td></tr>
     </table>
   </div>
 </div>
@@ -741,10 +763,10 @@ window.onload=function(){
     <div class="mota-close"><button onclick="closeMota('sp21')">X</button></div>
     <h3>PHỦ HẠT TRẮNG</h3>
     <table class="mota-table">
-      <tr><td>Loại Găng Tay</td><td>Găng Tay Phủ Hạt</td></tr>
-      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi cotton/poly + hạt PVC nổi 1 mặt.</td></tr>
-      <tr><td>Lợi ích (Công dụng)</td><td>Chống trơn trượt tối đa, tăng ma sát, cầm nắm chắc chắn.</td></tr>
-      <tr><td>Ngành nghề sử dụng</td><td>Kho bãi – vận chuyển – logistics.</td></tr>
+      <tr><td>Loại găng tay</td><td>Găng Tay Phủ HẠT</td></tr>
+      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi dệt cotton/poly + Hạt nhựa PVC (Polyvinyl Clorua) được in nổi/đính ở lòng bàn tay (hoặc cả hai mặt).</td></tr>
+      <tr><td>Lợi ích (Công dụng)</td><td>Chống trơn trượt tối đa nhờ các hạt PVC tạo lực ma sát. Giúp cầm nắm chắc chắn các vật liệu nặng, trơn, giảm rủi ro rơi vỡ hàng hóa. Tăng độ bền cho lòng bàn tay.</td></tr>
+      <tr><td>Ngành nghề sử dụng</td><td>Vận chuyển/Logistics, Kho bãi, Xử lý thùng carton, Xử lý vật liệu kính/gốm sứ, Thao tác máy móc rung nhẹ.</td></tr>
     </table>
   </div>
 </div>
@@ -755,10 +777,10 @@ window.onload=function(){
     <div class="mota-close"><button onclick="closeMota('sp22')">X</button></div>
     <h3>PHỦ HẠT VÀNG</h3>
     <table class="mota-table">
-      <tr><td>Loại Găng Tay</td><td>Găng Tay Phủ Hạt PVC</td></tr>
-      <tr><td>Chất liệu & Cấu tạo</td><td>Cotton/Poly + PVC vàng phủ hạt nổi.</td></tr>
-      <tr><td>Lợi ích (Công dụng)</td><td>Độ bám cực mạnh, chống trơn, giảm rơi vỡ hàng hóa.</td></tr>
-      <tr><td>Ngành nghề sử dụng</td><td>Thùng carton – gốm – thủy tinh – kho hàng.</td></tr>
+      <tr><td>Loại găng tay</td><td>Găng Tay Phủ HẠT</td></tr>
+      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi dệt cotton/poly + Hạt nhựa PVC (Polyvinyl Clorua) được in nổi/đính ở lòng bàn tay (hoặc cả hai mặt).</td></tr>
+      <tr><td>Lợi ích (Công dụng)</td><td>Chống trơn trượt tối đa nhờ các hạt PVC tạo lực ma sát. Giúp cầm nắm chắc chắn các vật liệu nặng, trơn, giảm rủi ro rơi vỡ hàng hóa. Tăng độ bền cho lòng bàn tay.</td></tr>
+      <tr><td>Ngành nghề sử dụng</td><td>Vận chuyển/Logistics, Kho bãi, Xử lý thùng carton, Xử lý vật liệu kính/gốm sứ, Thao tác máy móc rung nhẹ.</td></tr>
     </table>
   </div>
 </div>
@@ -769,10 +791,10 @@ window.onload=function(){
     <div class="mota-close"><button onclick="closeMota('sp23')">X</button></div>
     <h3>CHỐNG CẮT CẤP 3</h3>
     <table class="mota-table">
-      <tr><td>Loại Găng Tay</td><td>Găng chống cắt cấp 3</td></tr>
-      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi kỹ thuật HPPE + sợi thủy tinh, độ bền cao.</td></tr>
-      <tr><td>Lợi ích (Công dụng)</td><td>Chống cắt nhẹ, chống mài mòn cơ bản, an toàn khi thao tác dao/cạnh sắc.</td></tr>
-      <tr><td>Ngành nghề sử dụng</td><td>Gỗ – bao bì – kim loại mỏng – phân loại hàng.</td></tr>
+      <tr><td>Loại găng tay</td><td>Găng Tay Chống CẮT</td></tr>
+      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi kỹ thuật cao (HPPE, Kevlar, Sợi thủy tinh), thường đi kèm lớp phủ PU hoặc Nitrile ở lòng bàn tay.</td></tr>
+      <tr><td>Lợi ích (Công dụng)</td><td>Bảo vệ tay khỏi rủi ro cắt/cứa nguy hiểm. Chống mài mòn và chống đâm xuyên cơ bản. Giúp người lao động tự tin và an toàn khi làm việc với vật sắc nhọn.</td></tr>
+      <tr><td>Ngành nghề sử dụng</td><td>Chế biến thực phẩm/thịt, Công nghiệp kính, Gia công kim loại tấm, Xử lý rác thải nguy hại, Lắp ráp chi tiết sắc.</td></tr>
     </table>
   </div>
 </div>
@@ -783,10 +805,10 @@ window.onload=function(){
     <div class="mota-close"><button onclick="closeMota('sp24')">X</button></div>
     <h3>CHỐNG CẮT CẤP 5</h3>
     <table class="mota-table">
-      <tr><td>Loại Găng Tay</td><td>Găng chống cắt cấp 5</td></tr>
-      <tr><td>Chất liệu & Cấu tạo</td><td>HPPE + Kevlar + sợi thủy tinh (khả năng chống xuyên cực tốt).</td></tr>
-      <tr><td>Lợi ích (Công dụng)</td><td>Chống cắt mạnh, chịu lực tốt, chống đâm xuyên.</td></tr>
-      <tr><td>Ngành nghề sử dụng</td><td>Kính – kim loại tấm – ngành thép – xử lý rác nguy hại.</td></tr>
+      <tr><td>Loại găng tay</td><td>Găng Tay Chống CẮT</td></tr>
+      <tr><td>Chất liệu & Cấu tạo</td><td>Sợi kỹ thuật cao (HPPE, Kevlar, Sợi thủy tinh), thường đi kèm lớp phủ PU hoặc Nitrile ở lòng bàn tay.</td></tr>
+      <tr><td>Lợi ích (Công dụng)</td><td>Bảo vệ tay khỏi rủi ro cắt/cứa nguy hiểm. Chống mài mòn và chống đâm xuyên cơ bản. Giúp người lao động tự tin và an toàn khi làm việc với vật sắc nhọn.</td></tr>
+      <tr><td>Ngành nghề sử dụng</td><td>Chế biến thực phẩm/thịt, Công nghiệp kính, Gia công kim loại tấm, Xử lý rác thải nguy hại, Lắp ráp chi tiết sắc.</td></tr>
     </table>
   </div>
 </div>
