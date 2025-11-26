@@ -6,193 +6,185 @@
 <title>Bao Tay Thùy Dương</title>
 
 <style>
-    * {margin:0; padding:0; box-sizing:border-box;}
-    body {font-family: Arial, sans-serif; background:#eef4ff;}
+* {margin:0; padding:0; box-sizing:border-box;}
+body {font-family: Arial, sans-serif; background:#eef4ff;}
 
-    /* Header */
-    header{
-        background:#0a5ad9;
-        color:white;
-        text-align:center;
-        padding:20px 10px;
-        border-bottom:4px solid #083e96;
-    }
-    header h1{
-        font-size:34px;
-        font-weight:900;
-    }
-    header p{
-        margin-top:10px;
-        font-size:14px;
-        line-height:1.5;
-    }
+header{
+    background:#0a5ad9;
+    color:white;
+    text-align:center;
+    padding:20px 10px;
+    border-bottom:4px solid #083e96;
+}
+header h1{
+    font-size:34px;
+    font-weight:900;
+}
+header p{
+    margin-top:10px;
+    font-size:14px;
+    line-height:1.5;
+}
 
-    /* Menu */
-    nav{
-        background:#083e96;
-        display:flex;
-        justify-content:center;
-        gap:25px;
-        padding:12px;
-    }
-    nav a{
-        color:white;
-        text-decoration:none;
-        font-weight:bold;
-        font-size:16px;
-        cursor:pointer;
-        padding:6px 12px;
-        border-radius:5px;
-    }
-    nav a:hover{
-        background:rgba(255,255,255,0.25);
-    }
+nav{
+    background:#083e96;
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    padding:12px;
+}
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+    padding:6px 12px;
+    border-radius:5px;
+}
+nav a:hover{
+    background:rgba(255,255,255,0.25);
+}
 
-    /* Section */
-    section{
-        padding:20px;
-        max-width:1100px;
-        margin:auto;
-        display:none;
-    }
-    section.active{display:block;}
+section{
+    padding:20px;
+    max-width:1100px;
+    margin:auto;
+    display:none;
+}
+section.active{display:block;}
 
-    h2{
-        font-size:22px;
-        color:#0a5ad9;
-        margin-bottom:15px;
-        border-left:5px solid #ff9800;
-        padding-left:10px;
-        font-weight:800;
-    }
+h2{
+    font-size:22px;
+    color:#0a5ad9;
+    margin-bottom:15px;
+    border-left:5px solid #ff9800;
+    padding-left:10px;
+    font-weight:800;
+}
 
-    /* Product Grid */
-    .grid{
-        display:grid;
-        grid-template-columns:repeat(4,1fr);
-        gap:15px;
-    }
-    @media(max-width:900px){
-        .grid{
-            grid-template-columns:repeat(2,1fr);
-        }
-    }
-    .card{
-        background:white;
-        border-radius:10px;
-        box-shadow:0 3px 10px rgba(0,0,0,0.1);
-        padding:10px;
-        text-align:center;
-    }
-    .card img{
-        width:100%;
-        height:190px;
-        object-fit:cover;
-        border-radius:10px;
-        margin-bottom:10px;
-    }
-    .card button{
-        background:#0a5ad9;
-        border:none;
-        color:white;
-        padding:8px 12px;
-        border-radius:20px;
-        cursor:pointer;
-        font-size:13px;
-        margin-top:5px;
-    }
-    .card button:hover{
-        background:#083e96;
-    }
+/* Grid sản phẩm */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+@media(max-width:900px){
+    .grid{grid-template-columns:repeat(2,1fr);}
+}
 
-    /* Video grid */
-    .videos{
-        display:grid;
-        grid-template-columns:repeat(2,1fr);
-        gap:20px;
-    }
-    @media(max-width:900px){
-        .videos{
-            grid-template-columns:1fr;
-        }
-    }
-    iframe{
-        width:100%;
-        height:240px;
-        border-radius:12px;
-        background:#000;
-    }
+.card{
+    background:white;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.1);
+    padding:10px;
+    text-align:center;
+}
+.card img{
+    width:100%;
+    height:190px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:10px;
+}
+.card button{
+    background:#0a5ad9;
+    border:none;
+    color:white;
+    padding:8px 12px;
+    border-radius:20px;
+    cursor:pointer;
+    font-size:13px;
+    margin-top:5px;
+}
+.card button:hover{
+    background:#083e96;
+}
 
-    /* Intro text */
-    .intro{
-        font-size:15px;
-        line-height:1.6;
-        margin-bottom:20px;
-    }
+/* Popup mô tả */
+#popup{
+    display:none;
+    position:fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background:rgba(0,0,0,0.55);
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+#popupBox{
+    background:white;
+    width:90%; max-width:500px;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 4px 20px rgba(0,0,0,0.3);
+}
+#popup h3{
+    color:#0a5ad9;
+    font-size:20px;
+    margin-bottom:10px;
+    font-weight:800;
+}
+#popup button{
+    background:#0a5ad9;
+    color:white;
+    padding:10px;
+    width:100%;
+    border:none;
+    margin-top:15px;
+    border-radius:8px;
+    font-size:15px;
+    cursor:pointer;
+}
 
-    /* Footer */
-    footer{
-        background:#083e96;
-        color:white;
-        text-align:center;
-        padding:20px 10px;
-        margin-top:30px;
-        font-size:14px;
-        line-height:1.5;
-    }
+/* Video */
+.videos{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+@media(max-width:900px){
+    .videos{grid-template-columns:1fr;}
+}
 
-    /* Popup mô tả */
-    #popup{
-        display:none;
-        position:fixed;
-        top:0; left:0;
-        width:100%; height:100%;
-        background:rgba(0,0,0,0.55);
-        backdrop-filter:blur(3px);
-        justify-content:center;
-        align-items:center;
-        z-index:9999;
-    }
-    #popupContentBox{
-        background:white;
-        width:90%; max-width:500px;
-        padding:20px;
-        border-radius:12px;
-        box-shadow:0 4px 20px rgba(0,0,0,0.3);
-    }
+iframe{
+    width:100%;
+    height:240px;
+    border-radius:12px;
+    background:#000;
+}
 
-    #popup h3{
-        color:#0a5ad9;
-        font-size:20px;
-        margin-bottom:10px;
-        font-weight:800;
-    }
+/* Giới thiệu */
+.intro{
+    font-size:15px;
+    line-height:1.6;
+    margin-bottom:20px;
+}
 
-    #popup button{
-        background:#0a5ad9;
-        color:white;
-        padding:10px;
-        width:100%;
-        border:none;
-        margin-top:15px;
-        border-radius:8px;
-        font-size:15px;
-        cursor:pointer;
-    }
+/* Footer */
+footer{
+    background:#083e96;
+    color:white;
+    text-align:center;
+    padding:20px 10px;
+    margin-top:30px;
+    font-size:14px;
+    line-height:1.5;
+}
 
-    /* Zalo float */
-    #zaloFloat{
-        position:fixed;
-        bottom:15px;
-        right:15px;
-        background:#00a2ff;
-        color:white;
-        padding:12px 20px;
-        border-radius:30px;
-        cursor:pointer;
-        font-weight:bold;
-        box-shadow:0 4px 12px rgba(0,0,0,0.3);
-    }
+/* Nút Zalo nổi */
+#zaloFloat{
+    position:fixed;
+    bottom:15px;
+    right:15px;
+    background:#00a2ff;
+    color:white;
+    padding:12px 20px;
+    border-radius:30px;
+    cursor:pointer;
+    font-weight:bold;
+    box-shadow:0 4px 12px rgba(0,0,0,0.3);
+}
 </style>
 
 <script>
@@ -200,35 +192,26 @@ function showTab(tab){
     document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
     document.getElementById(tab).classList.add("active");
 }
-
-function goZalo(){
-    window.location.href = "https://zalo.me/0981171750";
-}
+function goZalo(){ window.location.href="https://zalo.me/0981171750"; }
 
 function showPopup(title, content){
     document.getElementById("popupTitle").innerHTML = title;
-    document.getElementById("popupBody").innerHTML = content;
+    document.getElementById("popupContent").innerHTML = content;
     document.getElementById("popup").style.display = "flex";
 }
+function closePopup(){ document.getElementById("popup").style.display = "none"; }
 
-function closePopup(){
-    document.getElementById("popup").style.display = "none";
-}
-
-window.onload = function(){
-    showTab('sanpham');
-}
+window.onload = function(){ showTab('sanpham'); }
 </script>
 
 </head>
 <body>
-
 <header>
     <h1>BAO TAY THÙY DƯƠNG</h1>
     <p>
         Đơn vị bán hàng: <b>CÔNG TY TNHH XUÂN CHƯƠNG GLOVES</b><br>
-        Mã số thuế: 3603502397<br>
-        Địa chỉ: Số 68, tổ 4, Khu phố 4, Phường Trảng Dài, Đồng Nai
+        MST: 3603502397<br>
+        ĐC: Số 68, tổ 4, Khu phố 4, Phường Trảng Dài, Đồng Nai
     </p>
 </header>
 
@@ -238,128 +221,281 @@ window.onload = function(){
     <a onclick="showTab('gioithieu')">GIỚI THIỆU</a>
 </nav>
 
-<!-- ===================== POPUP ===================== -->
+<!-- POPUP MÔ TẢ -->
 <div id="popup">
-    <div id="popupContentBox">
+    <div id="popupBox">
         <h3 id="popupTitle"></h3>
-        <div id="popupBody"></div>
+        <div id="popupContent" style="line-height:1.6; font-size:15px;"></div>
         <button onclick="closePopup()">Đóng</button>
     </div>
 </div>
 
-<!-- ===================== SẢN PHẨM ===================== -->
+<!-- ================== SẢN PHẨM ================== -->
 <section id="sanpham" class="active">
 
-    <h2>Nhóm 1 – Bao tay len trắng</h2>
+    <h2>BAO TAY LEN (16 SẢN PHẨM)</h2>
     <div class="grid">
+<div class="card">
+    <img src="images/sp1.jpg">
+    <button onclick="goZalo()">Zalo 0981 171 750</button>
+    <button onclick="showPopup('Bao tay len XÁM 30g', `
+        • Loại găng tay: Bao tay len xám 30g<br>
+        • Chất liệu: Cotton + Polyester<br>
+        • Công dụng: Thoáng – nhẹ – chống bụi, chống trầy nhẹ<br>
+        • Ngành nghề: Nông nghiệp – kho bãi – vệ sinh công nghiệp
+    `)">Mô tả</button>
+</div>
+<div class="card">
+    <img src="images/sp2.jpg">
+    <button onclick="goZalo()">Zalo 0981 171 750</button>
+    <button onclick="showPopup('Bao tay len XÁM 40g', `
+        • Loại găng tay: Bao tay len xám 40g<br>
+        • Chất liệu: Cotton/poly – độ dày trung bình<br>
+        • Công dụng: Thoáng – bền – dùng thao tác liên tục<br>
+        • Ngành nghề: Lắp ráp – kho hàng – phụ trợ nhà máy
+    `)">Mô tả</button>
+</div>
+<div class="card">
+    <img src="images/sp3.jpg">
+    <button onclick="goZalo()">Zalo 0981 171 750</button>
+    <button onclick="showPopup('Bao tay len XÁM 50g', `
+        • Chất liệu: Cotton/poly 50g<br>
+        • Công dụng: Chống trầy tốt – thấm hút – bền<br>
+        • Ngành nghề: Cơ khí nhẹ – xưởng gỗ – bốc xếp
+    `)">Mô tả</button>
+</div>
+<div class="card">
+    <img src="images/sp4.jpg">
+    <button onclick="goZalo()">Zalo 0981 171 750</button>
+    <button onclick="showPopup('Bao tay len XÁM 60g', `
+        • Chất liệu: Cotton/poly dày hơn 50g<br>
+        • Công dụng: Bền – bảo vệ tốt – chống ma sát<br>
+        • Ngành nghề: Xây dựng – cơ điện – cơ khí
+    `)">Mô tả</button>
+</div>
+<div class="card">
+    <img src="images/sp5.jpg">
+    <button onclick="goZalo()">Zalo 0981 171 750</button>
+    <button onclick="showPopup('Bao tay len XÁM 70g', `
+        • Chất liệu: Cotton/poly dày<br>
+        • Công dụng: Bảo vệ cao – độ bền vượt trội<br>
+        • Ngành nghề: Bốc xếp – kho vận – cơ khí nặng
+    `)">Mô tả</button>
+</div>
+<div class="card">
+    <img src="images/sp6.jpg">
+    <button onclick="goZalo()">Zalo 0981 171 750</button>
+    <button onclick="showPopup('Bao tay len XÁM 80g', `
+        • Chất liệu: Cotton/poly cực dày<br>
+        • Công dụng: Chịu lực – chống trầy mạnh – chống nóng nhẹ<br>
+        • Ngành nghề: Công trình – xưởng thép – vận tải
+    `)">Mô tả</button>
+</div>
+<div class="card">
+    <img src="images/sp7.jpg">
+    <button onclick="goZalo()">Zalo 0981 171 750</button>
+    <button onclick="showPopup('Bao tay len XÁM KIM 10 – 50g', `
+        • Máy kim 10 – dệt mịn, ôm tay<br>
+        • Công dụng: Mềm – tăng độ bám – an toàn<br>
+        • Ngành nghề: Lắp ráp – điện tử – cơ khí nhẹ
+    `)">Mô tả</button>
+</div>
+<div class="card">
+    <img src="images/sp8.jpg">
+    <button onclick="goZalo()">Zalo 0981 171 750</button>
+    <button onclick="showPopup('Bao tay len XÁM KIM 10 – 60g', `
+        • Máy kim 10 – sợi mịn cao cấp<br>
+        • Công dụng: Thoải mái – chống trầy – độ bền tốt<br>
+        • Ngành nghề: Điện tử – đóng gói – gỗ
+    `)">Mô tả</button>
+</div>
+<div class="card">
+    <img src="images/sp9.jpg">
+    <button onclick="goZalo()">Zalo 0981 171 750</button>
+    <button onclick="showPopup('Bao tay len KEM 40g', `
+        • Chất liệu: Cotton/poly màu kem<br>
+        • Công dụng: Thoáng – nhẹ – chống bụi<br>
+        • Ngành nghề: Nông nghiệp – kho gạo – lắp ráp nhẹ
+    `)">Mô tả</button>
+</div>
+<div class="card">
+    <img src="images/sp10.jpg">
+    <button onclick="goZalo()">Zalo 0981 171 750</button>
+    <button onclick="showPopup('Bao tay len KEM 50g', `
+        • Chất liệu: Cotton/poly 50g<br>
+        • Công dụng: Bền – chống trầy tốt<br>
+        • Ngành nghề: Gia công gỗ – cơ khí nhẹ – bốc hàng
+    `)">Mô tả</button>
+</div>
+<div class="card">
+    <img src="images/sp11.jpg">
+    <button onclick="goZalo()">Zalo 0981 171 750</button>
+    <button onclick="showPopup('Bao tay len KEM 60g', `
+        • Công dụng: Bảo vệ tốt – dày – không xù lông<br>
+        • Ngành nghề: Xây dựng – vận chuyển – kho bãi
+    `)">Mô tả</button>
+</div>
+<div class="card">
+    <img src="images/sp12.jpg">
+    <button onclick="goZalo()">Zalo 0981 171 750</button>
+    <button onclick="showPopup('Bao tay len KEM 70g', `
+        • Công dụng: Chống trượt – chống trầy tốt<br>
+        • Ngành nghề: Kho hàng – cơ khí – công trình
+    `)">Mô tả</button>
+</div>
+<div class="card">
+    <img src="images/sp13.jpg">
+    <button onclick="goZalo()">Zalo 0981 171 750</button>
+    <button onclick="showPopup('Bao tay POLY 40g', `
+        • Chất liệu: Polyester – độ bền cao<br>
+        • Công dụng: Ít xù lông – bền hơn cotton<br>
+        • Ngành nghề: Điện tử – kho – sản xuất nhẹ
+    `)">Mô tả</button>
+</div>
+
+<div class="card">
+    <img src="images/sp14.jpg">
+    <button onclick="goZalo()">Zalo 0981 171 750</button>
+    <button onclick="showPopup('Bao tay POLY 50g', `
+        • Công dụng: Bền – chịu mài mòn tốt<br>
+        • Ngành nghề: Cơ khí nhẹ – vận chuyển
+    `)">Mô tả</button>
+</div>
+<div class="card">
+    <img src="images/sp15.jpg">
+    <button onclick="goZalo()">Zalo 0981 171 750</button>
+    <button onclick="showPopup('Bao tay POLY 60g', `
+        • Công dụng: Độ bền cao – bảo vệ tốt<br>
+        • Ngành nghề: Gỗ – kim loại – xây dựng
+    `)">Mô tả</button>
+</div>
+<div class="card">
+    <img src="images/sp16.jpg">
+    <button onclick="goZalo()">Zalo 0981 171 750</button>
+    <button onclick="showPopup('Bao tay POLY 70g', `
+        • Công dụng: Cực bền – chống trầy mạnh<br>
+        • Ngành nghề: Kho thép – cơ khí nặng – vận tải
+    `)">Mô tả</button>
+</div>
+
+    <h2>BAO TAY PHỦ SƠN / CAO SU (4 SẢN PHẨM)</h2>
+    <div class="grid">
+
+        <!-- SP17 -->
         <div class="card">
-            <img src="images/sp1.jpg">
+            <img src="images/sp17.jpg">
             <button onclick="goZalo()">Zalo 0981 171 750</button>
-            <button onclick="showPopup('Bao tay len trắng', `
-                • Chất liệu cotton mềm mại<br>
-                • Co giãn tốt – thoáng khí<br>
-                • Ứng dụng: sản xuất – xây dựng – cơ khí<br>
-                • Giá tốt – giao nhanh
+
+            <button onclick="showPopup('Bao tay phủ sơn / cao su', `
+                • Loại găng tay: Phủ latex / PU / nitrile<br>
+                • Chất liệu: Lõi cotton/poly + lớp phủ cao su<br>
+                • Lợi ích: Bám dính cực tốt – chống trơn – chống dầu nhẹ<br>
+                • Ngành nghề: Cơ khí – điện tử – lắp ráp – sửa chữa xe
             `)">Mô tả</button>
         </div>
 
+        <!-- SP18 -->
         <div class="card">
-            <img src="images/sp2.jpg">
+            <img src="images/sp18.jpg">
             <button onclick="goZalo()">Zalo 0981 171 750</button>
-            <button onclick="showPopup('Bao tay len trắng', 'Mô tả sản phẩm...')">Mô tả</button>
+
+            <button onclick="showPopup('Bao tay phủ sơn / cao su', `
+                • Loại găng tay: Lòng bàn tay phủ latex<br>
+                • Công dụng: Chống trượt – chống mài mòn<br>
+                • Ngành nghề: Sản xuất – bảo trì – vận hành máy
+            `)">Mô tả</button>
         </div>
 
+        <!-- SP19 -->
         <div class="card">
-            <img src="images/sp3.jpg">
+            <img src="images/sp19.jpg">
             <button onclick="goZalo()">Zalo 0981 171 750</button>
-            <button onclick="showPopup('Bao tay len trắng', 'Mô tả sản phẩm...')">Mô tả</button>
+
+            <button onclick="showPopup('Bao tay phủ sơn / cao su', `
+                • Chất liệu: Cotton/poly + phủ PU<br>
+                • Lợi ích: Cầm nắm chính xác – độ bám tốt<br>
+                • Ngành nghề: Điện tử – linh kiện – sửa chữa nhỏ
+            `)">Mô tả</button>
         </div>
 
+        <!-- SP20 -->
         <div class="card">
-            <img src="images/sp4.jpg">
+            <img src="images/sp20.jpg">
             <button onclick="goZalo()">Zalo 0981 171 750</button>
-            <button onclick="showPopup('Bao tay len trắng', 'Mô tả sản phẩm...')">Mô tả</button>
-        </div>
-    </div>
 
-    <h2>Nhóm 2 – Bao tay len xám</h2>
+            <button onclick="showPopup('Bao tay phủ sơn / cao su', `
+                • Chất liệu: Lõi sợi + phủ nitrile bền cao<br>
+                • Lợi ích: Kháng dầu mỡ tốt – bền – chống trượt<br>
+                • Ngành nghề: Ô tô – cơ khí – công nghiệp nhẹ
+            `)">Mô tả</button>
+        </div>
+
+    </div> <!-- đóng grid -->
+
+    <h2>BAO TAY PHỦ HẠT (2 SẢN PHẨM)</h2>
     <div class="grid">
+
+        <!-- SP21 -->
         <div class="card">
-            <img src="images/sp5.jpg">
+            <img src="images/sp21.jpg">
             <button onclick="goZalo()">Zalo 0981 171 750</button>
-            <button onclick="showPopup('Bao tay len xám', 'Mô tả sản phẩm...')">Mô tả</button>
+
+            <button onclick="showPopup('Bao tay phủ hạt PVC', `
+                • Loại găng tay: Cotton/poly phủ hạt PVC<br>
+                • Công dụng: Tăng ma sát – chống trơn trượt<br>
+                • Ngành nghề: Kho bãi – vận chuyển – logistics
+            `)">Mô tả</button>
         </div>
 
+        <!-- SP22 -->
         <div class="card">
-            <img src="images/sp6.jpg">
+            <img src="images/sp22.jpg">
             <button onclick="goZalo()">Zalo 0981 171 750</button>
-            <button onclick="showPopup('Bao tay len xám', 'Mô tả sản phẩm...')">Mô tả</button>
+
+            <button onclick="showPopup('Bao tay phủ hạt PVC', `
+                • Công dụng: Cầm nắm chắc chắn – chống rơi hàng<br>
+                • Ngành nghề: Vận tải – xử lý carton – gốm/kính
+            `)">Mô tả</button>
         </div>
 
-        <div class="card">
-            <img src="images/sp7.jpg">
-            <button onclick="goZalo()">Zalo 0981 171 750</button>
-            <button onclick="showPopup('Bao tay len xám', 'Mô tả sản phẩm...')">Mô tả</button>
-        </div>
+    </div> <!-- đóng grid -->
 
-        <div class="card">
-            <img src="images/sp8.jpg">
-            <button onclick="goZalo()">Zalo 0981 171 750</button>
-            <button onclick="showPopup('Bao tay len xám', 'Mô tả sản phẩm...')">Mô tả</button>
-        </div>
-    </div>
 
-    <h2>Nhóm 3 – Bao tay phủ nhựa</h2>
+    <h2>BAO TAY CHỐNG CẮT (2 SẢN PHẨM)</h2>
     <div class="grid">
+
+        <!-- SP23 -->
         <div class="card">
-            <img src="images/sp9.jpg">
+            <img src="images/sp23.jpg">
             <button onclick="goZalo()">Zalo 0981 171 750</button>
-            <button onclick="showPopup('Bao tay phủ nhựa', 'Mô tả sản phẩm...')">Mô tả</button>
+
+            <button onclick="showPopup('Bao tay chống cắt', `
+                • Chất liệu: HPPE – kevlar – sợi thủy tinh<br>
+                • Công dụng: Chống cắt – chống mài mòn – bảo vệ cao<br>
+                • Ngành nghề: Gia công kim loại – kính – thực phẩm
+            `)">Mô tả</button>
         </div>
 
+        <!-- SP24 -->
         <div class="card">
-            <img src="images/sp10.jpg">
+            <img src="images/sp24.jpg">
             <button onclick="goZalo()">Zalo 0981 171 750</button>
-            <button onclick="showPopup('Bao tay phủ nhựa', 'Mô tả sản phẩm...')">Mô tả</button>
-        </div>
-    </div>
 
-    <h2>Nhóm 4 – Bao tay phủ sơn</h2>
-    <div class="grid">
-        <div class="card">
-            <img src="images/sp11.jpg">
-            <button onclick="goZalo()">Zalo 0981 171 750</button>
-            <button onclick="showPopup('Bao tay phủ sơn', 'Mô tả sản phẩm...')">Mô tả</button>
+            <button onclick="showPopup('Bao tay chống cắt', `
+                • Lớp phủ PU/Nitrile tăng độ bám<br>
+                • Công dụng: An toàn khi xử lý vật sắc nhọn<br>
+                • Ngành nghề: Cơ khí – lắp ráp kim loại – xử lý rác
+            `)">Mô tả</button>
         </div>
 
-        <div class="card">
-            <img src="images/sp12.jpg">
-            <button onclick="goZalo()">Zalo 0981 171 750</button>
-            <button onclick="showPopup('Bao tay phủ sơn', 'Mô tả sản phẩm...')">Mô tả</button>
-        </div>
-    </div>
+    </div> <!-- đóng grid -->
 
-    <h2>Nhóm 5 – Bao tay chống cắt</h2>
-    <div class="grid">
-        <div class="card">
-            <img src="images/sp13.jpg">
-            <button onclick="goZalo()">Zalo 0981 171 750</button>
-            <button onclick="showPopup('Bao tay chống cắt', 'Mô tả sản phẩm...')">Mô tả</button>
-        </div>
+</section> <!-- hết phần sản phẩm -->
 
-        <div class="card">
-            <img src="images/sp14.jpg">
-            <button onclick="goZalo()">Zalo 0981 171 750</button>
-            <button onclick="showPopup('Bao tay chống cắt', 'Mô tả sản phẩm...')">Mô tả</button>
-        </div>
-    </div>
-
-</section>
-
-<!-- ===================== VIDEO ===================== -->
+<!-- ================= VIDEO ================= -->
 <section id="video">
 
-    <h2>Video Giới Thiệu</h2>
+    <h2>VIDEO GIỚI THIỆU</h2>
 
     <div class="videos">
         <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
@@ -368,21 +504,20 @@ window.onload = function(){
 
 </section>
 
-<!-- ===================== GIỚI THIỆU ===================== -->
+<!-- ================= GIỚI THIỆU ================= -->
 <section id="gioithieu">
 
-    <h2>Giới thiệu công ty</h2>
+    <h2>GIỚI THIỆU CÔNG TY</h2>
 
     <p class="intro">
-        <b>CÔNG TY TNHH XUÂN CHƯƠNG GLOVES</b> là đơn vị chuyên cung cấp bao tay bảo hộ lao động,
-        bao tay len, phủ nhựa, phủ sơn, chống cắt cho nhà máy – công trình – xưởng sản xuất.
+        <b>CÔNG TY TNHH XUÂN CHƯƠNG GLOVES</b><br><br>
+        Chuyên cung cấp bao tay len – bao tay phủ sơn – bao tay phủ hạt – 
+        bao tay chống cắt cho nhà máy, công trình, kho xưởng.
         <br><br>
-        Uy tín – chất lượng – giao hàng nhanh – giá tốt.
-        <br><br>
-        Hotline/Zalo: <b>033 444 9494 – 0981 171 750</b>
+        Uy tín – Giá tốt – Giao hàng toàn quốc.
     </p>
 
-    <h2>Video giới thiệu công ty</h2>
+    <h2>VIDEO GIỚI THIỆU CÔNG TY</h2>
 
     <div class="videos">
         <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
@@ -395,7 +530,7 @@ window.onload = function(){
     CÔNG TY TNHH XUÂN CHƯƠNG GLOVES<br>
     MST: 3603502397<br>
     ĐC: Số 68, tổ 4, Khu phố 4, Phường Trảng Dài, Đồng Nai<br>
-    Hotline: 033 444 9494 – 0981 171 750
+    Hotline/Zalo: 033 444 9494 – 0981 171 750
 </footer>
 
 <div id="zaloFloat" onclick="goZalo()">
