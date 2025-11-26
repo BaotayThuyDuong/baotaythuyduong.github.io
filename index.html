@@ -3,449 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bao Tay Thùy Dương</title>
+    <title>Sản Phẩm & Mã QR</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            background: #eef4ff;
-            line-height: 1.6;
-        }
-        
-        header {
-            background: #0a5ad9;
-            color: white;
-            text-align: center;
-            padding: 25px 10px;
-        }
-        
-        header h1 {
-            font-size: 34px;
-            font-weight: 900;
-            margin-bottom: 10px;
-        }
-        
-        nav {
-            background: #083e96;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
             display: flex;
-            justify-content: center;
-            gap: 25px;
-            padding: 12px;
-            flex-wrap: wrap;
-        }
-        
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 16px;
-            padding: 6px 12px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        
-        nav a:hover {
-            background: rgba(255, 255, 255, 0.25);
-        }
-        
-        section {
-            padding: 20px;
-            max-width: 1100px;
-            margin: auto;
-            display: none;
-        }
-        
-        section.active {
-            display: block;
-        }
-        
-        h2 {
-            font-size: 22px;
-            color: #0a5ad9;
-            margin: 15px 0;
-            border-left: 5px solid #ff9800;
-            padding-left: 10px;
-            font-weight: 800;
-        }
-        
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-        }
-        
-        @media (max-width: 900px) {
-            .grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (max-width: 500px) {
-            .grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        .card {
-            background: white;
-            border-radius: 10px;
-            padding: 10px;
-            text-align: center;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-        
-        .card-title {
-            font-size: 15px;
-            font-weight: bold;
-            color: #0a5ad9;
-            margin: 10px 0;
-        }
-        
-        .btn-row {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 10px;
-        }
-        
-        .btn-zalo, .btn-mota {
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 13px;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .btn-zalo {
-            background: #0a5ad9;
-            color: white;
-        }
-        
-        .btn-zalo:hover {
-            background: #083e96;
-        }
-        
-        .btn-mota {
-            background: #ff9800;
-            color: white;
-        }
-        
-        .btn-mota:hover {
-            background: #d67f00;
-        }
-        
-        .mota-popup {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            display: none;
             justify-content: center;
             align-items: center;
-            z-index: 9999;
-        }
-        
-        .mota-box {
-            background: white;
-            width: 90%;
-            max-width: 500px;
             padding: 20px;
-            border-radius: 10px;
-            max-height: 80vh;
-            overflow-y: auto;
         }
         
-        .mota-close {
-            text-align: right;
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 900px;
+            width: 100%;
+        }
+        
+        .header {
+            text-align: center;
             margin-bottom: 10px;
         }
         
-        .mota-close button {
-            background: red;
-            color: white;
-            border: none;
-            padding: 5px 12px;
-            border-radius: 5px;
-            cursor: pointer;
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
         }
         
-        .mota-table {
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+        }
+        
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        
+        .image-container {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .image-box {
             width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-        }
-        
-        .mota-table td {
-            padding: 8px 12px;
-            border: 1px solid #ddd;
-            vertical-align: top;
-        }
-        
-        #zaloFloat {
-            position: fixed;
-            bottom: 15px;
-            right: 15px;
-            background: #00a2ff;
-            color: white;
-            padding: 12px 20px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: bold;
-            z-index: 1000;
-        }
-        
-        .danh-thiep {
-            text-align: center;
-            background: linear-gradient(135deg, #0a5ad9, #00a2ff);
-            color: white;
-            padding: 20px;
+            max-width: 800px;
+            height: 800px;
+            background-color: white;
             border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            width: 300px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
             position: relative;
         }
         
-        .danh-thiep h3 {
-            margin-bottom: 15px;
-            font-size: 24px;
-            font-weight: bold;
+        .image-label {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
         }
         
-        .danh-thiep .sdt {
-            margin-top: 15px;
-            font-size: 18px;
-            font-weight: bold;
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
-        .videos {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+        .qr-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background-color: white;
+        }
+        
+        .placeholder {
+            color: #95a5a6;
+            font-size: 1.1rem;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .description {
+            background-color: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             margin-top: 20px;
         }
         
-        .videos iframe {
-            width: 100%;
-            height: 300px;
+        .description h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .description p {
+            color: #7f8c8d;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .feature {
+            flex: 1;
+            min-width: 200px;
+            background: #f8f9fa;
+            padding: 15px;
             border-radius: 10px;
-            border: none;
+            text-align: center;
+        }
+        
+        .feature i {
+            font-size: 1.5rem;
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+        
+        .feature h3 {
+            color: #2c3e50;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        
+        .feature p {
+            color: #7f8c8d;
+            font-size: 0.9rem;
         }
         
         @media (max-width: 768px) {
-            .videos {
-                grid-template-columns: 1fr;
+            .content {
+                flex-direction: column;
             }
-        }
-        
-        .intro {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        footer {
-            background: #083e96;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 30px;
-            font-size: 14px;
-            line-height: 1.6;
+            
+            .image-container {
+                min-width: 100%;
+            }
+            
+            .image-box {
+                height: 400px;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>BAO TAY THÙY DƯƠNG</h1>
-        <p>CÔNG TY TNHH XUÂN CHƯƠNG GLOVES<br>
-        MST 3603502397 – Số 68, tổ 4, KP4, Phường Trảng Dài, Đồng Nai</p>
-    </header>
-
-    <nav>
-        <a onclick="showTab('len')">BAO TAY LEN</a>
-        <a onclick="showTab('dacbiet')">BAO TAY ĐẶC BIỆT</a>
-        <a onclick="showTab('video')">VIDEO</a>
-        <a onclick="showTab('gioithieu')">GIỚI THIỆU</a>
-    </nav>
-
-    <!-- TAB 1: BAO TAY LEN -->
-    <section id="len" class="active">
-        <h2>BAO TAY LEN</h2>
-        <div class="grid">
-            <div class="card">
-                <img src="images/sp1.jpg" alt="Xám 30g">
-                <div class="card-title">XÁM 30g</div>
-                <div class="btn-row">
-                    <button class="btn-zalo" onclick="openQR()">Zalo</button>
-                    <button class="btn-mota" onclick="openMota('sp1')">Mô tả</button>
+    <div class="container">
+        <div class="header">
+            <h1>Sản Phẩm Cao Cấp</h1>
+            <p>Thiết kế đẳng cấp - Chất lượng vượt trội</p>
+        </div>
+        
+        <div class="content">
+            <div class="image-container">
+                <div class="image-label">Ảnh Sản Phẩm</div>
+                <div class="image-box">
+                    <!-- Thay thế URL ảnh sản phẩm tại đây -->
+                    <img src="https://via.placeholder.com/800x800/3498db/ffffff?text=SẢN+PHẨM" alt="Sản phẩm" class="product-image">
                 </div>
             </div>
-
-            <div class="card">
-                <img src="images/sp2.jpg" alt="Xám 40g">
-                <div class="card-title">XÁM 40g</div>
-                <div class="btn-row">
-                    <button class="btn-zalo" onclick="openQR()">Zalo</button>
-                    <button class="btn-mota" onclick="openMota('sp2')">Mô tả</button>
+            
+            <div class="image-container">
+                <div class="image-label">Mã QR</div>
+                <div class="image-box">
+                    <!-- Thay thế URL mã QR tại đây -->
+                    <img src="https://via.placeholder.com/800x800/2ecc71/ffffff?text=QR+CODE" alt="Mã QR" class="qr-image">
                 </div>
             </div>
-
-            <!-- Thêm các sản phẩm khác tương tự -->
         </div>
-    </section>
-
-    <!-- TAB 2: BAO TAY ĐẶC BIỆT -->
-    <section id="dacbiet">
-        <h2>BAO TAY PHỦ SƠN / CAO SU</h2>
-        <div class="grid">
-            <div class="card">
-                <img src="images/sp17.jpg" alt="Phủ sơn xanh">
-                <div class="card-title">PHỦ SƠN XANH</div>
-                <div class="btn-row">
-                    <button class="btn-zalo" onclick="openQR()">Zalo</button>
-                    <button class="btn-mota" onclick="openMota('sp17')">Mô tả</button>
+        
+        <div class="description">
+            <h2>Thông Tin Sản Phẩm</h2>
+            <p>Sản phẩm của chúng tôi được thiết kế với tiêu chuẩn chất lượng cao nhất, kết hợp giữa công nghệ hiện đại và tính thẩm mỹ tinh tế. Mỗi chi tiết đều được chăm chút tỉ mỉ để mang đến trải nghiệm hoàn hảo cho người dùng.</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <i>✓</i>
+                    <h3>Chất Lượng Cao</h3>
+                    <p>Đảm bảo độ bền và hiệu suất vượt trội</p>
+                </div>
+                <div class="feature">
+                    <i>✓</i>
+                    <h3>Thiết Kế Tinh Tế</h3>
+                    <p>Đường nét sang trọng, phù hợp mọi không gian</p>
+                </div>
+                <div class="feature">
+                    <i>✓</i>
+                    <h3>Bảo Hành Dài Hạn</h3>
+                    <p>Chính sách bảo hành lên đến 24 tháng</p>
                 </div>
             </div>
-            <!-- Thêm các sản phẩm khác -->
-        </div>
-
-        <h2 style="margin-top: 40px;">BAO TAY PHỦ HẠT</h2>
-        <div class="grid">
-            <div class="card">
-                <img src="images/sp21.jpg" alt="Phủ hạt trắng">
-                <div class="card-title">PHỦ HẠT TRẮNG</div>
-                <div class="btn-row">
-                    <button class="btn-zalo" onclick="openQR()">Zalo</button>
-                    <button class="btn-mota" onclick="openMota('sp21')">Mô tả</button>
-                </div>
-            </div>
-            <!-- Thêm các sản phẩm khác -->
-        </div>
-
-        <h2 style="margin-top: 40px;">BAO TAY CHỐNG CẮT</h2>
-        <div class="grid">
-            <div class="card">
-                <img src="images/sp23.jpg" alt="Chống cắt cấp 3">
-                <div class="card-title">CHỐNG CẮT CẤP 3</div>
-                <div class="btn-row">
-                    <button class="btn-zalo" onclick="openQR()">Zalo</button>
-                    <button class="btn-mota" onclick="openMota('sp23')">Mô tả</button>
-                </div>
-            </div>
-            <!-- Thêm các sản phẩm khác -->
-        </div>
-    </section>
-
-    <!-- TAB 3: VIDEO -->
-    <section id="video">
-        <h2>VIDEO GIỚI THIỆU SẢN PHẨM</h2>
-        <div class="videos">
-            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-            <iframe src="https://www.youtube.com/embed/Pkh8UtuejGw" allowfullscreen></iframe>
-        </div>
-    </section>
-
-    <!-- TAB 4: GIỚI THIỆU -->
-    <section id="gioithieu">
-        <h2>GIỚI THIỆU CÔNG TY</h2>
-        <div class="intro">
-            <b>CÔNG TY TNHH XUÂN CHƯƠNG GLOVES</b><br><br>
-            Chuyên sản xuất và cung cấp BAO TAY BẢO HỘ LAO ĐỘNG:<br>
-            – Bao tay len<br>
-            – Bao tay phủ sơn – phủ Latex – phủ Nitrile<br>
-            – Bao tay phủ hạt PVC<br>
-            – Bao tay chống cắt HPPE – Kevlar<br><br>
-            Cam kết: Uy tín – Giá tốt – Giao hàng toàn quốc.<br>
-            Hotline/Zalo: <b>033 444 9494 – 0981 171 750</b>
-        </div>
-
-        <h2>VIDEO GIỚI THIỆU CÔNG TY</h2>
-        <div class="videos">
-            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-            <iframe src="https://www.youtube.com/embed/Pkh8UtuejGw" allowfullscreen></iframe>
-        </div>
-    </section>
-
-    <!-- POPUP QR ZALO -->
-    <div id="qrPopup" class="mota-popup">
-        <div class="danh-thiep">
-            <div class="mota-close">
-                <button onclick="closeQR()">X</button>
-            </div>
-            <h3>THÙY DƯƠNG</h3>
-            <img src="images/qr.png" style="width:100%;max-width:260px;height:auto;margin:15px auto;display:block;background:white;padding:10px;border-radius:10px;">
-            <div class="sdt">0981 171 750</div>
         </div>
     </div>
-
-    <!-- POPUP MÔ TẢ SẢN PHẨM -->
-    <div class="mota-popup" id="mota-sp1">
-        <div class="mota-box">
-            <div class="mota-close"><button onclick="closeMota('sp1')">X</button></div>
-            <h3>XÁM 30g</h3>
-            <table class="mota-table">
-                <tr><td>Loại găng tay</td><td>Găng Tay LEN</td></tr>
-                <tr><td>Chất liệu & Cấu tạo</td><td>Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.</td></tr>
-                <tr><td>Lợi ích (Công dụng)</td><td>Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.</td></tr>
-                <tr><td>Ngành nghề sử dụng</td><td>Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, cơ khí.</td></tr>
-            </table>
-        </div>
-    </div>
-
-    <!-- Thêm các popup mô tả khác tương tự -->
-
-    <footer>
-        CÔNG TY TNHH XUÂN CHƯƠNG GLOVES<br>
-        MST: 3603502397<br>
-        Địa chỉ: Số 68, tổ 4, KP4, Phường Trảng Dài, Đồng Nai<br>
-        Hotline/Zalo: 033 444 9494 – 0981 171 750
-    </footer>
-
-    <div id="zaloFloat" onclick="openQR()">Chat Zalo 0981 171 750</div>
-
-    <script>
-        function showTab(tab) {
-            document.querySelectorAll("section").forEach(function(s) {
-                s.classList.remove("active");
-            });
-            document.getElementById(tab).classList.add("active");
-        }
-
-        function openQR() { 
-            document.getElementById("qrPopup").style.display = "flex"; 
-        }
-        
-        function closeQR() { 
-            document.getElementById("qrPopup").style.display = "none"; 
-        }
-
-        function openMota(id) { 
-            document.getElementById("mota-" + id).style.display = "flex"; 
-        }
-        
-        function closeMota(id) { 
-            document.getElementById("mota-" + id).style.display = "none"; 
-        }
-
-        // Hiển thị tab đầu tiên khi trang load
-        window.onload = function() { 
-            showTab('len'); 
-        }
-    </script>
 </body>
 </html>
