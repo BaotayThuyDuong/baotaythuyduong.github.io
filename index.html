@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bao Tay Thùy Dương</title>
-
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:Arial,sans-serif;background:#eef4ff;line-height:1.6;}
@@ -23,6 +22,7 @@ h2{font-size:22px;color:#0a5ad9;margin:15px 0;border-left:5px solid #ff9800;padd
 
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;}
 @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:500px){.grid{grid-template-columns:1fr;}}
 
 .card{background:white;border-radius:10px;padding:10px;text-align:center;box-shadow:0 3px 10px rgba(0,0,0,0.1);}
 .card img{width:100%;height:200px;object-fit:cover;border-radius:10px;padding:0;margin:0;pointer-events:none;}
@@ -150,35 +150,7 @@ footer {
     right: 10px;
 }
 </style>
-
-<script>
-function showTab(tab){
-    document.querySelectorAll("section").forEach(function(s){
-        s.classList.remove("active");
-    });
-    document.getElementById(tab).classList.add("active");
-}
-
-function openQR(){ 
-    document.getElementById("qrPopup").style.display="flex"; 
-}
-function closeQR(){ 
-    document.getElementById("qrPopup").style.display="none"; 
-}
-
-function openMota(id){ 
-    document.getElementById("mota-"+id).style.display="flex"; 
-}
-function closeMota(id){ 
-    document.getElementById("mota-"+id).style.display="none"; 
-}
-
-window.onload=function(){ 
-    showTab('len'); 
-}
-</script>
 </head>
-
 <body>
 
 <header>
@@ -852,5 +824,31 @@ window.onload=function(){
 
 <div id="zaloFloat" onclick="openQR()">Chat Zalo 0981 171 750</div>
 
+<script>
+function showTab(tab){
+    document.querySelectorAll("section").forEach(function(s){
+        s.classList.remove("active");
+    });
+    document.getElementById(tab).classList.add("active");
+}
+
+function openQR(){ 
+    document.getElementById("qrPopup").style.display="flex"; 
+}
+function closeQR(){ 
+    document.getElementById("qrPopup").style.display="none"; 
+}
+
+function openMota(id){ 
+    document.getElementById("mota-"+id).style.display="flex"; 
+}
+function closeMota(id){ 
+    document.getElementById("mota-"+id).style.display="none"; 
+}
+
+window.onload=function(){ 
+    showTab('len'); 
+}
+</script>
 </body>
 </html>
