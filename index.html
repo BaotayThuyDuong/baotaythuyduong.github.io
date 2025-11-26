@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +14,6 @@
             padding: 0;
         }
 
-        /* HEADER */
         header {
             background: #ff8800;
             padding: 15px;
@@ -23,7 +23,6 @@
             font-weight: bold;
         }
 
-        /* MENU */
         nav {
             background: #333;
             padding: 10px 0;
@@ -42,25 +41,14 @@
             color: #ff8800;
         }
 
-        /* BANNER */
-        .banner {
-            width: 100%;
-            height: 250px;
-            background-image: url("https://via.placeholder.com/1920x500?text=GANG+TAY+BAO+HO");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-        }
-
-        /* TIÊU ĐỀ CHÍNH */
         .section-title {
             text-align: center;
             margin: 25px 0 10px 0;
-            font-size: 24px;
+            font-size: 26px;
+            font-weight: bold;
             color: #222;
         }
 
-        /* LƯỚI SẢN PHẨM */
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -68,12 +56,11 @@
             padding: 20px;
         }
 
-        /* Ô SẢN PHẨM */
         .product-card {
             background: #fff;
             border-radius: 10px;
             padding: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .product-card img {
@@ -88,7 +75,6 @@
             text-align: center;
         }
 
-        /* NÚT TAB */
         .tab-buttons {
             margin-top: 12px;
             display: flex;
@@ -114,7 +100,6 @@
             font-weight: bold;
         }
 
-        /* NỘI DUNG TAB */
         .tab-content {
             display: none;
             padding: 10px;
@@ -129,13 +114,28 @@
             display: block;
         }
 
+        .same-btn {
+            margin-top: 10px;
+            display: block;
+            text-align: center;
+            background: #0080ff;
+            color: #fff;
+            padding: 8px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .same-btn:hover {
+            background: #006ad1;
+        }
+
         .qr-img {
             width: 160px;
             display: block;
             margin: auto;
         }
 
-        /* FOOTER */
         footer {
             background: #222;
             color: white;
@@ -143,16 +143,15 @@
             margin-top: 40px;
             text-align: center;
             line-height: 1.6;
-            font-size: 14px;
+            font-size: 15px;
         }
     </style>
 </head>
+
 <body>
 
     <!-- HEADER -->
-    <header>
-        CÔNG TY TNHH XUÂN CHƯƠNG GLOVES
-    </header>
+    <header>CÔNG TY TNHH XUÂN CHƯƠNG GLOVES</header>
 
     <!-- MENU -->
     <nav>
@@ -162,44 +161,273 @@
         <a href="#">Liên Hệ</a>
     </nav>
 
-    <!-- BANNER -->
-    <div class="banner"></div>
-
-    <!-- KHỐI SẢN PHẨM -->
-    <h2 class="section-title">Sản phẩm găng tay bảo hộ</h2>
+    <!-- ============= NHÓM 1: BAO TAY LEN (4 LOẠI) ============= -->
+    <h2 class="section-title">Bao tay len</h2>
 
     <div class="product-grid">
 
-        <!-- SẢN PHẨM 1 -->
+        <!-- Len xám -->
         <div class="product-card">
+            <img src="https://via.placeholder.com/800x1000" alt="">
+            <div class="product-title">Bao tay len xám</div>
 
-            <img src="https://via.placeholder.com/800x1000" alt="Bao tay phủ PU xám">
-
-            <div class="product-title">Bao tay phủ PU xám</div>
-
-            <!-- NÚT TAB -->
             <div class="tab-buttons">
-                <button class="tab-btn active" onclick="openTab(this, 'mota1')">Mô Tả</button>
-                <button class="tab-btn" onclick="openTab(this, 'lienhe1')">Liên Hệ</button>
+                <button class="tab-btn active" onclick="openTab(this,'mota1')">Mô Tả</button>
+                <button class="tab-btn" onclick="openTab(this,'lienhe1')">Liên Hệ</button>
             </div>
 
-            <!-- TAB MÔ TẢ -->
             <div id="mota1" class="tab-content active">
-                <p><b>Tên SP:</b> Bao tay phủ PU xám</p>
-                <p><b>Chất liệu:</b> Sợi Polyester + phủ PU</p>
-                <p><b>Công dụng:</b> Chống trượt, thao tác chi tiết nhỏ, hạn chế trầy xước tay</p>
-                <p><b>Ngành nghề sử dụng:</b> Điện tử, lắp ráp linh kiện, cơ khí nhẹ, đóng gói</p>
+                <p><b>Tên sản phẩm:</b> Bao tay len xám</p>
+                <p><b>Chất liệu:</b> Sợi cotton + sợi tổng hợp</p>
+                <p><b>Công dụng:</b> Giữ ấm, bảo vệ tay, cầm nắm tốt</p>
+                <p><b>Ngành nghề sử dụng:</b> Bốc xếp, cơ khí nhẹ, làm vườn</p>
             </div>
 
-            <!-- TAB LIÊN HỆ -->
             <div id="lienhe1" class="tab-content">
                 <img class="qr-img" src="https://via.placeholder.com/300x300?text=QR+Zalo">
-                <p style="text-align:center;">
-                    <b>Zalo:</b> 0981171750<br>
-                    <b>Hotline:</b> 0981171750
-                </p>
+                <p style="text-align:center;"><b>Zalo:</b> 0981171750<br><b>Hotline:</b> 0981171750</p>
             </div>
 
+            <a class="same-btn" href="#len">Sản phẩm tương tự</a>
+        </div>
+
+        <!-- Len kem -->
+        <div class="product-card" id="len">
+            <img src="https://via.placeholder.com/800x1000" alt="">
+            <div class="product-title">Bao tay len kem</div>
+
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="openTab(this,'mota2')">Mô Tả</button>
+                <button class="tab-btn" onclick="openTab(this,'lienhe2')">Liên Hệ</button>
+            </div>
+
+            <div id="mota2" class="tab-content active">
+                <p><b>Tên sản phẩm:</b> Bao tay len kem</p>
+                <p><b>Chất liệu:</b> Cotton mềm + sợi tổng hợp</p>
+                <p><b>Công dụng:</b> Giữ ấm, chống trầy nhẹ</p>
+                <p><b>Ngành nghề:</b> Làm vườn, kho hàng</p>
+            </div>
+
+            <div id="lienhe2" class="tab-content">
+                <img class="qr-img" src="https://via.placeholder.com/300x300?text=QR+Zalo">
+                <p style="text-align:center;"><b>Zalo:</b> 0981171750<br><b>Hotline:</b> 0981171750</p>
+            </div>
+
+            <a class="same-btn" href="#len">Sản phẩm tương tự</a>
+        </div>
+
+        <!-- Len poly -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/800x1000" alt="">
+            <div class="product-title">Bao tay len poly</div>
+
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="openTab(this,'mota3')">Mô Tả</button>
+                <button class="tab-btn" onclick="openTab(this,'lienhe3')">Liên Hệ</button>
+            </div>
+
+            <div id="mota3" class="tab-content active">
+                <p><b>Tên sản phẩm:</b> Bao tay len poly</p>
+                <p><b>Chất liệu:</b> Polyester bền</p>
+                <p><b>Công dụng:</b> Dùng trong kho, vận chuyển, cầm nắm tốt</p>
+                <p><b>Ngành nghề:</b> Công nghiệp nhẹ, kho hàng</p>
+            </div>
+
+            <div id="lienhe3" class="tab-content">
+                <img class="qr-img" src="https://via.placeholder.com/300x300?text=QR+Zalo">
+                <p style="text-align:center;"><b>Zalo:</b> 0981171750<br><b>Hotline:</b> 0981171750</p>
+            </div>
+
+            <a class="same-btn" href="#len">Sản phẩm tương tự</a>
+        </div>
+
+        <!-- Len muối tiêu -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/800x1000" alt="">
+            <div class="product-title">Bao tay len muối tiêu</div>
+
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="openTab(this,'mota4')">Mô Tả</button>
+                <button class="tab-btn" onclick="openTab(this,'lienhe4')">Liên Hệ</button>
+            </div>
+
+            <div id="mota4" class="tab-content active">
+                <p><b>Tên sản phẩm:</b> Bao tay len muối tiêu</p>
+                <p><b>Chất liệu:</b> Cotton xoắn + sợi poly</p>
+                <p><b>Công dụng:</b> Bảo vệ tay, chống trầy nhẹ</p>
+                <p><b>Ngành nghề:</b> Sản xuất, kho hàng</p>
+            </div>
+
+            <div id="lienhe4" class="tab-content">
+                <img class="qr-img" src="https://via.placeholder.com/300x300?text=QR+Zalo">
+                <p style="text-align:center;"><b>Zalo:</b> 0981171750<br><b>Hotline:</b> 0981171750</p>
+            </div>
+
+            <a class="same-btn" href="#len">Sản phẩm tương tự</a>
+        </div>
+
+    </div>
+
+    <!-- ============= NHÓM 2: PHỦ SƠN & HẠT (4 LOẠI) ============= -->
+    <h2 class="section-title">Bao tay phủ sơn & phủ hạt</h2>
+
+    <div class="product-grid">
+
+        <!-- Latex đỏ -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/800x1000" alt="">
+            <div class="product-title">Bao tay phủ sơn latex đỏ</div>
+
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="openTab(this,'mota5')">Mô Tả</button>
+                <button class="tab-btn" onclick="openTab(this,'lienhe5')">Liên Hệ</button>
+            </div>
+
+            <div id="mota5" class="tab-content active">
+                <p><b>Tên sản phẩm:</b> Bao tay phủ sơn latex đỏ</p>
+                <p><b>Chất liệu:</b> Sợi poly + phủ latex</p>
+                <p><b>Công dụng:</b> Chống trơn trượt cực tốt</p>
+                <p><b>Ngành nghề:</b> Cơ khí, bốc vác</p>
+            </div>
+
+            <div id="lienhe5" class="tab-content">
+                <img class="qr-img" src="https://via.placeholder.com/300x300?text=QR+Zalo">
+                <p style="text-align:center;"><b>Zalo:</b> 0981171750<br><b>Hotline:</b> 0981171750</p>
+            </div>
+
+            <a class="same-btn" href="#sonhat">Sản phẩm tương tự</a>
+        </div>
+
+        <!-- Nitrile xanh -->
+        <div class="product-card" id="sonhat">
+            <img src="https://via.placeholder.com/800x1000" alt="">
+            <div class="product-title">Bao tay phủ sơn nitrile xanh</div>
+
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="openTab(this,'mota6')">Mô Tả</button>
+                <button class="tab-btn" onclick="openTab(this,'lienhe6')">Liên Hệ</button>
+            </div>
+
+            <div id="mota6" class="tab-content active">
+                <p><b>Tên sản phẩm:</b> Bao tay phủ sơn nitrile xanh</p>
+                <p><b>Chất liệu:</b> Polyester + Nitrile</p>
+                <p><b>Công dụng:</b> Chống dầu nhẹ, bám tốt</p>
+                <p><b>Ngành nghề:</b> Sửa chữa máy móc, công nghiệp</p>
+            </div>
+
+            <div id="lienhe6" class="tab-content">
+                <img class="qr-img" src="https://via.placeholder.com/300x300?text=QR+Zalo">
+                <p style="text-align:center;"><b>Zalo:</b> 0981171750<br><b>Hotline:</b> 0981171750</p>
+            </div>
+
+            <a class="same-btn" href="#sonhat">Sản phẩm tương tự</a>
+        </div>
+
+        <!-- Hạt PVC -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/800x1000" alt="">
+            <div class="product-title">Bao tay phủ hạt nhựa PVC</div>
+
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="openTab(this,'mota7')">Mô Tả</button>
+                <button class="tab-btn" onclick="openTab(this,'lienhe7')">Liên Hệ</button>
+            </div>
+
+            <div id="mota7" class="tab-content active">
+                <p><b>Tên sản phẩm:</b> Bao tay phủ hạt nhựa PVC</p>
+                <p><b>Chất liệu:</b> Len + phủ hạt PVC</p>
+                <p><b>Công dụng:</b> Chống trơn, bám tốt</p>
+                <p><b>Ngành nghề:</b> Kho hàng, vận chuyển</p>
+            </div>
+
+            <div id="lienhe7" class="tab-content">
+                <img class="qr-img" src="https://via.placeholder.com/300x300?text=QR+Zalo">
+                <p style="text-align:center;"><b>Zalo:</b> 0981171750<br><b>Hotline:</b> 0981171750</p>
+            </div>
+
+            <a class="same-btn" href="#sonhat">Sản phẩm tương tự</a>
+        </div>
+
+        <!-- Phủ sơn lòng bàn tay xám -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/800x1000" alt="">
+            <div class="product-title">Bao tay phủ sơn lòng bàn tay xám</div>
+
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="openTab(this,'mota8')">Mô Tả</button>
+                <button class="tab-btn" onclick="openTab(this,'lienhe8')">Liên Hệ</button>
+            </div>
+
+            <div id="mota8" class="tab-content active">
+                <p><b>Tên sản phẩm:</b> Bao tay phủ sơn lòng bàn tay xám</p>
+                <p><b>Chất liệu:</b> Polyester + Nitrile</p>
+                <p><b>Công dụng:</b> Cầm nắm tốt, bền</p>
+                <p><b>Ngành nghề:</b> Công nghiệp nhẹ, sản xuất</p>
+            </div>
+
+            <div id="lienhe8" class="tab-content">
+                <img class="qr-img" src="https://via.placeholder.com/300x300?text=QR+Zalo">
+                <p style="text-align:center;"><b>Zalo:</b> 0981171750<br><b>Hotline:</b> 0981171750</p>
+            </div>
+
+            <a class="same-btn" href="#sonhat">Sản phẩm tương tự</a>
+        </div>
+
+    </div>
+
+    <!-- ============= NHÓM 3: CHỐNG CẮT (2 LOẠI) ============= -->
+    <h2 class="section-title">Bao tay chống cắt</h2>
+
+    <div class="product-grid">
+
+        <!-- Cấp độ 3 -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/800x1000" alt="">
+            <div class="product-title">Bao tay chống cắt cấp độ 3</div>
+
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="openTab(this,'mota9')">Mô Tả</button>
+                <button class="tab-btn" onclick="openTab(this,'lienhe9')">Liên Hệ</button>
+            </div>
+
+            <div id="mota9" class="tab-content active">
+                <p><b>Tên sản phẩm:</b> Bao tay chống cắt cấp độ 3</p>
+                <p><b>Chất liệu:</b> HPPE + sợi thép chống cắt</p>
+                <p><b>Công dụng:</b> Bảo vệ tay khi xử lý vật sắc</p>
+                <p><b>Ngành nghề:</b> Cơ khí, mài, cắt, sửa máy</p>
+            </div>
+
+            <div id="lienhe9" class="tab-content">
+                <img class="qr-img" src="https://via.placeholder.com/300x300?text=QR+Zalo">
+                <p style="text-align:center;"><b>Zalo:</b> 0981171750<br><b>Hotline:</b> 0981171750</p>
+            </div>
+
+            <a class="same-btn" href="#cat">Sản phẩm tương tự</a>
+        </div>
+
+        <!-- Cấp độ 5 -->
+        <div class="product-card" id="cat">
+            <img src="https://via.placeholder.com/800x1000" alt="">
+            <div class="product-title">Bao tay chống cắt cấp độ 5</div>
+
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="openTab(this,'mota10')">Mô Tả</button>
+                <button class="tab-btn" onclick="openTab(this,'lienhe10')">Liên Hệ</button>
+            </div>
+
+            <div id="mota10" class="tab-content active">
+                <p><b>Tên sản phẩm:</b> Bao tay chống cắt cấp độ 5</p>
+                <p><b>Chất liệu:</b> HPPE + sợi thủy tinh</p>
+                <p><b>Công dụng:</b> Chống cắt mạnh, bền cao</p>
+                <p><b>Ngành nghề:</b> Nhà máy thép, chế tạo</p>
+            </div>
+
+            <div id="lienhe10" class="tab-content">
+                <img class="qr-img" src="https://via.placeholder.com/300x300?text=QR+Zalo">
+                <p style="text-align:center;"><b>Zalo:</b> 0981171750<br><b>Hotline:</b> 0981171750</p>
+            </div>
+
+            <a class="same-btn" href="#cat">Sản phẩm tương tự</a>
         </div>
 
     </div>
@@ -213,30 +441,21 @@
     </footer>
 
     <script>
-        // HÀM MỞ TAB – ĐẢM BẢO MỞ TAB NÀY THÌ TAB KHÁC TẮT
+        // MỞ TAB – ĐẢM BẢO TAB KHÁC TẮT
         function openTab(button, tabId) {
-            // Tìm ô sản phẩm cha
             var card = button.closest(".product-card");
 
-            // Tắt hết nội dung tab trong ô đó
             var contents = card.querySelectorAll(".tab-content");
-            for (var i = 0; i < contents.length; i++) {
-                contents[i].classList.remove("active");
-            }
+            contents.forEach(function (c) {
+                c.classList.remove("active");
+            });
 
-            // Bỏ active trên tất cả nút tab trong ô đó
             var btns = card.querySelectorAll(".tab-btn");
-            for (var j = 0; j < btns.length; j++) {
-                btns[j].classList.remove("active");
-            }
+            btns.forEach(function (b) {
+                b.classList.remove("active");
+            });
 
-            // Mở nội dung tab được chọn
-            var tab = document.getElementById(tabId);
-            if (tab) {
-                tab.classList.add("active");
-            }
-
-            // Đánh dấu nút đang chọn
+            document.getElementById(tabId).classList.add("active");
             button.classList.add("active");
         }
     </script>
