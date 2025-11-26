@@ -3,65 +3,123 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sản Phẩm Thùy Dương</title>
+<title>CÔNG TY TNHH XUÂN CHƯƠNG GLOVES</title>
 
 <style>
     body {
         font-family: Arial, sans-serif;
-        background: #f3f3f3;
+        background: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* HEADER */
+    header {
+        background: #ff8800;
+        padding: 15px;
+        color: white;
+        text-align: center;
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    /* MENU */
+    nav {
+        background: #333;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 17px;
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        color: #ff8800;
+    }
+
+    /* BANNER */
+    .banner {
+        width: 100%;
+        height: 250px;
+        background: url('https://via.placeholder.com/1920x500?text=Banner+G%C4%83ng+Tay+B%E1%BA%A3o+H%E1%BB%99') no-repeat center/cover;
+    }
+
+    /* TIÊU ĐỀ CHÍNH */
+    h2.section-title {
+        text-align: center;
+        margin: 25px 0 10px 0;
+        font-size: 26px;
+        color: #222;
+    }
+
+    /* LƯỚI SẢN PHẨM */
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
         padding: 20px;
     }
 
-    /* Ô sản phẩm */
+    /* Ô SẢN PHẨM */
     .product-card {
         background: #fff;
-        width: 300px;
-        padding: 15px;
         border-radius: 10px;
-        margin: auto;
+        padding: 15px;
         box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
     .product-card img {
         width: 100%;
-        border-radius: 8px;
+        border-radius: 10px;
     }
 
     .product-title {
-        font-size: 20px;
-        font-weight: bold;
+        font-size: 18px;
+        font-weight: 600;
         margin-top: 10px;
         text-align: center;
     }
 
     /* TAB BUTTON */
     .tab-buttons {
-        margin-top: 15px;
+        margin-top: 12px;
         display: flex;
-        justify-content: space-around;
     }
 
     .tab-buttons button {
         flex: 1;
         padding: 10px;
-        font-size: 16px;
+        font-size: 15px;
         border: none;
         cursor: pointer;
         background: #ddd;
+        border-right: 1px solid #ccc;
+    }
+
+    .tab-buttons button:last-child {
+        border-right: none;
     }
 
     .tab-buttons button.active {
         background: #ff8800;
-        color: #fff;
+        color: white;
+        font-weight: bold;
     }
 
-    /* TAB NỘI DUNG */
+    /* TAB CONTENT */
     .tab-content {
-        background: #fafafa;
-        padding: 10px;
-        margin-top: 10px;
-        border-radius: 6px;
         display: none;
+        padding: 10px;
+        background: #fafafa;
+        margin-top: 10px;
+        border-radius: 8px;
+        font-size: 15px;
+        line-height: 1.5;
     }
 
     .tab-content.active {
@@ -70,64 +128,98 @@
 
     .qr-img {
         width: 160px;
-        margin: auto;
         display: block;
-        border-radius: 10px;
+        margin: auto;
     }
 
+    /* FOOTER */
+    footer {
+        background: #222;
+        color: white;
+        padding: 20px;
+        margin-top: 40px;
+        text-align: center;
+        line-height: 1.6;
+    }
 </style>
 
 </head>
 <body>
 
-<h1 style="text-align:center;">Sản phẩm găng tay bảo hộ</h1>
+<!-- HEADER -->
+<header>
+    CÔNG TY TNHH XUÂN CHƯƠNG GLOVES
+</header>
 
-<!-- Ô SẢN PHẨM -->
-<div class="product-card">
+<!-- MENU -->
+<nav>
+    <a href="#">Trang Chủ</a>
+    <a href="#">Sản Phẩm</a>
+    <a href="#">Video</a>
+    <a href="#">Liên Hệ</a>
+</nav>
 
-    <img src="https://via.placeholder.com/800x1000" alt="Bao tay PU">
+<!-- BANNER -->
+<div class="banner"></div>
 
-    <div class="product-title">Bao tay phủ PU xám</div>
+<!-- KHỐI SẢN PHẨM -->
+<h2 class="section-title">Sản phẩm găng tay bảo hộ</h2>
 
-    <!-- Nút tab -->
-    <div class="tab-buttons">
-        <button class="tab-btn active" onclick="openTab('mota')">Mô Tả</button>
-        <button class="tab-btn" onclick="openTab('lienhe')">Liên Hệ</button>
+<div class="product-grid">
+
+    <!-- SẢN PHẨM 1 -->
+    <div class="product-card">
+
+        <img src="https://via.placeholder.com/800x1000" alt="Bao tay PU">
+
+        <div class="product-title">Bao tay phủ PU xám</div>
+
+        <!-- TAB BUTTON -->
+        <div class="tab-buttons">
+            <button class="tab-btn active" onclick="openTab(this,'mota1')">Mô Tả</button>
+            <button class="tab-btn" onclick="openTab(this,'lienhe1')">Liên Hệ</button>
+        </div>
+
+        <!-- TAB NỘI DUNG -->
+        <div id="mota1" class="tab-content active">
+            <p><b>Tên SP:</b> Bao tay phủ PU xám</p>
+            <p><b>Chất liệu:</b> Polyester + phủ PU</p>
+            <p><b>Công dụng:</b> Chống trượt, thao tác chi tiết nhỏ</p>
+            <p><b>Ngành nghề:</b> Điện tử, cơ khí nhẹ, đóng gói</p>
+        </div>
+
+        <div id="lienhe1" class="tab-content">
+            <img class="qr-img" src="https://via.placeholder.com/300x300?text=QR+Zalo">
+            <p style="text-align:center;">
+                <b>Zalo:</b> 0981171750<br>
+                <b>Hotline:</b> 0981171750
+            </p>
+        </div>
+
     </div>
 
-    <!-- TAB MÔ TẢ -->
-    <div id="mota" class="tab-content active">
-        <p><b>Tên SP:</b> Bao tay phủ PU xám</p>
-        <p><b>Chất liệu:</b> Sợi Polyester + Phủ PU</p>
-        <p><b>Công dụng:</b> Chống trượt, làm việc chi tiết nhỏ, tránh tĩnh điện</p>
-        <p><b>Ngành nghề:</b> Điện tử, lắp ráp, cơ khí nhẹ, đóng gói</p>
-    </div>
-
-    <!-- TAB LIÊN HỆ -->
-    <div id="lienhe" class="tab-content">
-        <img src="https://via.placeholder.com/300x300?text=QR+ZALO" class="qr-img">
-
-        <p style="text-align:center;">
-            <b>Zalo:</b> 0987 654 321 <br>
-            <b>Gọi ngay:</b> 0912 345 678
-        </p>
-    </div>
 </div>
 
+<!-- FOOTER -->
+<footer>
+    <b>ĐƠN VỊ BÁN HÀNG:</b> CÔNG TY TNHH XUÂN CHƯƠNG GLOVES<br>
+    <b>Mã số thuế:</b> 3603502397<br>
+    <b>Địa chỉ:</b> Số 68, tổ 4, Khu phố 4, Phường Trảng Dài, Tỉnh Đồng Nai, Việt Nam<br>
+    <b>Zalo liên hệ:</b> 0981171750
+</footer>
+
 <script>
-function openTab(tabName) {
-    // Ẩn tất cả
-    let contents = document.querySelectorAll(".tab-content");
-    contents.forEach(c => c.classList.remove("active"));
+/* TAB FUNCTION - CHỈ 1 TAB MỞ */
+function openTab(button, tabId) {
+    let card = button.closest(".product-card");
 
-    let buttons = document.querySelectorAll(".tab-btn");
-    buttons.forEach(b => b.classList.remove("active"));
+    // Tắt toàn bộ tab
+    card.querySelectorAll(".tab-content").forEach(tab => tab.classList.remove("active"));
+    card.querySelectorAll(".tab-btn").forEach(btn => btn.classList.remove("active"));
 
-    // Hiện đúng tab
-    document.getElementById(tabName).classList.add("active");
-
-    // Đổi màu nút tab
-    event.target.classList.add("active");
+    // Mở tab được chọn
+    document.getElementById(tabId).classList.add("active");
+    button.classList.add("active");
 }
 </script>
 
