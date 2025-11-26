@@ -3,236 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sản Phẩm & Mã QR</title>
+    <title>Găng Tay Bảo Hộ - Thùy Dương</title>
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
         body {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f4f4f4;
+        }
+
+        /* GRID SẢN PHẨM */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
             padding: 20px;
         }
-        
-        .container {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            max-width: 1700px;
-            width: 100%;
-        }
-        
-        .header {
-            text-align: center;
-            margin-bottom: 10px;
-        }
-        
-        .header h1 {
-            color: #2c3e50;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-        
-        .header p {
-            color: #7f8c8d;
-            font-size: 1.1rem;
-        }
-        
-        .content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            justify-content: center;
-        }
-        
-        .image-container {
-            flex: 1;
-            min-width: 300px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .image-label {
-            font-weight: 600;
-            color: #2c3e50;
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-        
-        .image-box {
-            width: 800px;
-            height: 800px;
-            background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-        
-        .product-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .qr-image {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            background-color: white;
-        }
-        
-        .description {
-            background-color: white;
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
-        
-        .description h2 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-        }
-        
-        .description p {
-            color: #7f8c8d;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-        
-        .features {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .feature {
-            flex: 1;
-            min-width: 200px;
-            background: #f8f9fa;
-            padding: 15px;
+
+        /* CARD SẢN PHẨM */
+        .product-card {
+            background: #fff;
             border-radius: 10px;
+            padding: 15px;
             text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: 0.3s;
         }
-        
-        .feature h3 {
-            color: #2c3e50;
-            font-size: 1.1rem;
-            margin-bottom: 8px;
+
+        .product-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.15);
         }
-        
-        .feature p {
-            color: #7f8c8d;
-            font-size: 0.9rem;
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
         }
-        
-        @media (max-width: 1700px) {
-            .image-box {
-                width: 600px;
-                height: 600px;
-            }
+
+        .product-card h3 {
+            font-size: 17px;
+            margin: 10px 0;
+            font-weight: 600;
         }
-        
-        @media (max-width: 1300px) {
-            .image-box {
-                width: 500px;
-                height: 500px;
-            }
+
+        .product-card button {
+            background: #ff8c00;
+            color: white;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.2s;
         }
-        
-        @media (max-width: 1100px) {
-            .content {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .image-box {
-                width: 600px;
-                height: 600px;
-            }
+
+        .product-card button:hover {
+            background: #e57a00;
         }
-        
-        @media (max-width: 768px) {
-            .image-box {
-                width: 400px;
-                height: 400px;
-            }
-            
-            .header h1 {
-                font-size: 2rem;
-            }
+
+        /* POPUP OVERLAY */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
         }
-        
-        @media (max-width: 480px) {
-            .image-box {
-                width: 300px;
-                height: 300px;
+
+        /* HỘP POPUP */
+        .popup-box {
+            background: white;
+            width: 90%;
+            max-width: 450px;
+            padding: 20px;
+            border-radius: 12px;
+            position: relative;
+            animation: popupShow 0.25s ease;
+        }
+
+        .popup-box img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .popup-box h2 {
+            margin: 15px 0 8px;
+        }
+
+        .popup-box p {
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        /* NÚT ĐÓNG POPUP */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 12px;
+            font-size: 22px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        /* ANIMATION */
+        @keyframes popupShow {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
             }
-            
-            .header h1 {
-                font-size: 1.5rem;
+            to {
+                transform: scale(1);
+                opacity: 1;
             }
         }
     </style>
+
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Sản Phẩm Cao Cấp</h1>
-            <p>Thiết kế đẳng cấp - Chất lượng vượt trội</p>
+
+    <h1 style="text-align:center; padding: 20px 0; margin:0;">Sản phẩm găng tay bảo hộ</h1>
+
+    <!-- GRID SẢN PHẨM -->
+    <div class="product-grid">
+
+        <!-- Ô SẢN PHẨM 1 -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/800x1000" alt="Bao tay phủ PU xám">
+            <h3>Bao tay phủ PU xám</h3>
+            <button onclick="openPopup('popup1')">Xem chi tiết</button>
         </div>
-        
-        <div class="content">
-            <div class="image-container">
-                <div class="image-label">Ảnh Sản Phẩm</div>
-                <div class="image-box">
-                    <!-- Thay thế URL ảnh sản phẩm tại đây -->
-                    <img src="https://via.placeholder.com/800x800/3498db/ffffff?text=SẢN+PHẨM" alt="Sản phẩm" class="product-image">
-                </div>
-            </div>
-            
-            <div class="image-container">
-                <div class="image-label">Mã QR</div>
-                <div class="image-box">
-                    <!-- Thay thế URL mã QR tại đây -->
-                    <img src="https://via.placeholder.com/800x800/2ecc71/ffffff?text=QR+CODE" alt="Mã QR" class="qr-image">
-                </div>
-            </div>
-        </div>
-        
-        <div class="description">
-            <h2>Thông Tin Sản Phẩm</h2>
-            <p>Sản phẩm của chúng tôi được thiết kế với tiêu chuẩn chất lượng cao nhất, kết hợp giữa công nghệ hiện đại và tính thẩm mỹ tinh tế. Mỗi chi tiết đều được chăm chút tỉ mỉ để mang đến trải nghiệm hoàn hảo cho người dùng.</p>
-            
-            <div class="features">
-                <div class="feature">
-                    <h3>Chất Lượng Cao</h3>
-                    <p>Đảm bảo độ bền và hiệu suất vượt trội</p>
-                </div>
-                <div class="feature">
-                    <h3>Thiết Kế Tinh Tế</h3>
-                    <p>Đường nét sang trọng, phù hợp mọi không gian</p>
-                </div>
-                <div class="feature">
-                    <h3>Bảo Hành Dài Hạn</h3>
-                    <p>Chính sách bảo hành lên đến 24 tháng</p>
-                </div>
-            </div>
+
+    </div>
+
+    <!-- POPUP 1 -->
+    <div id="popup1" class="popup-overlay">
+        <div class="popup-box">
+            <span class="close-btn" onclick="closePopup('popup1')">✖</span>
+
+            <img src="https://via.placeholder.com/1000x1250" alt="Bao tay phủ PU">
+
+            <h2>Bao tay phủ PU xám</h2>
+            <p>
+                ✔ Chất liệu: Sợi polyester + phủ PU<br>
+                ✔ Độ bám cao, co giãn tốt, thoáng khí<br>
+                ✔ Ứng dụng: Điện tử, cơ khí, lắp ráp linh kiện<br><br>
+                Phù hợp cho các công việc cần độ chính xác cao.
+            </p>
         </div>
     </div>
+
+    <script>
+        function openPopup(id) {
+            document.getElementById(id).style.display = "flex";
+        }
+        function closePopup(id) {
+            document.getElementById(id).style.display = "none";
+        }
+    </script>
+
 </body>
 </html>
