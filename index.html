@@ -101,8 +101,13 @@ function showTab(id){
 }
 
 // QR Zalo
-function openQR(){ document.getElementById("qrBox").style.display="flex"; }
-function closeQR(){ document.getElementById("qrBox").style.display="none"; }
+function openQR(){
+    document.getElementById("popupQR").style.display = "flex";
+}
+function closeQR(){
+    document.getElementById("popupQR").style.display = "none";
+}
+
 
 // Popup mô tả
 function openMota(id){ document.getElementById("mota-"+id).style.display="flex"; }
@@ -418,5 +423,6 @@ window.onload = ()=>showTab("sanpham");
 
     </div>
 </div>
+
 
 
