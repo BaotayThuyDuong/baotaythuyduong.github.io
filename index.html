@@ -14,7 +14,7 @@ header{
     padding:25px 10px;border-bottom:4px solid #083e96;
 }
 header h1{font-size:34px;font-weight:900;}
-header p{margin-top:8px;font-size:14px;}
+header p{margin-top:8px;font-size:14px;line-height:1.5;}
 
 nav{
     background:#083e96;display:flex;justify-content:center;
@@ -79,7 +79,7 @@ h2{
 .zalo-close{
     background:red;color:white;border:none;
     padding:5px 10px;border-radius:6px;
-    position:absolute;right:10px;top:10px;
+    position:absolute;right:10px;top:10px;cursor:pointer;
 }
 .zalo-avatar{
     width:90px;height:90px;border-radius:50%;margin-bottom:10px;
@@ -107,8 +107,25 @@ h2{
 .mota-close button{
     background:red;color:white;border:none;padding:6px 10px;
     border-radius:5px;float:right;margin-top:-10px;margin-right:-10px;
+    cursor:pointer;
 }
 .mota-box h3{color:#0a5ad9;margin-bottom:10px;}
+
+/* VIDEO & GIỚI THIỆU & FOOTER */
+.videos{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:20px;
+}
+@media(max-width:900px){.videos{grid-template-columns:1fr;}}
+iframe{
+    width:100%;height:240px;border-radius:12px;background:#000;border:none;
+}
+.intro{
+    font-size:14px;line-height:1.6;margin-bottom:20px;
+}
+footer{
+    background:#083e96;color:white;text-align:center;
+    padding:18px 10px;font-size:14px;margin-top:30px;line-height:1.6;
+}
 </style>
 
 <script>
@@ -124,7 +141,10 @@ function closeMota(id){ document.getElementById("popup-"+id).style.display="none
 
 <header>
     <h1>BAO TAY THÙY DƯƠNG</h1>
-    <p>CÔNG TY TNHH XUÂN CHƯƠNG GLOVES – MST: 3603502397 – Trảng Dài, Đồng Nai</p>
+    <p>
+        CÔNG TY TNHH XUÂN CHƯƠNG GLOVES<br>
+        MST: 3603502397 – Số 68, tổ 4, KP4, Phường Trảng Dài, Đồng Nai
+    </p>
 </header>
 
 <nav>
@@ -138,9 +158,6 @@ function closeMota(id){ document.getElementById("popup-"+id).style.display="none
 <h2>BAO TAY LEN (16 SẢN PHẨM)</h2>
 
 <div class="grid">
-
-<!-- ===== SP1 – SP16 ===== -->
-<!-- Tôi gửi 2 mẫu, 14 cái còn lại bạn copy đúng mẫu -->
 
 <!-- SP1 -->
 <div class="card">
@@ -162,7 +179,145 @@ function closeMota(id){ document.getElementById("popup-"+id).style.display="none
     </div>
 </div>
 
-<!-- (Tiếp tục SP3 → SP16 giống y mẫu trên) -->
+<!-- SP3 -->
+<div class="card">
+    <img src="images/sp3.jpg">
+    <div class="card-title">Xám 50g</div>
+    <div class="btn-row">
+        <button class="btn-zalo" onclick="showZalo()">Zalo</button>
+        <button class="btn-mota" onclick="openMota('sp3')">Mô tả</button>
+    </div>
+</div>
+
+<!-- SP4 -->
+<div class="card">
+    <img src="images/sp4.jpg">
+    <div class="card-title">Xám 60g</div>
+    <div class="btn-row">
+        <button class="btn-zalo" onclick="showZalo()">Zalo</button>
+        <button class="btn-mota" onclick="openMota('sp4')">Mô tả</button>
+    </div>
+</div>
+
+<!-- SP5 -->
+<div class="card">
+    <img src="images/sp5.jpg">
+    <div class="card-title">Xám 70g</div>
+    <div class="btn-row">
+        <button class="btn-zalo" onclick="showZalo()">Zalo</button>
+        <button class="btn-mota" onclick="openMota('sp5')">Mô tả</button>
+    </div>
+</div>
+
+<!-- SP6 -->
+<div class="card">
+    <img src="images/sp6.jpg">
+    <div class="card-title">Xám 80g</div>
+    <div class="btn-row">
+        <button class="btn-zalo" onclick="showZalo()">Zalo</button>
+        <button class="btn-mota" onclick="openMota('sp6')">Mô tả</button>
+    </div>
+</div>
+
+<!-- SP7 -->
+<div class="card">
+    <img src="images/sp7.jpg">
+    <div class="card-title">Xám kim10 – 50g</div>
+    <div class="btn-row">
+        <button class="btn-zalo" onclick="showZalo()">Zalo</button>
+        <button class="btn-mota" onclick="openMota('sp7')">Mô tả</button>
+    </div>
+</div>
+
+<!-- SP8 -->
+<div class="card">
+    <img src="images/sp8.jpg">
+    <div class="card-title">Xám kim10 – 60g</div>
+    <div class="btn-row">
+        <button class="btn-zalo" onclick="showZalo()">Zalo</button>
+        <button class="btn-mota" onclick="openMota('sp8')">Mô tả</button>
+    </div>
+</div>
+
+<!-- SP9 -->
+<div class="card">
+    <img src="images/sp9.jpg">
+    <div class="card-title">Kem 40g</div>
+    <div class="btn-row">
+        <button class="btn-zalo" onclick="showZalo()">Zalo</button>
+        <button class="btn-mota" onclick="openMota('sp9')">Mô tả</button>
+    </div>
+</div>
+
+<!-- SP10 -->
+<div class="card">
+    <img src="images/sp10.jpg">
+    <div class="card-title">Kem 50g</div>
+    <div class="btn-row">
+        <button class="btn-zalo" onclick="showZalo()">Zalo</button>
+        <button class="btn-mota" onclick="openMota('sp10')">Mô tả</button>
+    </div>
+</div>
+
+<!-- SP11 -->
+<div class="card">
+    <img src="images/sp11.jpg">
+    <div class="card-title">Kem 60g</div>
+    <div class="btn-row">
+        <button class="btn-zalo" onclick="showZalo()">Zalo</button>
+        <button class="btn-mota" onclick="openMota('sp11')">Mô tả</button>
+    </div>
+</div>
+
+<!-- SP12 -->
+<div class="card">
+    <img src="images/sp12.jpg">
+    <div class="card-title">Kem 70g</div>
+    <div class="btn-row">
+        <button class="btn-zalo" onclick="showZalo()">Zalo</button>
+        <button class="btn-mota" onclick="openMota('sp12')">Mô tả</button>
+    </div>
+</div>
+
+<!-- SP13 -->
+<div class="card">
+    <img src="images/sp13.jpg">
+    <div class="card-title">Poly 40g</div>
+    <div class="btn-row">
+        <button class="btn-zalo" onclick="showZalo()">Zalo</button>
+        <button class="btn-mota" onclick="openMota('sp13')">Mô tả</button>
+    </div>
+</div>
+
+<!-- SP14 -->
+<div class="card">
+    <img src="images/sp14.jpg">
+    <div class="card-title">Poly 50g</div>
+    <div class="btn-row">
+        <button class="btn-zalo" onclick="showZalo()">Zalo</button>
+        <button class="btn-mota" onclick="openMota('sp14')">Mô tả</button>
+    </div>
+</div>
+
+<!-- SP15 -->
+<div class="card">
+    <img src="images/sp15.jpg">
+    <div class="card-title">Poly 60g</div>
+    <div class="btn-row">
+        <button class="btn-zalo" onclick="showZalo()">Zalo</button>
+        <button class="btn-mota" onclick="openMota('sp15')">Mô tả</button>
+    </div>
+</div>
+
+<!-- SP16 -->
+<div class="card">
+    <img src="images/sp16.jpg">
+    <div class="card-title">Poly 70g</div>
+    <div class="btn-row">
+        <button class="btn-zalo" onclick="showZalo()">Zalo</button>
+        <button class="btn-mota" onclick="openMota('sp16')">Mô tả</button>
+    </div>
+</div>
 
 </div>
 </section>
@@ -171,7 +326,7 @@ function closeMota(id){ document.getElementById("popup-"+id).style.display="none
 <div class="zalo-popup" id="zaloPopup">
     <div class="zalo-box">
         <button class="zalo-close" onclick="closeZalo()">X</button>
-        <img class="zalo-avatar" src="https://chat.zalo.me/assets/icons/zalo.png">
+        <img class="zalo-avatar" src="https://chat.zalo.me/assets/icons/zalo.png" alt="Zalo">
         <div class="zalo-title">Liên hệ Zalo</div>
         <b>0981 171 750</b><br>
         <b>033 444 9494</b><br><br>
@@ -345,7 +500,7 @@ Ngành nghề sử dụng Phổ biến: Bốc xếp kho bãi, Xây dựng, Nông
 <h3>Poly 60g</h3>
 Loại Găng Tay: Găng Tay LEN
 Chất liệu & Cấu tạo: Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ khác nhau (40g - 70g/đôi). Bo cổ tay chống tuột.
-Lợi ích (Công dụng) Chi tiết: Bảo vệ Cơ bản và Thoải Mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn. 
+Lợi ích (Công dụng) Chi tiết: Bảo vệ Cơ bản và Thoải Mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.
 Ngành nghề sử dụng Phổ biến: Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Công việc phụ trợ trong nhà máy, Lái xe tải, Thợ hàn, Cơ khí.
 </div></div>
 
@@ -361,7 +516,6 @@ Ngành nghề sử dụng Phổ biến: Bốc xếp kho bãi, Xây dựng, Nông
 </div></div>
 
 <!-- ====================== VIDEO ====================== -->
-
 <section id="video">
     <h2>VIDEO GIỚI THIỆU SẢN PHẨM</h2>
     <div class="videos">
@@ -370,45 +524,23 @@ Ngành nghề sử dụng Phổ biến: Bốc xếp kho bãi, Xây dựng, Nông
     </div>
 </section>
 
-
 <!-- ====================== GIỚI THIỆU ====================== -->
-
 <section id="gioithieu">
     <h2>GIỚI THIỆU CÔNG TY</h2>
     <p class="intro">
         <b>CÔNG TY TNHH XUÂN CHƯƠNG GLOVES</b><br><br>
         Chuyên cung cấp bao tay len – phủ sơn – phủ hạt – chống cắt chất lượng cao.<br>
-        Cam kết: Uy tín – Giá tốt – Giao hàng toàn quốc.
-        <br><br>
+        Cam kết: Uy tín – Giá tốt – Giao hàng toàn quốc.<br><br>
         Hotline/Zalo: <b>033 444 9494 – 0981 171 750</b>
     </p>
-
-    <h2>VIDEO GIỚI THIỆU CÔNG TY</h2>
-    <div class="videos">
-        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/Pkh8UtuejGw" allowfullscreen></iframe>
-    </div>
 </section>
-
-
-<!-- ====================== FOOTER ====================== -->
 
 <footer>
     CÔNG TY TNHH XUÂN CHƯƠNG GLOVES<br>
     MST: 3603502397<br>
-    Địa chỉ: Số 68, tổ 4, KP4, Phường Trảng Dài, Đồng Nai<br>
+    Địa chỉ: Số 68, tổ 4, Khu phố 4, Phường Trảng Dài, Đồng Nai<br>
     Hotline/Zalo: 033 444 9494 – 0981 171 750
 </footer>
 
-
-<!-- ====================== ZALO FLOAT ====================== -->
-
-<div id="zaloFloat" onclick="goZalo()">
-    Chat Zalo 0981 171 750
-</div>
-
 </body>
 </html>
-
-
-
