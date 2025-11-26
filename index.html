@@ -1,134 +1,172 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bao Tay Thùy Dương</title>
 
 <style>
-    * {margin: 0; padding: 0; box-sizing: border-box;}
-    body {font-family: Arial, sans-serif; background: #f0f6ff; color:#222;}
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {font-family: Arial, sans-serif; background:#eef4ff;}
 
-    /* HEADER */
-    header {
-        background: #0a5ad9;
-        color: #fff;
-        text-align: center;
-        padding: 20px 10px;
-        border-bottom: 4px solid #083e96;
+    /* Header */
+    header{
+        background:#0a5ad9;
+        color:white;
+        text-align:center;
+        padding:20px 10px;
+        border-bottom:4px solid #083e96;
     }
-    header h1 {
-        font-size: 32px;
-        font-weight: 900;
-        margin-bottom: 6px;
+    header h1{
+        font-size:34px;
+        font-weight:900;
     }
-    header p {font-size: 14px; line-height: 1.5;}
-
-    /* MENU */
-    nav {
-        background: #083e96;
-        padding: 10px;
-        display: flex;
-        justify-content: center;
-        gap: 25px;
-    }
-    nav a {
-        color: #fff;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 15px;
-        padding: 6px 12px;
-        border-radius: 5px;
-        transition: 0.2s;
-    }
-    nav a:hover {background: rgba(255,255,255,0.2);}
-
-    /* SECTIONS */
-    section {padding: 25px 10px; max-width: 1100px; margin: auto;}
-
-    h2 {
-        font-size: 24px;
-        color: #0a5ad9;
-        margin-bottom: 15px;
-        border-left: 5px solid #ff9800;
-        padding-left: 10px;
-        font-weight: 800;
+    header p{
+        margin-top:10px;
+        font-size:14px;
+        line-height:1.5;
     }
 
-    /* PRODUCT GRID */
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 15px;
+    /* Menu */
+    nav{
+        background:#083e96;
+        display:flex;
+        justify-content:center;
+        gap:25px;
+        padding:12px;
+    }
+    nav a{
+        color:white;
+        text-decoration:none;
+        font-weight:bold;
+        font-size:16px;
+        cursor:pointer;
+        padding:6px 12px;
+        border-radius:5px;
+    }
+    nav a:hover{
+        background:rgba(255,255,255,0.25);
+    }
+
+    /* Section */
+    section{
+        padding:20px;
+        max-width:1100px;
+        margin:auto;
+        display:none;
+    }
+    section.active{display:block;}
+
+    h2{
+        font-size:22px;
+        color:#0a5ad9;
+        margin-bottom:15px;
+        border-left:5px solid #ff9800;
+        padding-left:10px;
+        font-weight:800;
+    }
+
+    /* Product Grid */
+    .grid{
+        display:grid;
+        grid-template-columns:repeat(4,1fr);
+        gap:15px;
     }
     @media(max-width:900px){
-        .grid {grid-template-columns: repeat(2, 1fr);}
+        .grid{
+            grid-template-columns:repeat(2,1fr);
+        }
+    }
+    .card{
+        background:white;
+        border-radius:10px;
+        box-shadow:0 3px 10px rgba(0,0,0,0.1);
+        padding:10px;
+        text-align:center;
+    }
+    .card img{
+        width:100%;
+        height:190px;
+        object-fit:cover;
+        border-radius:10px;
+        margin-bottom:10px;
+    }
+    .card button{
+        background:#0a5ad9;
+        border:none;
+        color:white;
+        padding:8px 12px;
+        border-radius:20px;
+        cursor:pointer;
+        font-size:13px;
+    }
+    .card button:hover{
+        background:#083e96;
     }
 
-    .card {
-        background: #fff;
-        border-radius: 12px;
-        padding: 10px;
-        box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-        transition: 0.2s;
-        text-align: center;
+    /* Video grid */
+    .videos{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:20px;
     }
-    .card:hover {transform: translateY(-5px); box-shadow: 0 5px 14px rgba(0,0,0,0.15);}
-    .card img {
-        width: 100%;
-        height: 190px;
-        object-fit: cover;
-        border-radius: 10px;
-        margin-bottom: 10px;
+    @media(max-width:900px){
+        .videos{
+            grid-template-columns:1fr;
+        }
     }
-    .card button {
-        background: #0a5ad9;
-        color: #fff;
-        border: none;
-        padding: 8px 10px;
-        border-radius: 20px;
-        margin-top: 8px;
-        cursor: pointer;
-        font-size: 14px;
-        transition: 0.2s;
-    }
-    .card button:hover {background: #083e96;}
-
-    /* VIDEO GRID */
-    .videos {display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;}
-    @media(max-width:900px){.videos {grid-template-columns: 1fr;}}
-
-    iframe {width: 100%; height: 240px; border-radius: 10px;}
-
-    /* FOOTER */
-    footer {
-        background: #083e96;
-        color: #fff;
-        padding: 20px 10px;
-        text-align: center;
-        margin-top: 30px;
+    iframe{
+        width:100%;
+        height:240px;
+        border-radius:12px;
+        background:#000;
     }
 
-    /* ZALO NỔI */
-    #zaloFloat {
-        position: fixed;
-        bottom: 15px;
-        right: 15px;
-        background: #00a2ff;
-        color: #fff;
-        padding: 10px 16px;
-        border-radius: 30px;
-        font-weight: bold;
-        cursor: pointer;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-        z-index: 999;
+    /* Intro text */
+    .intro{
+        font-size:15px;
+        line-height:1.6;
+        margin-bottom:20px;
     }
-    #zaloFloat:hover {background: #0084cc;}
+
+    /* Footer */
+    footer{
+        background:#083e96;
+        color:white;
+        text-align:center;
+        padding:20px 10px;
+        margin-top:30px;
+        font-size:14px;
+        line-height:1.5;
+    }
+
+    /* Zalo float */
+    #zaloFloat{
+        position:fixed;
+        bottom:15px;
+        right:15px;
+        background:#00a2ff;
+        color:white;
+        padding:12px 20px;
+        border-radius:30px;
+        cursor:pointer;
+        font-weight:bold;
+        box-shadow:0 4px 12px rgba(0,0,0,0.3);
+    }
 </style>
 
 <script>
+function showTab(tab){
+    document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
+    document.getElementById(tab).classList.add("active");
+}
+
 function goZalo(){
     window.location.href = "https://zalo.me/0981171750";
+}
+
+window.onload = function(){
+    showTab('sanpham');
 }
 </script>
 
@@ -140,19 +178,20 @@ function goZalo(){
     <p>
         Đơn vị bán hàng: <b>CÔNG TY TNHH XUÂN CHƯƠNG GLOVES</b><br>
         Mã số thuế: 3603502397<br>
-        Địa chỉ: Số 68, tổ 4, Khu phố 4, Phường Trảng Dài, Tỉnh Đồng Nai, Việt Nam
+        Địa chỉ: Số 68, tổ 4, Khu phố 4, Phường Trảng Dài, Đồng Nai
     </p>
 </header>
 
 <nav>
-    <a href="#sanpham">SẢN PHẨM</a>
-    <a href="#video">VIDEO</a>
-    <a href="#gioithieu">GIỚI THIỆU</a>
+    <a onclick="showTab('sanpham')">SẢN PHẨM</a>
+    <a onclick="showTab('video')">VIDEO</a>
+    <a onclick="showTab('gioithieu')">GIỚI THIỆU</a>
 </nav>
 
-<!-- =============== SẢN PHẨM =============== -->
-<section id="sanpham">
-    <h2>Nhóm 1 – Bao tay len trắng (4 SP)</h2>
+<!-- ===================== SẢN PHẨM ===================== -->
+<section id="sanpham" class="active">
+
+    <h2>Nhóm 1 – Bao tay len trắng</h2>
     <div class="grid">
         <div class="card"><img src="images/sp1.jpg"><button onclick="goZalo()">Zalo 0981 171 750</button></div>
         <div class="card"><img src="images/sp2.jpg"><button onclick="goZalo()">Zalo 0981 171 750</button></div>
@@ -160,7 +199,7 @@ function goZalo(){
         <div class="card"><img src="images/sp4.jpg"><button onclick="goZalo()">Zalo 0981 171 750</button></div>
     </div>
 
-    <h2>Nhóm 2 – Bao tay len xám (4 SP)</h2>
+    <h2>Nhóm 2 – Bao tay len xám</h2>
     <div class="grid">
         <div class="card"><img src="images/sp5.jpg"><button onclick="goZalo()">Zalo 0981 171 750</button></div>
         <div class="card"><img src="images/sp6.jpg"><button onclick="goZalo()">Zalo 0981 171 750</button></div>
@@ -168,64 +207,69 @@ function goZalo(){
         <div class="card"><img src="images/sp8.jpg"><button onclick="goZalo()">Zalo 0981 171 750</button></div>
     </div>
 
-    <h2>Nhóm 3 – Bao tay phủ nhựa (2 SP)</h2>
+    <h2>Nhóm 3 – Bao tay phủ nhựa</h2>
     <div class="grid">
         <div class="card"><img src="images/sp9.jpg"><button onclick="goZalo()">Zalo 0981 171 750</button></div>
         <div class="card"><img src="images/sp10.jpg"><button onclick="goZalo()">Zalo 0981 171 750</button></div>
     </div>
 
-    <h2>Nhóm 4 – Bao tay phủ sơn (2 SP)</h2>
+    <h2>Nhóm 4 – Bao tay phủ sơn</h2>
     <div class="grid">
         <div class="card"><img src="images/sp11.jpg"><button onclick="goZalo()">Zalo 0981 171 750</button></div>
         <div class="card"><img src="images/sp12.jpg"><button onclick="goZalo()">Zalo 0981 171 750</button></div>
     </div>
 
-    <h2>Nhóm 5 – Bao tay chống cắt (2 SP)</h2>
+    <h2>Nhóm 5 – Bao tay chống cắt</h2>
     <div class="grid">
         <div class="card"><img src="images/sp13.jpg"><button onclick="goZalo()">Zalo 0981 171 750</button></div>
         <div class="card"><img src="images/sp14.jpg"><button onclick="goZalo()">Zalo 0981 171 750</button></div>
     </div>
+
 </section>
 
-<!-- =============== VIDEO =============== -->
+<!-- ===================== VIDEO ===================== -->
 <section id="video">
-    <h2>Video Giới Thiệu (thêm link tùy thích)</h2>
+
+    <h2>Video Giới Thiệu</h2>
 
     <div class="videos">
-        <!-- Video mẫu – bạn thay link tùy thích -->
+        <!-- Video mẫu – bạn thay link -->
         <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
         <iframe src="https://www.youtube.com/embed/Pkh8UtuejGw" allowfullscreen></iframe>
     </div>
 
-    <p style="margin-top:15px; font-size:14px;">
-        Muốn thêm video? → Chỉ cần copy-dán thêm dòng iframe.
-    </p>
 </section>
 
-<!-- =============== GIỚI THIỆU =============== -->
+<!-- ===================== GIỚI THIỆU ===================== -->
 <section id="gioithieu">
+
     <h2>Giới thiệu công ty</h2>
 
-    <p style="line-height:1.6; font-size:15px; margin-top:10px;">
-        <b>CÔNG TY TNHH XUÂN CHƯƠNG GLOVES</b> là đơn vị chuyên cung cấp 
-        bao tay bảo hộ lao động, bao tay len, bao tay phủ nhựa, phủ sơn, 
-        chống cắt cho các xưởng sản xuất – công trình – kho vận – xí nghiệp trên toàn quốc.
+    <p class="intro">
+        <b>CÔNG TY TNHH XUÂN CHƯƠNG GLOVES</b> là đơn vị chuyên cung cấp bao tay bảo hộ lao động,
+        bao tay len, phủ nhựa, phủ sơn, chống cắt cho nhà máy – công trình – xưởng sản xuất.
         <br><br>
-        Với đội ngũ kinh nghiệm lâu năm và nguồn hàng ổn định, chúng tôi 
-        cam kết cung cấp sản phẩm chất lượng – giá tốt – giao hàng nhanh chóng.
+        Uy tín – chất lượng – giao hàng nhanh – giá tốt.
         <br><br>
-        Liên hệ Zalo: <b>033 444 9494 – 0981 171 750</b>
+        Hotline/Zalo: <b>033 444 9494 – 0981 171 750</b>
     </p>
+
+    <h2>Video giới thiệu công ty</h2>
+
+    <div class="videos">
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/Pkh8UtuejGw" allowfullscreen></iframe>
+    </div>
+
 </section>
 
 <footer>
-    <b>CÔNG TY TNHH XUÂN CHƯƠNG GLOVES</b><br>
+    CÔNG TY TNHH XUÂN CHƯƠNG GLOVES<br>
     MST: 3603502397<br>
-    Địa chỉ: Số 68, tổ 4, Khu phố 4, Phường Trảng Dài, Tỉnh Đồng Nai<br>
-    Hotline / Zalo: 033 444 9494 – 0981 171 750
+    ĐC: Số 68, tổ 4, Khu phố 4, Phường Trảng Dài, Đồng Nai<br>
+    Hotline: 033 444 9494 – 0981 171 750
 </footer>
 
-<!-- NÚT ZALO NỔI -->
 <div id="zaloFloat" onclick="goZalo()">
     Chat Zalo 0981 171 750
 </div>
