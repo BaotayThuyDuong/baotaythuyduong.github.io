@@ -296,6 +296,35 @@ header {
         font-size: 20px;
         padding: 10px 15px;
     }
+    /* ========== TAGLINE ========== */
+.header-tagline {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 5px;
+    text-align: center;
+}
+
+/* Mobile điều chỉnh */
+@media (max-width: 600px) {
+    .header-tagline {
+        font-size: 16px;
+        margin-top: 3px;
+    }
+    
+    /* Điều chỉnh lại header height trên mobile */
+    header {
+        min-height: 130px;
+    }
+    
+    .menu-bar {
+        top: 130px;
+    }
+    
+    #content-area {
+        margin-top: 180px !important;
+    }
+
 }
 </style>
 </head>
@@ -305,7 +334,9 @@ header {
 <!-- ========== HEADER MỚI ========== -->
 <header>
     <div class="header-top">
-        <h1>BAO TAY THÙY DƯƠNG</h1>
+    <h1>BAO TAY THÙY DƯƠNG</h1>
+    <div class="header-tagline">Chất lượng thật – Giá trị thật.</div>
+</div>
     </div>
     <div class="header-bottom">
         <div class="header-left">
@@ -726,6 +757,7 @@ function createPopups() {
 </script>
 </body>
 </html>
+
 
 
 
