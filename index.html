@@ -47,6 +47,14 @@ header {
     line-height: 1.2;
 }
 
+.header-tagline {
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 5px;
+    text-align: center;
+}
+
 .header-bottom {
     display: flex;
     justify-content: space-between;
@@ -89,7 +97,6 @@ header {
     background: rgba(255,255,255,0.1);
 }
 
-/* THÊM: Active state cho tab */
 .menu-bar a.active {
     color: #ff8800;
     background: rgba(255,255,255,0.1);
@@ -157,7 +164,6 @@ header {
         overflow: hidden;
     }
     
-    /* THÊM: Căn chỉnh header trên desktop */
     .header-left, .header-right {
         padding: 0 30px;
     }
@@ -243,6 +249,33 @@ header {
     color: #333;
 }
 
+/* ========== VIDEO GRID ========== */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.video-item {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.video-item iframe {
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.video-item p {
+    font-weight: 600;
+    color: #333;
+    margin: 10px 0 0 0;
+}
+
 /* Tablet */
 @media (max-width: 992px) {
     .product-grid {
@@ -252,6 +285,10 @@ header {
     .menu-bar a {
         margin: 0 20px;
         font-size: 18px;
+    }
+    
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -263,10 +300,14 @@ header {
         padding: 6px 8px;
     }
 
-    
     .header-top h1 {
         font-size: 32px;
         margin-bottom: 10px;
+    }
+    
+    .header-tagline {
+        font-size: 14px;
+        margin-top: 3px;
     }
     
     .header-bottom {
@@ -295,50 +336,8 @@ header {
     .section-title {
         font-size: 20px;
         padding: 10px 15px;
-   /* ========== TAGLINE ========== */
-.header-tagline {
-    color: white;
-    font-size: 16px;
-    font-weight: 600;
-    margin-top: 5px;
-    text-align: center;
-}
-
-/* Mobile điều chỉnh */
-@media (max-width: 600px) {
-    .header-tagline {
-        font-size: 14px;
-        margin-top: 3px;
-
-    /* ========== VIDEO GRID ========== */
-.video-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.video-item {
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-.video-item iframe {
-    border-radius: 8px;
-    margin-bottom: 10px;
-}
-
-.video-item p {
-    font-weight: 600;
-    color: #333;
-    margin: 10px 0 0 0;
-}
-
-/* Mobile điều chỉnh */
-@media (max-width: 600px) {
+    }
+    
     .video-grid {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -348,7 +347,6 @@ header {
         padding: 10px;
     }
 }
-
 </style>
 </head>
 
@@ -588,7 +586,7 @@ header {
         <p style="font-size: 18px; margin: 10px 0;">🏢 Địa chỉ: Số 68, tổ 4, KP4, P.Trảng Dài, Đồng Nai</p>
         <p style="font-size: 18px; margin: 10px 0;">📞 Zalo: 0981171750</p>
 </div>
-
+</div> <!-- Kết thúc trang home -->
 
     <div id="page-videos" style="display:none; padding:20px;">
     <h2>Video</h2>
@@ -597,7 +595,7 @@ header {
             <iframe 
                 width="100%" 
                 height="315" 
-                src="https://www.youtube.com/watch?v=abPmZCZZrFA" 
+                src="https://www.youtube.com/embed/abPmZCZZrFA" 
                 frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
@@ -608,7 +606,7 @@ header {
             <iframe 
                 width="100%" 
                 height="315" 
-                src="https://www.youtube.com/watch?v=N5qDd4caI1o" 
+                src="https://www.youtube.com/embed/N5qDd4caI1o" 
                 frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
@@ -619,7 +617,7 @@ header {
             <iframe 
                 width="100%" 
                 height="315" 
-                src="https://www.youtube.com/watch?v=UVbv-PJXm14" 
+                src="https://www.youtube.com/embed/UVbv-PJXm14" 
                 frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
@@ -630,7 +628,7 @@ header {
             <iframe 
                 width="100%" 
                 height="315" 
-                src="https://www.youtube.com/watch?v=FikdKWos-NQ" 
+                src="https://www.youtube.com/embed/FikdKWos-NQ" 
                 frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
@@ -639,7 +637,6 @@ header {
         </div>
     </div>
 </div>
-
 <div id="page-contact" style="display:none; padding:20px;">
     <h2>Liên Hệ</h2>
     <p><strong> CÔNG TY TNHH XUÂN CHƯƠNG GLOVES</strong></p>
@@ -825,6 +822,7 @@ function createPopups() {
 </script>
 </body>
 </html>
+
 
 
 
