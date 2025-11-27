@@ -36,32 +36,36 @@ header {
 .company-bar {
     background: #ff8800;
     color: white;
-    padding: 10px 20px;
-    position: fixed;
-    top: 70px;
-    width: 100%;
-    z-index: 999;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    height: 70px;
+    align-items: center;     /* ĐƯA 3 CỤM LÊN GIỮA THEO CHIỀU CAO */
+    padding: 20px 40px;      /* LÀM CHO THANH CAO VÀ ĐẸP HƠN */
+    height: 110px;           /* FULL CAO NHƯ BẠN MUỐN */
     box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
 }
 
 .title-left {
-    font-size: 14px;
-    line-height: 1.4;
+    font-size: 18px;
+    line-height: 1.5;
 }
+
 .title-center {
-    font-size: 26px;
-    font-weight: 700;
+    font-size: 40px;     /* TO LÊN */
+    font-weight: 800;
     text-align: center;
+    flex: 1;             /* GIỮA 3 CỘT CHUẨN TỰ ĐỘNG */
 }
+
 .title-right {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 700;
     text-align: right;
 }
+
 
 /* ====== MENU ====== */
 .menu-bar {
@@ -559,3 +563,4 @@ document.getElementById("popups-here").innerHTML = popupHTML;
 </body>
 
 </html>
+
