@@ -15,21 +15,6 @@ body {
     background: #f4f4f4;
 }
 
-/* ================= HEADER CAM ================= */
-.header-top {
-    background: #ff8800;
-    color: white;
-    width: 100%;
-    padding: 15px 0 20px;
-    text-align: center;
-    font-size: 40px;
-    font-weight: 700;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-}
-
 /* ====== TIÊU ĐỀ CHÍNH ====== */
 header {
     background: #ff8800;
@@ -90,6 +75,7 @@ header {
     margin: 0 35px;
     font-size: 20px;
     font-weight: 600;
+    cursor: pointer;
 }
 .menu-bar a:hover {
     color: #ff8800;
@@ -123,6 +109,12 @@ header {
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     text-align: center;
     padding-bottom: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .product-card img {
@@ -154,13 +146,15 @@ header {
     background: #e67a00;
 }
 
+/* THANH PHÂN LOẠI SẢN PHẨM - TRONG SUỐT */
 .section-title {
     padding: 15px 20px;
-    background: #333;
-    color: white;
+    background: transparent;
+    color: #333;
     margin: 30px 0 0 0;
     font-size: 24px;
     text-align: center;
+    border-bottom: 2px solid #ff8800;
 }
 
 /* ================= POPUP STYLES ================= */
@@ -263,7 +257,7 @@ header {
 
 <body>
 
-<!-- ========== HEADER + COMPANY BAR + MENU (BẢN CHUẨN 100%) ========== -->
+<!-- ========== HEADER + COMPANY BAR + MENU ========== -->
 
 <!-- TIÊU ĐỀ CHÍNH -->
 <header>
