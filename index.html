@@ -58,23 +58,21 @@ header {
 .header-bottom {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /* Thay center thành flex-start */
-    margin-top:0px;
-    margin-bottom: 10px;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 .header-left, .header-right {
     font-size: 16px;
     font-weight: 500;
     line-height: 1.4;
     text-align: center;
-    margin-top: -35px; /* THÊM DÒNG NÀY */
-    margin-bottom: -20px; /* THÊM DÒNG NÀY */
 }
 
 /* ====== MENU ====== */
 .menu-bar {
     position: fixed;
-    top: 100px; /* Đặt menu ngay dưới header (100px) */
+    top: 130px; /* Đặt menu ngay dưới header (100px) */
     left: 0;
     width: 100%;
     background: #333;
@@ -106,7 +104,7 @@ header {
 
 /* ====== ĐẨY CONTENT XUỐNG ====== */
 #content-area {
-    margin-top: 160px !important; /* Header 100px + Menu 60px (khoảng 18px padding top + bottom và chiều cao chữ) = 160px */
+    margin-top: 200px !important; /* Header 100px + Menu 60px (khoảng 18px padding top + bottom và chiều cao chữ) = 160px */
 }
 
 /* Container để tạo khoảng cách hai bên */
@@ -846,9 +844,6 @@ function createPopups() {
 </script>
 </body>
 </html>
-
-
-
 
 
 
