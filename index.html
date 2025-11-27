@@ -30,61 +30,77 @@ body {
     z-index: 1000;
 }
 
-/* ================= THANH THÔNG TIN CÔNG TY ================= */
+
+/* ====== TIÊU ĐỀ CHÍNH ====== */
+header {
+    background: #ff8800;
+    color: white;
+    text-align: center;
+    padding: 18px 0;
+    font-size: 40px;
+    font-weight: 700;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* ====== COMPANY BAR ====== */
 .company-bar {
     background: #ff8800;
     color: white;
+    padding: 10px 20px;
+    position: fixed;
+    top: 70px;
     width: 100%;
+    z-index: 999;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 20px 15px;
-    position: fixed;
-    top: 70px;
-    left: 0;
-    z-index: 999;
 }
 
-.company-left {
+.title-left {
     font-size: 14px;
-    line-height: 1.5;
-    text-align: left;
+    line-height: 1.4;
 }
-
-.company-right {
-    font-size: 24px;
+.title-center {
+    font-size: 26px;
+    font-weight: 700;
+    text-align: center;
+}
+.title-right {
+    font-size: 20px;
     font-weight: 700;
     text-align: right;
 }
 
-/* ================= MENU ĐEN ================= */
-nav {
+/* ====== MENU ====== */
+.menu-bar {
     background: #333;
-    width: 100%;
-    color: white;
     padding: 12px 0;
-    position: fixed;
-    top: 125px;
-    z-index: 998;
     text-align: center;
+    position: fixed;
+    top: 140px;
+    width: 100%;
+    z-index: 998;
 }
-
-nav a {
+.menu-bar a {
     color: white;
     text-decoration: none;
+    margin: 0 35px;
     font-size: 20px;
-    margin: 0 28px;
     font-weight: 600;
 }
-
-nav a:hover {
+.menu-bar a:hover {
     color: #ff8800;
 }
 
-/* ================= KHOẢNG TRỐNG ================= */
+/* ĐẨY NỘI DUNG XUỐNG DƯỚI BA CÁI THANH CỐ ĐỊNH */
 #content-area {
-    margin-top: 190px;  /* tránh bị che */
+    margin-top: 200px !important;
 }
+
 
 /* ================= LƯỚI SẢN PHẨM ================= */
 .product-grid {
@@ -112,30 +128,38 @@ nav a:hover {
 
 <body>
 
-<!-- ================= HEADER CHÍNH ================= -->
-<div class="header-top">
-    BAO TAY THÙY DƯƠNG
-</div>
+<!-- ========== HEADER + COMPANY BAR + MENU (BẢN CHUẨN 100%) ========== -->
 
-<!-- ================= COMPANY INFO ================= -->
+<!-- TIÊU ĐỀ CHÍNH -->
+<header>
+    BAO TAY THÙY DƯƠNG
+</header>
+
+<!-- THANH THÔNG TIN CÔNG TY -->
 <div class="company-bar">
-    <div class="company-left">
-        Địa chỉ: Số 68, tổ 4, KP4, P.Trảng Dài, Đồng Nai<br>
+    <div class="title-left">
+        Địa chỉ: Số 68, tổ 4, KP4, P.Trảng Dài, Đồng Nai <br>
         MST: 3603502397
     </div>
 
-    <div class="company-right">
-        Zalo: 0981171750
+    <div class="title-center">
+        BAO TAY THÙY DƯƠNG
+    </div>
+
+    <div class="title-right">
+        Zalo: <b>0981171750</b>
     </div>
 </div>
 
-<!-- ================= MENU ================= -->
-<nav>
+<!-- MENU -->
+<nav class="menu-bar">
     <a onclick="showHome()">Trang Chủ</a>
     <a onclick="showProducts()">Sản Phẩm</a>
     <a onclick="showVideos()">Video</a>
     <a onclick="showContact()">Liên Hệ</a>
 </nav>
+
+
 
 <!-- ================= BẮT ĐẦU NỘI DUNG ================= -->
 <div id="content-area">
@@ -375,3 +399,4 @@ for (let i = 1; i <= 10; i++) {
 document.getElementById("popups-here").innerHTML = popupHTML;
 
 </script>
+
