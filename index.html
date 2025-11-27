@@ -275,6 +275,42 @@ header {
         padding: 10px 15px;
     }
 }
+
+    <style>
+/* ... toàn bộ css của bạn ... */
+
+/* ================= MOBILE FIX ================= */
+@media (max-width: 600px) {
+    header {
+        font-size: 26px;
+        height: 70px;
+        padding-top: 18px;
+    }
+
+    .company-bar {
+        top: 70px;
+        height: auto;
+        padding: 6px 10px;
+        flex-direction: column;
+        gap: 4px;
+        text-align: center;
+    }
+
+    .title-left,
+    .title-right {
+        text-align: center !important;
+    }
+
+    .menu-bar {
+        top: calc(70px + 60px);
+    }
+
+    #content-area {
+        margin-top: calc(70px + 60px + 50px) !important;
+    }
+}
+</style>
+
 </style>
 </head>
 
@@ -600,6 +636,7 @@ document.getElementById("popups-here").innerHTML = popupHTML;
 </body>
 
 </html>
+
 
 
 
