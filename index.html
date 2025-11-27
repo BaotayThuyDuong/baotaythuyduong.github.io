@@ -453,68 +453,91 @@ function closePopup(id){
 
 /* ================= DỮ LIỆU MÔ TẢ – GIỮ NGUYÊN 100% ================= */
 
+
 const mota = {
 
-    mota1:{ten:"Bao tay len xám",
-        chatlieu:"Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ 30g – 80g/đôi. Bo cổ tay chống tuột.",
-        congdung:"Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.",
-        nganh:"Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Thợ cơ khí, Công việc phụ trợ trong nhà máy."
+    /* 1) Bao tay len xám */
+    mota1:{
+        ten:"Bao tay len xám (30g – 80g)",
+        chatlieu:"Sợi Cotton thấm hút tốt pha Polyester tăng độ bền. Dệt kim chắc chắn 30g–80g/đôi, bo cổ tay chống tuột.",
+        congdung:"Chống trầy xước cơ bản, giữ tay sạch, thấm hút mồ hôi tốt. Đeo thoáng, dễ chịu, phù hợp sử dụng số lượng lớn.",
+        nganh:"Kho bãi, bốc xếp hàng hóa, thợ cơ khí nhẹ, xây dựng (việc sạch), nông nghiệp, làm vườn, may mặc, vận chuyển."
     },
 
-    mota2:{ten:"Bao tay len kem",
-        chatlieu:"Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ 30g – 80g/đôi. Bo cổ tay chống tuột.",
-        congdung:"Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.",
-        nganh:"Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Thợ cơ khí, Công việc phụ trợ trong nhà máy."
+    /* 2) Bao tay len kem */
+    mota2:{
+        ten:"Bao tay len kem (30g – 80g)",
+        chatlieu:"Cotton pha Polyester, dệt nhiều trọng lượng từ 30g đến 80g. Mềm, bền và thoáng.",
+        congdung:"Chống bụi bẩn, chống xước nhẹ, giữ nhiệt nhẹ trong môi trường mát. Giá thành kinh tế.",
+        nganh:"Kho hàng, logistic, thợ máy nhẹ, phụ việc công trình, nông nghiệp, lắp ráp đơn giản."
     },
 
-    mota3:{ten:"Bao tay len poly",
-        chatlieu:"Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ 30g – 80g/đôi. Bo cổ tay chống tuột.",
-        congdung:"Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.",
-        nganh:"Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Thợ cơ khí, Công việc phụ trợ trong nhà máy."
+    /* 3) Bao tay len poly */
+    mota3:{
+        ten:"Bao tay len poly (dệt mịn)",
+        chatlieu:"100% Polyester chất lượng cao, dệt mịn 13G–15G, sợi bền và không rụng bụi.",
+        congdung:"Không tạo bụi sợi, chống bám bẩn, bền hơn len cotton. Thao tác nhẹ nhàng, linh hoạt.",
+        nganh:"Điện tử – linh kiện, lắp ráp nhỏ, kiểm tra sản phẩm, môi trường sạch (cleanroom mức thấp)."
     },
 
-    mota4:{ten:"Bao tay len muối tiêu",
-        chatlieu:"Sợi Cotton (thấm hút) pha Polyester (độ bền). Dệt kim mật độ 30g – 80g/đôi. Bo cổ tay chống tuột.",
-        congdung:"Bảo vệ Cơ bản và Thoải mái. Thấm hút mồ hôi, thoáng khí tối đa. Chống bụi bẩn, trầy xước nhẹ. Hiệu quả kinh tế cao, lý tưởng cho việc sử dụng số lượng lớn.",
-        nganh:"Bốc xếp kho bãi, Xây dựng, Nông nghiệp, Làm vườn, Thợ cơ khí, Công việc phụ trợ trong nhà máy."
+    /* 4) Bao tay len muối tiêu */
+    mota4:{
+        ten:"Bao tay len muối tiêu",
+        chatlieu:"Cotton + Polyester dệt hai màu dạng muối tiêu, trọng lượng 40g–70g/đôi.",
+        congdung:"Độ bền cao hơn len trơn, chống trầy tốt, thoáng, dễ đeo và kinh tế.",
+        nganh:"Kho vận, bốc xếp, thợ cơ khí nhẹ, công nhân lắp ráp, nông nghiệp, làm vườn."
     },
 
-    mota5:{ten:"Bao tay phủ sơn latex đỏ",
-        chatlieu:"Lõi sợi dệt (Poly/Cotton) + Lớp phủ cao su Latex. Lớp phủ có thể là lòng bàn tay, 3/4 hoặc phủ toàn bộ.",
-        congdung:"Tăng độ bám dính vượt trội trong môi trường trơn trượt. Chống thấm dầu, mỡ, hóa chất nhẹ và nước. Chống mài mòn tốt.",
-        nganh:"Cơ khí, Lắp ráp linh kiện, Điện tử, Sửa chữa ô tô, Bảo trì máy móc, Xử lý vật liệu dính dầu mỡ."
+    /* 5) Bao tay phủ sơn Latex đỏ */
+    mota5:{
+        ten:"Bao tay phủ sơn Latex đỏ",
+        chatlieu:"Lõi cotton hoặc poly-cotton, phủ cao su Latex nguyên chất ở lòng bàn tay hoặc phủ 3/4.",
+        congdung:"Ma sát cực cao, bám chắc khi cầm gỗ – kim loại – gạch. Chống trượt tốt, chống mài mòn, co giãn tốt.",
+        nganh:"Xây dựng, vận chuyển hàng nặng, sản xuất gỗ, công trình, nông nghiệp."
     },
 
-    mota6:{ten:"Bao tay phủ sơn nitrile xanh",
-        chatlieu:"Lõi sợi dệt (Poly/Cotton) + Lớp phủ Nitrile. Chống dầu vượt trội.",
-        congdung:"Tăng độ bám trong môi trường dầu mỡ. Chống thấm dầu, chống mài mòn, độ bền cao khi thao tác máy móc.",
-        nganh:"Cơ khí, Điện tử, Lắp ráp, Công nghiệp dầu nhẹ."
+    /* 6) Bao tay phủ sơn Nitrile xanh */
+    mota6:{
+        ten:"Bao tay phủ sơn Nitrile xanh",
+        chatlieu:"Sợi Polyester hoặc Poly/Cotton, phủ Nitrile chống dầu chuyên dụng.",
+        congdung:"Chống dầu – mỡ – hóa chất nhẹ tốt nhất. Độ bền cao, chịu ma sát tốt, không gây dị ứng.",
+        nganh:"Sửa chữa ô tô, công nghiệp dầu mỡ, cơ khí, lắp ráp máy móc."
     },
 
-    mota7:{ten:"Bao tay phủ hạt nhựa PVC",
-        chatlieu:"Sợi dệt Cotton/Poly + Hạt nhựa PVC được in nổi/đính ở lòng bàn tay hoặc cả hai mặt.",
-        congdung:"Chống trơn trượt tối đa nhờ các hạt PVC tạo lực ma sát. Giúp cầm nắm chắc chắn các vật liệu nặng, trơn; giảm rủi ro rơi vỡ hàng hóa. Tăng độ bền cho lòng bàn tay.",
-        nganh:"Vận chuyển/Logistics, Kho bãi, Xử lý thùng carton, Xử lý vật liệu kính/gốm sứ, Thao tác máy móc rung nhẹ."
+    /* 7) Bao tay phủ hạt PVC */
+    mota7:{
+        ten:"Bao tay phủ hạt PVC",
+        chatlieu:"Cotton/Poly dệt, hạt PVC in nổi 1 hoặc 2 mặt giúp tăng ma sát mạnh.",
+        congdung:"Chống trơn trượt mạnh, cầm nắm vật trơn rất chắc, bảo vệ lòng bàn tay khỏi mài mòn.",
+        nganh:"Kho bãi – logistics, vận chuyển thùng hàng, thủy tinh – gốm sứ, đóng gói carton."
     },
 
-    mota8:{ten:"Bao tay phủ sơn lòng bàn tay xám",
-        chatlieu:"Lõi sợi Poly + Lớp phủ Nitrile/PU ở lòng bàn tay.",
-        congdung:"Tạo độ bám cao, chống trơn trượt khi thao tác máy móc, chống mài mòn tốt.",
-        nganh:"Lắp ráp linh kiện, Kho bãi, Điện tử, Công việc cơ khí nhẹ."
+    /* 8) Bao tay phủ sơn lòng bàn tay xám */
+    mota8:{
+        ten:"Bao tay phủ sơn lòng bàn tay xám (PU/Nitrile)",
+        chatlieu:"Lõi Polyester hoặc HPPE, phủ PU hoặc Nitrile mỏng ở lòng bàn tay.",
+        congdung:"Thao tác chính xác, chống trơn nhẹ, thoáng tay, không đổ mồ hôi, bám tốt vào chi tiết nhỏ.",
+        nganh:"Điện tử, công nghiệp nhẹ, kiểm tra sản phẩm, lắp ráp chính xác."
     },
 
-    mota9:{ten:"Bao tay chống cắt cấp độ 3",
-        chatlieu:"Sợi kỹ thuật cao (HPPE, sợi thủy tinh). Thường kèm lớp phủ PU để tăng độ bám.",
-        congdung:"Bảo vệ tay khỏi nguy cơ cắt/cứa trung bình. Chống mài mòn tốt, hỗ trợ thao tác an toàn với vật sắc.",
-        nganh:"Chế biến thực phẩm/thịt, Công nghiệp kính, Gia công kim loại tấm, Lắp ráp chi tiết sắc."
+    /* 9) Bao tay chống cắt cấp độ 3 */
+    mota9:{
+        ten:"Bao tay chống cắt cấp độ 3 (EN388 – C level)",
+        chatlieu:"Sợi HPPE + sợi thủy tinh composite, phủ PU mỏng để tăng độ bám.",
+        congdung:"Chống cắt trung bình, chịu mài mòn cao, giữ độ linh hoạt tốt, thao tác an toàn với vật sắc nhẹ.",
+        nganh:"Gia công kim loại nhẹ, chế biến thực phẩm, xử lý linh kiện sắc, ngành kính nhẹ."
     },
 
-    mota10:{ten:"Bao tay chống cắt cấp độ 5",
-        chatlieu:"Sợi HPPE + Kevlar + sợi thủy tinh (cường lực cao).",
-        congdung:"Chống cắt mạnh, chịu mài mòn cao, bảo vệ tối đa khi thao tác vật sắc nguy hiểm.",
-        nganh:"Công nghiệp kính, Gia công thép, Làm việc với tấm kim loại sắc, Xử lý rác thải nguy hại."
+    /* 10) Bao tay chống cắt cấp độ 5 */
+    mota10:{
+        ten:"Bao tay chống cắt cấp độ 5 (EN388 – E/F level)",
+        chatlieu:"Sợi HPPE + Kevlar + sợi thép hoặc sợi thủy tinh cường lực, phủ PU/Nitrile.",
+        congdung:"Chống cắt mạnh (cấp cao), chịu ma sát mạnh, bảo vệ tối đa khi làm việc với vật sắc nguy hiểm.",
+        nganh:"Gia công inox – thép, xử lý tấm kim loại sắc, chế biến thủy tinh – kính, công nghiệp nặng."
     }
+
 };
+
 
 
 /* ================= TẠO POPUP TỰ ĐỘNG ================= */
@@ -563,6 +586,7 @@ document.getElementById("popups-here").innerHTML = popupHTML;
 </body>
 
 </html>
+
 
 
 
