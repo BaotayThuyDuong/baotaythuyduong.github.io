@@ -49,14 +49,16 @@ header {
 
 .header-bottom {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* SỬA: center thay vì space-between */
     align-items: center;
-    margin-top: 15px; /* CHỈ THÊM DÒNG NÀY */
+    margin-top: 15px;
+    gap: 50px; /* THÊM: khoảng cách giữa 2 phần */
 }
 .header-left, .header-right {
     font-size: 16px;
     font-weight: 500;
     line-height: 1.4;
+    text-align: center; /* THÊM: canh giữa chữ */
 }
 
 /* ====== MENU ====== */
@@ -67,7 +69,7 @@ header {
     width: 100%;
     background: #333;
     color: white;
-    padding: 12px 0;
+    padding: 16px 0; /* SỬA: 12px → 16px (to hơn) */
     text-align: center;
     z-index: 998;
 }
@@ -78,9 +80,19 @@ header {
     font-size: 18px;
     font-weight: 600;
     cursor: pointer;
+    padding: 8px 16px; /* THÊM: để dễ click trên desktop */
+    border-radius: 4px; /* THÊM: bo góc đẹp hơn */
+    transition: all 0.3s ease; /* THÊM: hiệu ứng mượt */
 }
 .menu-bar a:hover {
     color: #ff8800;
+    background: rgba(255,255,255,0.1); /* THÊM: hiệu ứng hover */
+}
+
+/* THÊM: Active state cho tab */
+.menu-bar a.active {
+    color: #ff8800;
+    background: rgba(255,255,255,0.1);
 }
 
 /* ====== ĐẨY CONTENT XUỐNG ====== */
@@ -255,12 +267,13 @@ header {
     
     .menu-bar {
         top: 150px;
-        padding: 10px 0;
+        padding: 14px 0; /* SỬA: 10px → 14px (to hơn) */
     }
     
     .menu-bar a {
         margin: 0 12px;
         font-size: 16px;
+        padding: 6px 12px; /* THÊM: cho mobile */
     }
     
     #content-area {
@@ -299,10 +312,10 @@ header {
 
 <!-- MENU -->
 <nav class="menu-bar">
-    <a onclick="showHome()">Trang Chủ</a>
-    <a onclick="showProducts()">Sản Phẩm</a>
-    <a onclick="showVideos()">Video</a>
-    <a onclick="showContact()">Liên Hệ</a>
+    <a onclick="showHome()" data-tab="home">Trang Chủ</a>
+    <a onclick="showProducts()" data-tab="products">Sản Phẩm</a>
+    <a onclick="showVideos()" data-tab="videos">Video</a>
+    <a onclick="showContact()" data-tab="contact">Liên Hệ</a>
 </nav>
 
 <!-- ================= BẮT ĐẦU NỘI DUNG ================= -->
@@ -448,18 +461,7 @@ header {
         </div>
 
         <div class="product-card">
-            <img 
-   <img 
-    src="phusonxam-400.jpg"
-    srcset="phusonxam-400.jpg 400w,
-            phusonxam-800.jpg 800w,
-            phusonxam-1200.jpg 1200w"
-    sizes="(max-width: 600px) 200px,
-           (max-width: 992px) 250px,
-           300px"
-    alt="Bao tay sơn lòng xám"
-    loading="lazy"
->
+            <img src="phusonxam-400.jpg" alt="Bao tay sơn lòng xám" loading="lazy">
             <div class="product-name">Phủ sơn đen</div>
             <button class="btn-orange" onclick="openPopup('mota8')">Mô tả</button>
             <button class="btn-orange" onclick="openPopup('lh8')">Liên hệ</button>
@@ -563,10 +565,22 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /* ================= CHUYỂN TRANG ================= */
-function showHome()    { page("home"); }
-function showProducts(){ page("products"); }
-function showVideos()  { page("videos"); }
-function showContact() { page("contact"); }
+function showHome()    { 
+    page("home"); 
+    setActiveTab('home');
+}
+function showProducts(){ 
+    page("products"); 
+    setActiveTab('products');
+}
+function showVideos()  { 
+    page("videos"); 
+    setActiveTab('videos');
+}
+function showContact() { 
+    page("contact"); 
+    setActiveTab('contact');
+}
 
 function page(p) {
     document.getElementById("page-products").style.display = (p === "products") ? "block" : "none";
@@ -574,7 +588,24 @@ function page(p) {
     document.getElementById("page-videos").style.display   = (p === "videos")   ? "block" : "none";
     document.getElementById("page-contact").style.display  = (p === "contact")  ? "block" : "none";
 
-    window.scrollTo(0,0); /* Khi chuyển trang → nhảy lên đầu */
+    // SỬA: chờ một chút rồi scroll để đảm bảo trang đã load
+    setTimeout(() => {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }, 50);
+}
+
+// THÊM: Hàm set active tab
+function setActiveTab(tabName) {
+    // Remove active class từ tất cả tabs
+    document.querySelectorAll('.menu-bar a').forEach(tab => {
+        tab.classList.remove('active');
+    });
+    
+    // Add active class vào tab được click
+    const activeTab = document.querySelector(`.menu-bar a[data-tab="${tabName}"]`);
+    if (activeTab) {
+        activeTab.classList.add('active');
+    }
 }
 
 /* ================= POPUP ================= */
@@ -687,22 +718,3 @@ function createPopups() {
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
