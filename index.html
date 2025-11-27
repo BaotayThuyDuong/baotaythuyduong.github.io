@@ -22,7 +22,7 @@ body {
 header {
     background: #ff8800;
     color: white;
-    padding: 10px 20px;
+    padding: 5px 20px;
     position: fixed;
     top: 0;
     left: 0;
@@ -32,7 +32,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: 120px;
+    min-height: 100px;
 }
 
 .header-top {
@@ -50,26 +50,26 @@ header {
 .header-bottom {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* SỬA: từ flex-start thành center */
-    margin-top: 0; /* SỬA: từ 5px thành 0 */
-    margin-bottom: 22px; /* THÊM: tạo khoảng cách dưới */
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 .header-left, .header-right {
     font-size: 16px;
     font-weight: 500;
     line-height: 1.4;
-    text-align: center; /* THÊM: canh giữa chữ */
+    text-align: center;
 }
 
 /* ====== MENU ====== */
 .menu-bar {
     position: fixed;
-    top: 120px;
+    top: 100px;
     left: 0;
     width: 100%;
     background: #333;
     color: white;
-    padding: 14px 0;
+    padding: 18px 0;
     text-align: center;
     z-index: 998;
 }
@@ -80,13 +80,13 @@ header {
     font-size: 18px;
     font-weight: 600;
     cursor: pointer;
-    padding: 8px 16px; /* THÊM: để dễ click trên desktop */
-    border-radius: 4px; /* THÊM: bo góc đẹp hơn */
-    transition: all 0.3s ease; /* THÊM: hiệu ứng mượt */
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
 }
 .menu-bar a:hover {
     color: #ff8800;
-    background: rgba(255,255,255,0.1); /* THÊM: hiệu ứng hover */
+    background: rgba(255,255,255,0.1);
 }
 
 /* THÊM: Active state cho tab */
@@ -97,7 +97,7 @@ header {
 
 /* ====== ĐẨY CONTENT XUỐNG ====== */
 #content-area {
-    margin-top: 180px !important; 
+    margin-top: 160px !important; 
 }
 
 /* Container để tạo khoảng cách hai bên */
@@ -155,7 +155,19 @@ header {
     
     .product-card {
         overflow: hidden;
-
+    }
+    
+    /* THÊM: Căn chỉnh header trên desktop */
+    .header-left, .header-right {
+        padding: 0 30px;
+    }
+    
+    .header-right {
+        font-size: 22px;
+    }
+    
+    .header-right b {
+        font-size: 26px;
     }
 }
 
@@ -246,9 +258,9 @@ header {
 /* ================= MOBILE FIX ================= */
 @media (max-width: 600px) {
     .menu-bar a {
-        margin: 0 5px; /* ĐÃ SỬA: từ 10px thành 5px để chữ không bị xuống dòng */
-        font-size: 14px; /* ĐÃ SỬA: từ 15px thành 14px để chữ nhỏ hơn */
-        padding: 6px 8px; /* ĐÃ SỬA: từ 12px thành 8px để khoảng cách nhỏ hơn */
+        margin: 0 5px;
+        font-size: 14px;
+        padding: 6px 8px;
     }
 
     
@@ -269,7 +281,7 @@ header {
     
     .menu-bar {
         top: 150px;
-        padding: 14px 0; /* SỬA: 10px → 14px (to hơn) */
+        padding: 14px 0;
     }
     
     #content-area {
@@ -284,34 +296,6 @@ header {
         font-size: 20px;
         padding: 10px 15px;
     }
-    /* ================= DESKTOP FIX ================= */
-@media (min-width: 601px) {
-    .header-left, .header-right {
-        padding: 0 20px;
-    }
-    
-    .header-right {
-        font-size: 20px;
-    }
-    
-    .header-right b {
-        font-size: 24px;
-    }
-    
-    header {
-        min-height: 100px;
-        padding: 5px 20px;
-    }
-    
-    .menu-bar {
-        top: 100px;
-        padding: 18px 0;
-    }
-    
-    #content-area {
-        margin-top: 160px !important;
-    }
-
 }
 </style>
 </head>
@@ -742,6 +726,7 @@ function createPopups() {
 </script>
 </body>
 </html>
+
 
 
 
