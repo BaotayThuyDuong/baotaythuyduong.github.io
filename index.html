@@ -346,6 +346,14 @@ header {
     
     .video-item {
         padding: 10px;
+/* ========== FIX HEADER OVERLAP ========== */
+@media (min-width: 601px) {
+    .menu-bar {
+        top: 120px !important; /* Đẩy menu đen xuống dưới header */
+    }
+    
+    #content-area {
+        margin-top: 190px !important; /* Đẩy toàn bộ nội dung xuống */
     }
 }
 </style>
@@ -824,3 +832,4 @@ function createPopups() {
 </script>
 </body>
 </html>
+
