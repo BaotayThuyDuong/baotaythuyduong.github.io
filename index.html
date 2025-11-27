@@ -71,20 +71,17 @@ header {
 
 
 nav {
-    position: fixed;
-    top: 140px;
-    left: 0;
-    width: 100%;
     background: #333;
+    color: white;
+    position: fixed;
+    top: 90px;   /* ĐẨY XUỐNG ĐÚNG */
+    width: 100%;
+    z-index: 999;
     padding: 12px 0;
-    text-align: center;
-    z-index: 998;
-    height: 55px;
 }
 
-
 #content-area {
-    margin-top: 200px !important;
+    margin-top: 160px !important;
 }
 
 
@@ -207,22 +204,35 @@ footer {
 <header>BAO TAY THÙY DƯƠNG</header>
 
 <!-- THANH THÔNG TIN CÔNG TY (CỐ ĐỊNH) -->
-<div class="company-bar">
+.company-bar {
+    background: #ff8800;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 
-    <div class="title-left">
-        <div class="address">Địa chỉ: Số 68, tổ 4, KP4, P.Trảng Dài, Đồng Nai</div>
-        <div class="mst">MST: 3603502397</div>
-    </div>
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.title-center {
+    font-size: 32px;
+    font-weight: 800;
+    text-align: center;
+}
+.title-left {
+    font-size: 14px;
+    line-height: 1.4;
+    text-align: left;
+}
 
-    <div class="title-center">
-        BAO TAY THÙY DƯƠNG
-    </div>
-
-    <div class="title-right">
-        Zalo: 0981171750
-    </div>
-
-</div>
+.title-right {
+    font-size: 22px;
+    font-weight: 700;
+    text-align: right;
+}
 
 
 <!-- MENU -->
@@ -520,6 +530,7 @@ document.getElementById("popups-here").innerHTML = popupHTML;
 
 </body>
 </html>
+
 
 
 
