@@ -297,6 +297,7 @@ header {
         padding: 10px 15px;
     }
     /* ========== TAGLINE ========== */
+/* ========== TAGLINE ========== */
 .header-tagline {
     color: white;
     font-size: 18px;
@@ -305,26 +306,48 @@ header {
     text-align: center;
 }
 
-/* Mobile điều chỉnh */
-@media (max-width: 600px) {
+/* Desktop điều chỉnh */
+@media (min-width: 601px) {
     .header-tagline {
         font-size: 16px;
         margin-top: 3px;
+        margin-bottom: 5px;
+    }
+    
+    /* Điều chỉnh lại header height trên desktop */
+    header {
+        min-height: 110px;
+    }
+    
+    .menu-bar {
+        top: 110px;
+    }
+    
+    #content-area {
+        margin-top: 170px !important;
+    }
+}
+
+/* Mobile điều chỉnh */
+@media (max-width: 600px) {
+    .header-tagline {
+        font-size: 14px;
+        margin-top: 2px;
+        margin-bottom: 5px;
     }
     
     /* Điều chỉnh lại header height trên mobile */
     header {
-        min-height: 130px;
+        min-height: 140px;
     }
     
     .menu-bar {
-        top: 130px;
+        top: 140px;
     }
     
     #content-area {
-        margin-top: 180px !important;
+        margin-top: 190px !important;
     }
-
 }
 </style>
 </head>
@@ -757,6 +780,7 @@ function createPopups() {
 </script>
 </body>
 </html>
+
 
 
 
