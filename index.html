@@ -8,6 +8,9 @@
 <!-- FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+<!-- THƯ VIỆN ZOOM ẢNH -->
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script>
+
 <style>
 body {
     margin: 0;
@@ -121,6 +124,12 @@ header {
     height: 200px;
     object-fit: cover;
     background-color: #f0f0f0;
+    cursor: zoom-in;
+    transition: transform 0.3s;
+}
+
+.product-card img:hover {
+    transform: scale(1.02);
 }
 
 .product-name {
@@ -417,6 +426,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Tạo popup ngay sau khi trang tải xong
     createPopups();
+    
+    // Khởi tạo zoom cho ảnh sản phẩm
+    mediumZoom('.product-card img', {
+        margin: 50,
+        background: 'rgba(0, 0, 0, 0.8)',
+        scrollOffset: 100
+    });
 });
 
 /* ================= CHUYỂN TRANG ================= */
@@ -545,5 +561,3 @@ function createPopups() {
 </script>
 </body>
 </html>
-
-
