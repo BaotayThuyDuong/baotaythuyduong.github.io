@@ -33,35 +33,53 @@ header {
 }
 
 /* ====== COMPANY BAR ====== */
+/* ====== COMPANY BAR (SỬA LỖI DESKTOP + MOBILE) ====== */
 .company-bar {
     background: #ff8800;
     color: white;
-    padding: 10px 20px;
+    padding: 6px 20px;
     position: fixed;
     top: 70px;
     width: 100%;
-    z-index: 999;
+    z-index: 1000;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 70px;
-    box-sizing: border-box;
 }
 
-.title-left {
+/* TRÁI – ĐỊA CHỈ + MST */
+.company-left {
     font-size: 14px;
     line-height: 1.4;
 }
-.title-center {
-    font-size: 26px;
+
+/* PHẢI – ZALO */
+.company-right {
+    font-size: 18px;
     font-weight: 700;
-    text-align: center;
 }
-.title-right {
-    font-size: 20px;
-    font-weight: 700;
-    text-align: right;
+
+/* ===== RESPONSIVE MOBILE ===== */
+@media (max-width: 600px) {
+
+    .company-bar {
+        flex-direction: column;
+        padding: 10px 0;
+        gap: 6px;
+    }
+
+    .company-left {
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .company-right {
+        text-align: center;
+        font-size: 16px;
+    }
 }
+
 
 /* ====== MENU ====== */
 .menu-bar {
@@ -266,23 +284,20 @@ header {
 <!-- ========== HEADER + COMPANY BAR + MENU ========== -->
 
 <!-- TIÊU ĐỀ CHÍNH (CHỈ CÓ MỘT HEADER DUY NHẤT) -->
-<header>
-    BAO TAY THÙY DƯƠNG
-</header>
+
 
 <!-- THANH THÔNG TIN CÔNG TY -->
 <div class="company-bar">
-    <div class="title-left">
+    <div class="company-left">
         Địa chỉ: Số 68, tổ 4, KP4, P.Trảng Dài, Đồng Nai <br>
         MST: 3603502397
     </div>
 
-  
-
-    <div class="title-right">
-        Zalo: <b>0981171750</b>
+    <div class="company-right">
+        Zalo: 0981171750
     </div>
 </div>
+
 
 <!-- MENU -->
 <nav class="menu-bar">
@@ -581,5 +596,6 @@ document.getElementById("popups-here").innerHTML = popupHTML;
 </script>
 </body>
 </html>
+
 
 
