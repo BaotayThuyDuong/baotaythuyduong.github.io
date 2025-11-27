@@ -1,239 +1,135 @@
-<!-- ========== PHẦN 1 / 3 — HEADER + CSS + MENU + COMPANY BAR ========== -->
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BAO TAY THÙY DƯƠNG</title>
 
-<!-- FONT POPPINS -->
+<!-- FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    
     background: #f4f4f4;
 }
 
-/* ====== HEADER ====== */
-header {
+/* ================= HEADER CAM ================= */
+.header-top {
     background: #ff8800;
     color: white;
+    width: 100%;
+    padding: 15px 0 20px;
     text-align: center;
-    padding: 18px 0 5px;
-    font-size: 42px;
+    font-size: 40px;
     font-weight: 700;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
     z-index: 1000;
-    height: 70px;
 }
 
-
+/* ================= THANH THÔNG TIN CÔNG TY ================= */
 .company-bar {
     background: #ff8800;
     color: white;
-    padding: 10px 20px;
-    position: fixed;
-    top: 60px;
     width: 100%;
-    z-index: 999;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 8px 20px 15px;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    z-index: 999;
 }
 
-/* TRÁI */
-.title-left {
-    text-align: left;
-    line-height: 1.4;
+.company-left {
     font-size: 14px;
+    line-height: 1.5;
+    text-align: left;
 }
 
-/* GIỮA = TIÊU ĐỀ */
-.title-center {
-    font-size: 32px;        /* TO */
-    font-weight: 700;
-    text-align: center;
-}
-
-/* PHẢI = ZALO */
-.title-right {
-    font-size: 28px;        /* TO GẤP ĐÔI */
+.company-right {
+    font-size: 24px;
     font-weight: 700;
     text-align: right;
 }
 
-
+/* ================= MENU ĐEN ================= */
 nav {
     background: #333;
-    color: white;
-    position: fixed;
-    top: 90px;   /* ĐẨY XUỐNG ĐÚNG */
     width: 100%;
-    z-index: 999;
+    color: white;
     padding: 12px 0;
+    position: fixed;
+    top: 125px;
+    z-index: 998;
+    text-align: center;
 }
 
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 0 28px;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #ff8800;
+}
+
+/* ================= KHOẢNG TRỐNG ================= */
 #content-area {
-    margin-top: 160px !important;
+    margin-top: 190px;  /* tránh bị che */
 }
 
-
-/* PRODUCT GRID */
-/* GRID SẢN PHẨM */
+/* ================= LƯỚI SẢN PHẨM ================= */
 .product-grid {
     display: grid;
     gap: 22px;
     padding: 20px;
-    grid-template-columns: repeat(4, 1fr); /* Desktop 4 SP */
+    grid-template-columns: repeat(4, 1fr);
 }
 
 /* Tablet */
 @media (max-width: 992px) {
     .product-grid {
-        grid-template-columns: repeat(3, 1fr); /* Tablet 3 SP */
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
 /* Mobile */
 @media (max-width: 600px) {
     .product-grid {
-        grid-template-columns: repeat(2, 1fr); /* Mobile 2 SP */
+        grid-template-columns: repeat(2, 1fr);
     }
-
-    .product-card img {
-        height: 140px;
-    }
-
-    .btn-orange {
-        padding: 8px 12px;
-        font-size: 14px;
-    }
-}
-
-
-.product-card {
-    background: white;
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    text-align: center;
-}
-/* ẢNH SẢN PHẨM CHUẨN AN TOÀN */
-.product-card img {
-    width: 100%;
-    max-width: 260px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-    display: block;
-    margin: 0 auto;
-}
-
-
-/* BUTTONS */
-.btn-orange, .btn-blue {
-    padding: 10px 18px;
-    border-radius: 6px;
-    border: none;
-    color: white;
-    font-size: 16px;
-    font-weight: 600;
-    margin: 5px;
-    cursor: pointer;
-}
-.btn-orange { background: #ff8800; }
-.btn-blue { background: #007bff; }
-
-/* POPUP */
-.popup-overlay {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.6);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 2000;
-}
-.popup-box {
-    background: white;
-    width: 90%;
-    max-width: 650px;
-    padding: 25px;
-    border-radius: 16px;
-    position: relative;
-}
-.close-btn {
-    position: absolute;
-    top: 14px; right: 20px;
-    font-size: 32px;
-    color: #ff8800;
-    cursor: pointer;
-}
-
-/* VIDEO */
-.video-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-    gap: 22px;
-    padding: 20px;
-}
-
-/* FOOTER */
-footer {
-    background: #222;
-    color: white;
-    text-align: center;
-    padding: 25px;
-    margin-top: 50px;
-    line-height: 1.7;
 }
 </style>
 </head>
 
 <body>
 
+<!-- ================= HEADER CHÍNH ================= -->
+<div class="header-top">
+    BAO TAY THÙY DƯƠNG
+</div>
 
-<!-- THANH THÔNG TIN CÔNG TY (CỐ ĐỊNH) -->
-.company-bar {
-    background: #ff8800;
-    color: white;
-    padding: 20px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
+<!-- ================= COMPANY INFO ================= -->
+<div class="company-bar">
+    <div class="company-left">
+        Địa chỉ: Số 68, tổ 4, KP4, P.Trảng Dài, Đồng Nai<br>
+        MST: 3603502397
+    </div>
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.title-center {
-    font-size: 32px;
-    font-weight: 800;
-    text-align: center;
-}
-.title-left {
-    font-size: 14px;
-    line-height: 1.4;
-    text-align: left;
-}
+    <div class="company-right">
+        Zalo: 0981171750
+    </div>
+</div>
 
-.title-right {
-    font-size: 22px;
-    font-weight: 700;
-    text-align: right;
-}
-
-
-<!-- MENU -->
+<!-- ================= MENU ================= -->
 <nav>
     <a onclick="showHome()">Trang Chủ</a>
     <a onclick="showProducts()">Sản Phẩm</a>
@@ -241,43 +137,44 @@ footer {
     <a onclick="showContact()">Liên Hệ</a>
 </nav>
 
-<!-- MỞ CONTENT AREA -->
+<!-- ================= BẮT ĐẦU NỘI DUNG ================= -->
 <div id="content-area">
 <!-- ⭐⭐⭐ TRANG SẢN PHẨM (HIỂN THỊ MẶC ĐỊNH) ⭐⭐⭐ -->
 <div id="page-products">
 
+    <!-- NHÓM 1 — BAO TAY LEN -->
     <h2 class="section-title">Bao tay len</h2>
 
     <div class="product-grid">
 
         <!-- LEN XÁM -->
         <div class="product-card">
-            <img src="https://via.placeholder.com/800x1000?text=LEN+XAM">
-            <div>Bao tay len xám</div>
+            <img src="len-xam.jpg" alt="Bao tay len xám">
+            <div class="product-name">Bao tay len xám</div>
             <button class="btn-orange" onclick="openPopup('mota1')">Mô tả</button>
             <button class="btn-orange" onclick="openPopup('lh1')">Liên hệ</button>
         </div>
 
         <!-- LEN KEM -->
         <div class="product-card">
-            <img src="https://via.placeholder.com/800x1000?text=LEN+KEM">
-            <div>Bao tay len kem</div>
+            <img src="len-kem.jpg" alt="Bao tay len kem">
+            <div class="product-name">Bao tay len kem</div>
             <button class="btn-orange" onclick="openPopup('mota2')">Mô tả</button>
             <button class="btn-orange" onclick="openPopup('lh2')">Liên hệ</button>
         </div>
 
         <!-- LEN POLY -->
         <div class="product-card">
-            <img src="https://via.placeholder.com/800x1000?text=LEN+POLY">
-            <div>Bao tay len poly</div>
+            <img src="len-poly.jpg" alt="Bao tay len poly">
+            <div class="product-name">Bao tay len poly</div>
             <button class="btn-orange" onclick="openPopup('mota3')">Mô tả</button>
             <button class="btn-orange" onclick="openPopup('lh3')">Liên hệ</button>
         </div>
 
         <!-- LEN MUỐI TIÊU -->
         <div class="product-card">
-            <img src="https://via.placeholder.com/800x1000?text=MUOI+TIEU">
-            <div>Bao tay len muối tiêu</div>
+            <img src="len-muoi-tieu.jpg" alt="Bao tay len muối tiêu">
+            <div class="product-name">Bao tay len muối tiêu</div>
             <button class="btn-orange" onclick="openPopup('mota4')">Mô tả</button>
             <button class="btn-orange" onclick="openPopup('lh4')">Liên hệ</button>
         </div>
@@ -291,29 +188,29 @@ footer {
     <div class="product-grid">
 
         <div class="product-card">
-            <img src="https://via.placeholder.com/800x1000?text=LATEX+DO">
-            <div>Phủ sơn latex đỏ</div>
+            <img src="latex-do.jpg" alt="phủ sơn latex đỏ">
+            <div class="product-name">Phủ sơn latex đỏ</div>
             <button class="btn-orange" onclick="openPopup('mota5')">Mô tả</button>
             <button class="btn-orange" onclick="openPopup('lh5')">Liên hệ</button>
         </div>
 
         <div class="product-card">
-            <img src="https://via.placeholder.com/800x1000?text=NITRILE">
-            <div>Phủ sơn nitrile xanh</div>
+            <img src="nitrile-xanh.jpg" alt="phủ sơn nitrile xanh">
+            <div class="product-name">Phủ sơn nitrile xanh</div>
             <button class="btn-orange" onclick="openPopup('mota6')">Mô tả</button>
             <button class="btn-orange" onclick="openPopup('lh6')">Liên hệ</button>
         </div>
 
         <div class="product-card">
-            <img src="https://via.placeholder.com/800x1000?text=PVC+HAT">
-            <div>Phủ hạt nhựa PVC</div>
+            <img src="pvc-hat.jpg" alt="phủ hạt PVC">
+            <div class="product-name">Phủ hạt nhựa PVC</div>
             <button class="btn-orange" onclick="openPopup('mota7')">Mô tả</button>
             <button class="btn-orange" onclick="openPopup('lh7')">Liên hệ</button>
         </div>
 
         <div class="product-card">
-            <img src="https://via.placeholder.com/800x1000?text=LBT+XAM">
-            <div>Phủ sơn lòng bàn tay xám</div>
+            <img src="lbt-xam.jpg" alt="phủ sơn lòng bàn tay xám">
+            <div class="product-name">Phủ sơn lòng bàn tay xám</div>
             <button class="btn-orange" onclick="openPopup('mota8')">Mô tả</button>
             <button class="btn-orange" onclick="openPopup('lh8')">Liên hệ</button>
         </div>
@@ -327,15 +224,15 @@ footer {
     <div class="product-grid">
 
         <div class="product-card">
-            <img src="https://via.placeholder.com/800x1000?text=CAT+3">
-            <div>Chống cắt cấp độ 3</div>
+            <img src="cat-3.jpg" alt="chống cắt cấp độ 3">
+            <div class="product-name">Chống cắt cấp độ 3</div>
             <button class="btn-orange" onclick="openPopup('mota9')">Mô tả</button>
             <button class="btn-orange" onclick="openPopup('lh9')">Liên hệ</button>
         </div>
 
         <div class="product-card">
-            <img src="https://via.placeholder.com/800x1000?text=CAT+5">
-            <div>Chống cắt cấp độ 5</div>
+            <img src="cat-5.jpg" alt="chống cắt cấp độ 5">
+            <div class="product-name">Chống cắt cấp độ 5</div>
             <button class="btn-orange" onclick="openPopup('mota10')">Mô tả</button>
             <button class="btn-orange" onclick="openPopup('lh10')">Liên hệ</button>
         </div>
@@ -343,75 +240,34 @@ footer {
     </div>
 
 </div> <!-- KẾT THÚC TRANG SẢN PHẨM -->
-
-
-
-<!-- ⭐⭐⭐ TRANG HOME ⭐⭐⭐ -->
-<div id="page-home" style="display:none;">
-
-    <img class="home-banner" 
-         src="https://images.unsplash.com/photo-1581090895367-4c92d3a2851c?auto=format&fit=crop&w=1600&q=80">
-
-</div>
-
-
-
-<!-- ⭐⭐⭐ TRANG VIDEO ⭐⭐⭐ -->
-<div id="page-videos" style="display:none;">
-    <h2 class="section-title">Video giới thiệu sản phẩm</h2>
-
-    <div class="video-grid">
-        <div style="background:#ddd;height:220px;border-radius:10px;"></div>
-        <div style="background:#ddd;height:220px;border-radius:10px;"></div>
-        <div style="background:#ddd;height:220px;border-radius:10px;"></div>
-    </div>
-</div>
-
-
-
-<!-- ⭐⭐⭐ TRANG LIÊN HỆ ⭐⭐⭐ -->
-<div id="page-contact" style="display:none;">
-    <h2 class="section-title">Liên hệ</h2>
-
-    <div class="company-info" style="text-align:center;">
-        <b>CÔNG TY TNHH XUÂN CHƯƠNG GLOVES</b><br>
-        MST: 3603502397 <br>
-        Địa chỉ: Số 68, tổ 4, Khu phố 4, P.Trảng Dài, Đồng Nai<br>
-        Zalo: 0981171750
-    </div>
-</div>
-
-
-
-<!-- ⭐⭐⭐ POPUP MÔ TẢ & LIÊN HỆ ⭐⭐⭐ -->
-<div id="popups-here"></div>
-<!-- ========== PHẦN 3 — SCRIPT (ĐÃ FIX 100% NÚT BẤM + POPUP) ========== -->
-
+<!-- ========== PHẦN 3 — SCRIPT ========== -->
 <script>
 
 /* ================= CHUYỂN TRANG ================= */
-function page(p) {
-    document.getElementById("page-products").style.display = p === "products" ? "block" : "none";
-    document.getElementById("page-home").style.display     = p === "home"     ? "block" : "none";
-    document.getElementById("page-videos").style.display   = p === "videos"   ? "block" : "none";
-    document.getElementById("page-contact").style.display  = p === "contact"  ? "block" : "none";
-    window.scrollTo(0,0);
-}
-
-function showHome(){ page("home"); }
+function showHome()    { page("home"); }
 function showProducts(){ page("products"); }
-function showVideos(){ page("videos"); }
-function showContact(){ page("contact"); }
+function showVideos()  { page("videos"); }
+function showContact() { page("contact"); }
+
+function page(p) {
+    document.getElementById("page-products").style.display = (p === "products") ? "block" : "none";
+    document.getElementById("page-home").style.display     = (p === "home")     ? "block" : "none";
+    document.getElementById("page-videos").style.display   = (p === "videos")   ? "block" : "none";
+    document.getElementById("page-contact").style.display  = (p === "contact")  ? "block" : "none";
+
+    window.scrollTo(0,0); /* Khi chuyển trang → nhảy lên đầu */
+}
 
 /* ================= POPUP ================= */
 function openPopup(id){
-    document.getElementById(id).style.display="flex";
+    document.getElementById(id).style.display = "flex";
 }
 function closePopup(id){
-    document.getElementById(id).style.display="none";
+    document.getElementById(id).style.display = "none";
 }
 
-/* ================= MÔ TẢ CHI TIẾT TỪ BẢNG GỐC ================= */
+/* ================= DỮ LIỆU MÔ TẢ – GIỮ NGUYÊN 100% ================= */
+
 const mota = {
 
     mota1:{ten:"Bao tay len xám",
@@ -476,19 +332,17 @@ const mota = {
 };
 
 
-/* ================= TẠO HTML POPUP ================= */
-
+/* ================= TẠO POPUP TỰ ĐỘNG ================= */
 let popupHTML = "";
 
-for(let i=1;i<=10;i++){
-    let m = mota["mota"+i];
+for (let i = 1; i <= 10; i++) {
+    let m = mota["mota" + i];
 
     popupHTML += `
     <div id="mota${i}" class="popup-overlay">
         <div class="popup-box">
             <div class="close-btn" onclick="closePopup('mota${i}')">×</div>
-            <h2 style="color:#ff8800;">${m.ten}</h2>
-
+            <h2 style="color:#ff8800">${m.ten}</h2>
             <p><b>Chất liệu & Cấu tạo:</b><br>${m.chatlieu}</p>
             <p><b>Lợi ích (Công dụng) chi tiết:</b><br>${m.congdung}</p>
             <p><b>Ngành nghề sử dụng phổ biến:</b><br>${m.nganh}</p>
@@ -496,43 +350,28 @@ for(let i=1;i<=10;i++){
     </div>
 
     <div id="lh${i}" class="popup-overlay">
-    <div class="popup-box">
-        <div class="close-btn" onclick="closePopup('lh${i}')">×</div>
-        <h2 style="color:#ff8800;text-align:center;">Liên hệ</h2>
+        <div class="popup-box">
+            <div class="close-btn" onclick="closePopup('lh${i}')">×</div>
+            <h2 style="color:#ff8800;text-align:center;">Liên hệ</h2>
 
-        <!-- ẢNH QR VUÔNG, NHỎ 1/2 -->
-       <img src="qr-thuyduong.jpg"
-    style="
-        width: 100%;
-        max-width: 160px;     /* kích thước chuẩn, không bao giờ tràn */
-        aspect-ratio: 1 / 1;  /* luôn vuông */
-        object-fit: cover;
-        display: block;
-        margin: 20px auto;
-        border-radius: 10px;
-    ">
-
-
-        <p style="text-align:center;font-size:20px;font-weight:600;margin-top:15px;">
-            Zalo: <b>0981171750</b>
-        </p>
+            <img src="qr-thuyduong.jpg"
+                style="
+                    width: 100%;
+                    max-width: 160px;
+                    aspect-ratio: 1;
+                    object-fit: cover;
+                    display: block;
+                    margin: 20px auto;
+                    border-radius: 10px;
+                ">
+            <p style="text-align:center;font-size:20px;font-weight:600">
+                Zalo: <b>0981171750</b>
+            </p>
+        </div>
     </div>
-</div>
-
     `;
 }
 
 document.getElementById("popups-here").innerHTML = popupHTML;
 
 </script>
-
-</body>
-</html>
-
-
-
-
-
-
-
-
