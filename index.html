@@ -48,8 +48,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 15px; /* Thêm dòng này để đẩy lên cao */
 }
-
 .header-left, .header-right {
     font-size: 16px;
     font-weight: 500;
@@ -524,21 +524,21 @@ function createPopups() {
             </div>
         </div>
 
-        <div id="lh${i}" class="popup-overlay">
-            <div class="popup-box">
-                <div class="close-btn" onclick="closePopup('lh${i}')">×</div>
-                <h2 style="color:#ff8800;text-align:center;">Liên hệ</h2>
-                <div style="text-align:center; margin:20px 0;">
-                    <div style="width:160px; height:160px; background:#f0f0f0; display:inline-block; border-radius:10px; line-height:160px; color:#666;">
-                        QR Code
-                    </div>
-                </div>
-                <p style="text-align:center;font-size:20px;font-weight:600">
-                    Zalo: <b>0981171750</b>
-                </p>
-            </div>
+         <div id="lh${i}" class="popup-overlay">
+        <div class="popup-box" style="max-width: 300px; padding: 20px;">
+            <div class="close-btn" onclick="closePopup('lh${i}')">×</div>
+            <img src="qr-thuyduong.jpg"
+                style="
+                    width: 100%;
+                    height: auto;
+                    display: block;
+                    border-radius: 10px;
+                ">
+            <p style="text-align:center;font-size:20px;font-weight:600; margin-top: 15px;">
+                Zalo: <b>0981171750</b>
+            </p>
         </div>
-        `;
+    </div>
     }
 
     document.getElementById("popups-here").innerHTML = popupHTML;
@@ -546,4 +546,5 @@ function createPopups() {
 </script>
 </body>
 </html>
+
 
