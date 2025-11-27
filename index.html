@@ -16,19 +16,24 @@ body {
 }
 
 /* ====== TIÊU ĐỀ CHÍNH ====== */
+/* ====== HEADER CHÍNH ====== */
 header {
     background: #ff8800;
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     text-align: center;
-    padding: 18px 0;
-    font-size: 40px;
+    height: 110px; /* Tăng chiều cao cho mobile */
+    padding: 0;
+    font-size: 34px;
     font-weight: 700;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    height: 70px;
     box-sizing: border-box;
 }
 
@@ -36,62 +41,71 @@ header {
 .company-bar {
     background: #ff8800;
     color: white;
+    width: 100%;
+    padding: 0 20px;
+    height: 60px;
+    position: fixed;
+    top: 110px; /* Nằm ngay dưới header */
+    left: 0;
+    z-index: 999;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 140px;        /* TĂNG ĐỘ CAO – DÍNH SÁT THANH ĐEN */
-    padding: 0 40px;      /* LOẠI BỎ PADDING TRÊN DƯỚI */
-    box-sizing: border-box;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 999;
+    font-size: 15px;
+    font-weight: 500;
 }
-.title-left {
-    font-size: 18px;
-    line-height: 1.6;
-}
-
-.title-center {
-    font-size: 42px;
-    font-weight: 800;
-    text-align: center;
-    flex: 1;
-}
-
-.title-right {
-    font-size: 24px;
-    font-weight: 700;
-    text-align: right;
-}
-
 
 /* ====== MENU ====== */
 .menu-bar {
+    position: fixed;
+    top: 170px; /* Ngay dưới company bar */
+    left: 0;
+    width: 100%;
     background: #333;
+    color: white;
     padding: 12px 0;
     text-align: center;
-    position: fixed;
-    top: 140px;
-    width: 100%;
     z-index: 998;
 }
 .menu-bar a {
     color: white;
-    text-decoration: none;
-    margin: 0 35px;
-    font-size: 20px;
+    margin: 0 25px;
+    font-size: 18px;
     font-weight: 600;
-    cursor: pointer;
-}
-.menu-bar a:hover {
-    color: #ff8800;
 }
 
-/* ĐẨY NỘI DUNG XUỐNG DƯỚI BA CÁI THANH CỐ ĐỊNH */
+/* ====== ĐẨY CONTENT XUỐNG ====== */
 #content-area {
-    margin-top: 200px !important;
+    margin-top: 230px !important; 
 }
+
+/* ====== MOBILE FIX 100% ====== */
+@media (max-width: 600px){
+
+    header{
+        height: 120px;
+        font-size: 26px;
+    }
+
+    .company-bar{
+        flex-direction: column;
+        height: auto;
+        padding: 6px 10px;
+        text-align:center;
+        gap: 3px;
+        top: 120px;
+    }
+
+    .menu-bar{
+        top: 180px;
+        padding: 10px 0;
+    }
+
+    #content-area {
+        margin-top: 250px !important;
+    }
+}
+
 
 /* Container để tạo khoảng cách hai bên */
 .container {
@@ -586,6 +600,7 @@ document.getElementById("popups-here").innerHTML = popupHTML;
 </body>
 
 </html>
+
 
 
 
