@@ -155,6 +155,32 @@ header {
     
     .product-card {
         overflow: hidden;
+/* ========== DESKTOP FIX ========== */
+@media (min-width: 601px) {
+    .header-left, .header-right {
+        padding: 0 20px; /* Căn lề hai bên */
+    }
+    
+    .header-right {
+        font-size: 20px; /* Tăng kích thước chữ Zalo */
+    }
+    
+    .header-right b {
+        font-size: 24px; /* Tăng kích thước số điện thoại */
+    }
+    
+    header {
+        min-height: 100px; /* Giảm chiều cao header */
+        padding: 5px 20px;
+    }
+    
+    .menu-bar {
+        top: 100px; /* Điều chỉnh vị trí menu do header nhỏ hơn */
+        padding: 18px 0; /* Tăng chiều cao thanh menu */
+    }
+    
+    #content-area {
+        margin-top: 160px !important; /* Điều chỉnh khoảng cách content */
     }
 }
 
@@ -713,6 +739,7 @@ function createPopups() {
 </script>
 </body>
 </html>
+
 
 
 
