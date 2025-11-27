@@ -15,50 +15,51 @@ body {
     background: #f4f4f4;
 }
 
-/* ====== TIÊU ĐỀ CHÍNH ====== */
 /* ====== HEADER CHÍNH ====== */
 header {
     background: #ff8800;
     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    height: 110px; /* Tăng chiều cao cho mobile */
-    padding: 0;
-    font-size: 34px;
-    font-weight: 700;
+    padding: 10px 20px;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 120px;
 }
 
-/* ====== COMPANY BAR ====== */
-.company-bar {
-    background: #ff8800;
-    color: white;
-    width: 100%;
-    padding: 0 20px;
-    height: 60px;
-    position: fixed;
-    top: 110px; /* Nằm ngay dưới header */
-    left: 0;
-    z-index: 999;
+.header-top {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.header-top h1 {
+    font-size: 42px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.header-bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 15px;
+}
+
+.header-left, .header-right {
+    font-size: 16px;
     font-weight: 500;
+    line-height: 1.4;
 }
 
 /* ====== MENU ====== */
 .menu-bar {
     position: fixed;
-    top: 170px; /* Ngay dưới company bar */
+    top: 120px; /* Ngay dưới header */
     left: 0;
     width: 100%;
     background: #333;
@@ -69,43 +70,20 @@ header {
 }
 .menu-bar a {
     color: white;
+    text-decoration: none;
     margin: 0 25px;
     font-size: 18px;
     font-weight: 600;
+    cursor: pointer;
+}
+.menu-bar a:hover {
+    color: #ff8800;
 }
 
 /* ====== ĐẨY CONTENT XUỐNG ====== */
 #content-area {
-    margin-top: 230px !important; 
+    margin-top: 180px !important; 
 }
-
-/* ====== MOBILE FIX 100% ====== */
-@media (max-width: 600px){
-
-    header{
-        height: 120px;
-        font-size: 26px;
-    }
-
-    .company-bar{
-        flex-direction: column;
-        height: auto;
-        padding: 6px 10px;
-        text-align:center;
-        gap: 3px;
-        top: 120px;
-    }
-
-    .menu-bar{
-        top: 180px;
-        padding: 10px 0;
-    }
-
-    #content-area {
-        margin-top: 250px !important;
-    }
-}
-
 
 /* Container để tạo khoảng cách hai bên */
 .container {
@@ -142,6 +120,7 @@ header {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    background-color: #f0f0f0;
 }
 
 .product-name {
@@ -224,50 +203,45 @@ header {
     }
 }
 
-/* Mobile */
+/* ================= MOBILE FIX ================= */
 @media (max-width: 600px) {
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
     header {
-        font-size: 28px;
-        padding: 15px 0;
-        height: 60px;
-    }
-    
-    .company-bar {
-        flex-direction: column;
-        padding: 8px 10px;
-        top: 60px;
-        height: 60px;
-    }
-    
-    .title-left, .title-center, .title-right {
+        min-height: 150px;
+        padding: 10px 15px;
         text-align: center;
-        margin: 3px 0;
     }
     
-    .title-center {
-        font-size: 20px;
+    .header-top h1 {
+        font-size: 32px;
+        margin-bottom: 10px;
     }
     
-    .title-right {
-        font-size: 16px;
+    .header-bottom {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .header-left, .header-right {
+        text-align: center;
+        font-size: 14px;
     }
     
     .menu-bar {
-        top: 120px;
-        padding: 8px 0;
+        top: 150px;
+        padding: 10px 0;
     }
     
     .menu-bar a {
-        margin: 0 10px;
+        margin: 0 12px;
         font-size: 16px;
     }
     
     #content-area {
-        margin-top: 150px !important;
+        margin-top: 200px !important;
+    }
+    
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
     
     .section-title {
@@ -275,68 +249,26 @@ header {
         padding: 10px 15px;
     }
 }
-
-    <style>
-/* ... toàn bộ css của bạn ... */
-
-/* ================= MOBILE FIX ================= */
-@media (max-width: 600px) {
-    header {
-        font-size: 26px;
-        height: 70px;
-        padding-top: 18px;
-    }
-
-    .company-bar {
-        top: 70px;
-        height: auto;
-        padding: 6px 10px;
-        flex-direction: column;
-        gap: 4px;
-        text-align: center;
-    }
-
-    .title-left,
-    .title-right {
-        text-align: center !important;
-    }
-
-    .menu-bar {
-        top: calc(70px + 60px);
-    }
-
-    #content-area {
-        margin-top: calc(70px + 60px + 50px) !important;
-    }
-}
-</style>
-
 </style>
 </head>
 
 <body>
 
-<!-- ========== HEADER + COMPANY BAR + MENU ========== -->
-
-<!-- TIÊU ĐỀ CHÍNH (CHỈ CÓ MỘT HEADER DUY NHẤT) -->
-
-
-<!-- THANH THÔNG TIN CÔNG TY -->
-<div class="company-bar">
-    <div class="title-left">
-        Địa chỉ: Số 68, tổ 4, KP4, P.Trảng Dài, Đồng Nai <br>
-        MST: 3603502397
+<!-- ========== HEADER MỚI ========== -->
+<header>
+    <div class="header-top">
+        <h1>BAO TAY THÙY DƯƠNG</h1>
     </div>
-
-    <div class="title-center">
-        BAO TAY THÙY DƯƠNG
-
+    <div class="header-bottom">
+        <div class="header-left">
+            Địa chỉ: Số 68, tổ 4, KP4, P.Trảng Dài, Đồng Nai<br>
+            MST: 3603502397
+        </div>
+        <div class="header-right">
+            Zalo: <b>0981171750</b>
+        </div>
     </div>
-
-    <div class="title-right">
-        Zalo: <b>0981171750</b>
-    </div>
-</div>
+</header>
 
 <!-- MENU -->
 <nav class="menu-bar">
@@ -345,8 +277,6 @@ header {
     <a onclick="showVideos()">Video</a>
     <a onclick="showContact()">Liên Hệ</a>
 </nav>
-
-
 
 <!-- ================= BẮT ĐẦU NỘI DUNG ================= -->
 <div id="content-area">
@@ -361,7 +291,7 @@ header {
 
         <!-- LEN XÁM -->
         <div class="product-card">
-            <img src="len-xam.jpg" alt="Bao tay len xám">
+            <img src="https://via.placeholder.com/300x200?text=Bao+tay+len+xám" alt="Bao tay len xám">
             <div class="product-name">Bao tay len xám</div>
             <button class="btn-orange" onclick="openPopup('mota1')">Mô tả</button>
             <button class="btn-orange" onclick="openPopup('lh1')">Liên hệ</button>
@@ -369,7 +299,7 @@ header {
 
         <!-- LEN KEM -->
         <div class="product-card">
-            <img src="len-kem.jpg" alt="Bao tay len kem">
+            <img src="https://via.placeholder.com/300x200?text=Bao+tay+len+kem" alt="Bao tay len kem">
             <div class="product-name">Bao tay len kem</div>
             <button class="btn-orange" onclick="openPopup('mota2')">Mô tả</button>
             <button class="btn-orange" onclick="openPopup('lh2')">Liên hệ</button>
@@ -377,7 +307,7 @@ header {
 
         <!-- LEN POLY -->
         <div class="product-card">
-            <img src="len-poly.jpg" alt="Bao tay len poly">
+            <img src="https://via.placeholder.com/300x200?text=Bao+tay+len+poly" alt="Bao tay len poly">
             <div class="product-name">Bao tay len poly</div>
             <button class="btn-orange" onclick="openPopup('mota3')">Mô tả</button>
             <button class="btn-orange" onclick="openPopup('lh3')">Liên hệ</button>
@@ -385,7 +315,7 @@ header {
 
         <!-- LEN MUỐI TIÊU -->
         <div class="product-card">
-            <img src="len-muoi-tieu.jpg" alt="Bao tay len muối tiêu">
+            <img src="https://via.placeholder.com/300x200?text=Bao+tay+len+muối+tiêu" alt="Bao tay len muối tiêu">
             <div class="product-name">Bao tay len muối tiêu</div>
             <button class="btn-orange" onclick="openPopup('mota4')">Mô tả</button>
             <button class="btn-orange" onclick="openPopup('lh4')">Liên hệ</button>
@@ -400,28 +330,28 @@ header {
     <div class="product-grid">
 
         <div class="product-card">
-            <img src="latex-do.jpg" alt="phủ sơn latex đỏ">
+            <img src="https://via.placeholder.com/300x200?text=Phủ+sơn+latex+đỏ" alt="phủ sơn latex đỏ">
             <div class="product-name">Phủ sơn latex đỏ</div>
             <button class="btn-orange" onclick="openPopup('mota5')">Mô tả</button>
             <button class="btn-orange" onclick="openPopup('lh5')">Liên hệ</button>
         </div>
 
         <div class="product-card">
-            <img src="nitrile-xanh.jpg" alt="phủ sơn nitrile xanh">
+            <img src="https://via.placeholder.com/300x200?text=Phủ+sơn+nitrile+xanh" alt="phủ sơn nitrile xanh">
             <div class="product-name">Phủ sơn nitrile xanh</div>
             <button class="btn-orange" onclick="openPopup('mota6')">Mô tả</button>
             <button class="btn-orange" onclick="openPopup('lh6')">Liên hệ</button>
         </div>
 
         <div class="product-card">
-            <img src="pvc-hat.jpg" alt="phủ hạt PVC">
+            <img src="https://via.placeholder.com/300x200?text=Phủ+hạt+PVC" alt="phủ hạt PVC">
             <div class="product-name">Phủ hạt nhựa PVC</div>
             <button class="btn-orange" onclick="openPopup('mota7')">Mô tả</button>
             <button class="btn-orange" onclick="openPopup('lh7')">Liên hệ</button>
         </div>
 
         <div class="product-card">
-            <img src="lbt-xam.jpg" alt="phủ sơn lòng bàn tay xám">
+            <img src="https://via.placeholder.com/300x200?text=Phủ+sơn+lòng+bàn+tay+xám" alt="phủ sơn lòng bàn tay xám">
             <div class="product-name">Phủ sơn lòng bàn tay xám</div>
             <button class="btn-orange" onclick="openPopup('mota8')">Mô tả</button>
             <button class="btn-orange" onclick="openPopup('lh8')">Liên hệ</button>
@@ -436,14 +366,14 @@ header {
     <div class="product-grid">
 
         <div class="product-card">
-            <img src="cat-3.jpg" alt="chống cắt cấp độ 3">
+            <img src="https://via.placeholder.com/300x200?text=Chống+cắt+cấp+độ+3" alt="chống cắt cấp độ 3">
             <div class="product-name">Chống cắt cấp độ 3</div>
             <button class="btn-orange" onclick="openPopup('mota9')">Mô tả</button>
             <button class="btn-orange" onclick="openPopup('lh9')">Liên hệ</button>
         </div>
 
         <div class="product-card">
-            <img src="cat-5.jpg" alt="chống cắt cấp độ 5">
+            <img src="https://via.placeholder.com/300x200?text=Chống+cắt+cấp+độ+5" alt="chống cắt cấp độ 5">
             <div class="product-name">Chống cắt cấp độ 5</div>
             <button class="btn-orange" onclick="openPopup('mota10')">Mô tả</button>
             <button class="btn-orange" onclick="openPopup('lh10')">Liên hệ</button>
@@ -453,20 +383,24 @@ header {
 
 </div> <!-- KẾT THÚC TRANG SẢN PHẨM -->
 
-<!-- Các trang khác (để trống theo yêu cầu) -->
+<!-- Các trang khác -->
 <div id="page-home" style="display:none; padding:20px;">
     <h2>Trang Chủ</h2>
-    <p>Nội dung trang chủ sẽ được cập nhật sau.</p>
+    <p>Chào mừng đến với BAO TAY THÙY DƯƠNG - nhà cung cấp bao tay bảo hộ lao động chất lượng cao.</p>
+    <p>Chúng tôi chuyên sản xuất và phân phối các loại bao tay công nghiệp, bao tay len, bao tay chống cắt và nhiều sản phẩm bảo hộ khác.</p>
 </div>
 
 <div id="page-videos" style="display:none; padding:20px;">
     <h2>Video</h2>
-    <p>Nội dung video sẽ được cập nhật sau.</p>
+    <p>Video giới thiệu sản phẩm sẽ được cập nhật sớm.</p>
 </div>
 
 <div id="page-contact" style="display:none; padding:20px;">
     <h2>Liên Hệ</h2>
-    <p>Nội dung liên hệ sẽ được cập nhật sau.</p>
+    <p><strong>Công ty TNHH BAO TAY THÙY DƯƠNG</strong></p>
+    <p>Địa chỉ: Số 68, tổ 4, KP4, P.Trảng Dài, Đồng Nai</p>
+    <p>MST: 3603502397</p>
+    <p>Zalo: <strong>0981171750</strong></p>
 </div>
 
 </div> <!-- Kết thúc container -->
@@ -477,6 +411,13 @@ header {
 
 <!-- ========== PHẦN 3 — SCRIPT ========== -->
 <script>
+// Khởi tạo trang mặc định
+document.addEventListener('DOMContentLoaded', function() {
+    showProducts();
+    
+    // Tạo popup ngay sau khi trang tải xong
+    createPopups();
+});
 
 /* ================= CHUYỂN TRANG ================= */
 function showHome()    { page("home"); }
@@ -501,145 +442,107 @@ function closePopup(id){
     document.getElementById(id).style.display = "none";
 }
 
-/* ================= DỮ LIỆU MÔ TẢ – GIỮ NGUYÊN 100% ================= */
-
-
+/* ================= DỮ LIỆU MÔ TẢ ================= */
 const mota = {
-
-    /* 1) Bao tay len xám */
     mota1:{
         ten:"Bao tay len xám (30g – 80g)",
         chatlieu:"Sợi Cotton thấm hút tốt pha Polyester tăng độ bền. Dệt kim chắc chắn 30g–80g/đôi, bo cổ tay chống tuột.",
         congdung:"Chống trầy xước cơ bản, giữ tay sạch, thấm hút mồ hôi tốt. Đeo thoáng, dễ chịu, phù hợp sử dụng số lượng lớn.",
         nganh:"Kho bãi, bốc xếp hàng hóa, thợ cơ khí nhẹ, xây dựng (việc sạch), nông nghiệp, làm vườn, may mặc, vận chuyển."
     },
-
-    /* 2) Bao tay len kem */
     mota2:{
         ten:"Bao tay len kem (30g – 80g)",
         chatlieu:"Cotton pha Polyester, dệt nhiều trọng lượng từ 30g đến 80g. Mềm, bền và thoáng.",
         congdung:"Chống bụi bẩn, chống xước nhẹ, giữ nhiệt nhẹ trong môi trường mát. Giá thành kinh tế.",
         nganh:"Kho hàng, logistic, thợ máy nhẹ, phụ việc công trình, nông nghiệp, lắp ráp đơn giản."
     },
-
-    /* 3) Bao tay len poly */
     mota3:{
         ten:"Bao tay len poly (dệt mịn)",
         chatlieu:"100% Polyester chất lượng cao, dệt mịn 13G–15G, sợi bền và không rụng bụi.",
         congdung:"Không tạo bụi sợi, chống bám bẩn, bền hơn len cotton. Thao tác nhẹ nhàng, linh hoạt.",
         nganh:"Điện tử – linh kiện, lắp ráp nhỏ, kiểm tra sản phẩm, môi trường sạch (cleanroom mức thấp)."
     },
-
-    /* 4) Bao tay len muối tiêu */
     mota4:{
         ten:"Bao tay len muối tiêu",
         chatlieu:"Cotton + Polyester dệt hai màu dạng muối tiêu, trọng lượng 40g–70g/đôi.",
         congdung:"Độ bền cao hơn len trơn, chống trầy tốt, thoáng, dễ đeo và kinh tế.",
         nganh:"Kho vận, bốc xếp, thợ cơ khí nhẹ, công nhân lắp ráp, nông nghiệp, làm vườn."
     },
-
-    /* 5) Bao tay phủ sơn Latex đỏ */
     mota5:{
         ten:"Bao tay phủ sơn Latex đỏ",
         chatlieu:"Lõi cotton hoặc poly-cotton, phủ cao su Latex nguyên chất ở lòng bàn tay hoặc phủ 3/4.",
         congdung:"Ma sát cực cao, bám chắc khi cầm gỗ – kim loại – gạch. Chống trượt tốt, chống mài mòn, co giãn tốt.",
         nganh:"Xây dựng, vận chuyển hàng nặng, sản xuất gỗ, công trình, nông nghiệp."
     },
-
-    /* 6) Bao tay phủ sơn Nitrile xanh */
     mota6:{
         ten:"Bao tay phủ sơn Nitrile xanh",
         chatlieu:"Sợi Polyester hoặc Poly/Cotton, phủ Nitrile chống dầu chuyên dụng.",
         congdung:"Chống dầu – mỡ – hóa chất nhẹ tốt nhất. Độ bền cao, chịu ma sát tốt, không gây dị ứng.",
         nganh:"Sửa chữa ô tô, công nghiệp dầu mỡ, cơ khí, lắp ráp máy móc."
     },
-
-    /* 7) Bao tay phủ hạt PVC */
     mota7:{
         ten:"Bao tay phủ hạt PVC",
         chatlieu:"Cotton/Poly dệt, hạt PVC in nổi 1 hoặc 2 mặt giúp tăng ma sát mạnh.",
         congdung:"Chống trơn trượt mạnh, cầm nắm vật trơn rất chắc, bảo vệ lòng bàn tay khỏi mài mòn.",
         nganh:"Kho bãi – logistics, vận chuyển thùng hàng, thủy tinh – gốm sứ, đóng gói carton."
     },
-
-    /* 8) Bao tay phủ sơn lòng bàn tay xám */
     mota8:{
         ten:"Bao tay phủ sơn lòng bàn tay xám (PU/Nitrile)",
         chatlieu:"Lõi Polyester hoặc HPPE, phủ PU hoặc Nitrile mỏng ở lòng bàn tay.",
         congdung:"Thao tác chính xác, chống trơn nhẹ, thoáng tay, không đổ mồ hôi, bám tốt vào chi tiết nhỏ.",
         nganh:"Điện tử, công nghiệp nhẹ, kiểm tra sản phẩm, lắp ráp chính xác."
     },
-
-    /* 9) Bao tay chống cắt cấp độ 3 */
     mota9:{
         ten:"Bao tay chống cắt cấp độ 3 (EN388 – C level)",
         chatlieu:"Sợi HPPE + sợi thủy tinh composite, phủ PU mỏng để tăng độ bám.",
         congdung:"Chống cắt trung bình, chịu mài mòn cao, giữ độ linh hoạt tốt, thao tác an toàn với vật sắc nhẹ.",
         nganh:"Gia công kim loại nhẹ, chế biến thực phẩm, xử lý linh kiện sắc, ngành kính nhẹ."
     },
-
-    /* 10) Bao tay chống cắt cấp độ 5 */
     mota10:{
         ten:"Bao tay chống cắt cấp độ 5 (EN388 – E/F level)",
         chatlieu:"Sợi HPPE + Kevlar + sợi thép hoặc sợi thủy tinh cường lực, phủ PU/Nitrile.",
         congdung:"Chống cắt mạnh (cấp cao), chịu ma sát mạnh, bảo vệ tối đa khi làm việc với vật sắc nguy hiểm.",
         nganh:"Gia công inox – thép, xử lý tấm kim loại sắc, chế biến thủy tinh – kính, công nghiệp nặng."
     }
-
 };
 
-
-
 /* ================= TẠO POPUP TỰ ĐỘNG ================= */
-let popupHTML = "";
+function createPopups() {
+    let popupHTML = "";
 
-for (let i = 1; i <= 10; i++) {
-    let m = mota["mota" + i];
+    for (let i = 1; i <= 10; i++) {
+        let m = mota["mota" + i];
 
-    popupHTML += `
-    <div id="mota${i}" class="popup-overlay">
-        <div class="popup-box">
-            <div class="close-btn" onclick="closePopup('mota${i}')">×</div>
-            <h2 style="color:#ff8800">${m.ten}</h2>
-            <p><b>Chất liệu & Cấu tạo:</b><br>${m.chatlieu}</p>
-            <p><b>Lợi ích (Công dụng) chi tiết:</b><br>${m.congdung}</p>
-            <p><b>Ngành nghề sử dụng phổ biến:</b><br>${m.nganh}</p>
+        popupHTML += `
+        <div id="mota${i}" class="popup-overlay">
+            <div class="popup-box">
+                <div class="close-btn" onclick="closePopup('mota${i}')">×</div>
+                <h2 style="color:#ff8800">${m.ten}</h2>
+                <p><b>Chất liệu & Cấu tạo:</b><br>${m.chatlieu}</p>
+                <p><b>Lợi ích (Công dụng) chi tiết:</b><br>${m.congdung}</p>
+                <p><b>Ngành nghề sử dụng phổ biến:</b><br>${m.nganh}</p>
+            </div>
         </div>
-    </div>
 
-    <div id="lh${i}" class="popup-overlay">
-        <div class="popup-box">
-            <div class="close-btn" onclick="closePopup('lh${i}')">×</div>
-            <h2 style="color:#ff8800;text-align:center;">Liên hệ</h2>
-
-            <img src="qr-thuyduong.jpg"
-                style="
-                    width: 100%;
-                    max-width: 160px;
-                    aspect-ratio: 1;
-                    object-fit: cover;
-                    display: block;
-                    margin: 20px auto;
-                    border-radius: 10px;
-                ">
-            <p style="text-align:center;font-size:20px;font-weight:600">
-                Zalo: <b>0981171750</b>
-            </p>
+        <div id="lh${i}" class="popup-overlay">
+            <div class="popup-box">
+                <div class="close-btn" onclick="closePopup('lh${i}')">×</div>
+                <h2 style="color:#ff8800;text-align:center;">Liên hệ</h2>
+                <div style="text-align:center; margin:20px 0;">
+                    <div style="width:160px; height:160px; background:#f0f0f0; display:inline-block; border-radius:10px; line-height:160px; color:#666;">
+                        QR Code
+                    </div>
+                </div>
+                <p style="text-align:center;font-size:20px;font-weight:600">
+                    Zalo: <b>0981171750</b>
+                </p>
+            </div>
         </div>
-    </div>
-    `;
+        `;
+    }
+
+    document.getElementById("popups-here").innerHTML = popupHTML;
 }
-
-document.getElementById("popups-here").innerHTML = popupHTML;
-
 </script>
 </body>
-
 </html>
-
-
-
-
-
-
-
